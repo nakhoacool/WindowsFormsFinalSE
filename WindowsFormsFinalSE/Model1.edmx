@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FinalSEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accountant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="AName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Phone" Type="varchar" MaxLength="11" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="BirthDay" Type="date" />
+        </EntityType>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="AID" />
+          </Key>
+          <Property Name="AID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="AName" Type="nvarchar" MaxLength="30" />
+          <Property Name="PhoneNum" Type="varchar" MaxLength="11" />
+          <Property Name="A_Address" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Delivery">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="AID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="AID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="GStatus" Type="varchar" MaxLength="1" />
+          <Property Name="PaymentStatus" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Good">
+          <Key>
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="GID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="GName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Manufacture" Type="nvarchar" MaxLength="1" />
+          <Property Name="SellingPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="GOrder">
+          <Key>
+            <PropertyRef Name="GID" />
+            <PropertyRef Name="AID" />
+          </Key>
+          <Property Name="GID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="AID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="TotalPrice" Type="int" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="PaymentMethod" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Import">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="GID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="ImportDate" Type="date" />
+          <Property Name="ImportPrice" Type="int" />
+        </EntityType>
+        <Association Name="FK__Delivery__AID__412EB0B6">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="AID" />
+            </Principal>
+            <Dependent Role="Delivery">
+              <PropertyRef Name="AID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Delivery__ID__403A8C7D">
+          <End Role="Accountant" Type="Self.Accountant" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accountant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Delivery">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GOrder__AID__44FF419A">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+          <End Role="GOrder" Type="Self.GOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="AID" />
+            </Principal>
+            <Dependent Role="GOrder">
+              <PropertyRef Name="AID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GOrder__GID__440B1D61">
+          <End Role="Good" Type="Self.Good" Multiplicity="1" />
+          <End Role="GOrder" Type="Self.GOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Good">
+              <PropertyRef Name="GID" />
+            </Principal>
+            <Dependent Role="GOrder">
+              <PropertyRef Name="GID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Import__GID__3D5E1FD2">
+          <End Role="Good" Type="Self.Good" Multiplicity="1" />
+          <End Role="Import" Type="Self.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Good">
+              <PropertyRef Name="GID" />
+            </Principal>
+            <Dependent Role="Import">
+              <PropertyRef Name="GID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Import__ID__3C69FB99">
+          <End Role="Accountant" Type="Self.Accountant" Multiplicity="1" />
+          <End Role="Import" Type="Self.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accountant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Import">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinalSEModelStoreContainer">
+          <EntitySet Name="Accountant" EntityType="Self.Accountant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Good" EntityType="Self.Good" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GOrder" EntityType="Self.GOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Import" EntityType="Self.Import" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Delivery__AID__412EB0B6" Association="Self.FK__Delivery__AID__412EB0B6">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="Delivery" EntitySet="Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Delivery__ID__403A8C7D" Association="Self.FK__Delivery__ID__403A8C7D">
+            <End Role="Accountant" EntitySet="Accountant" />
+            <End Role="Delivery" EntitySet="Delivery" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GOrder__AID__44FF419A" Association="Self.FK__GOrder__AID__44FF419A">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="GOrder" EntitySet="GOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GOrder__GID__440B1D61" Association="Self.FK__GOrder__GID__440B1D61">
+            <End Role="Good" EntitySet="Good" />
+            <End Role="GOrder" EntitySet="GOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Import__GID__3D5E1FD2" Association="Self.FK__Import__GID__3D5E1FD2">
+            <End Role="Good" EntitySet="Good" />
+            <End Role="Import" EntitySet="Import" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Import__ID__3C69FB99" Association="Self.FK__Import__ID__3C69FB99">
+            <End Role="Accountant" EntitySet="Accountant" />
+            <End Role="Import" EntitySet="Import" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinalSEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Accountant">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDay" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Deliveries" Relationship="Self.FK__Delivery__ID__403A8C7D" FromRole="Accountant" ToRole="Delivery" />
+          <NavigationProperty Name="Imports" Relationship="Self.FK__Import__ID__3C69FB99" FromRole="Accountant" ToRole="Import" />
+        </EntityType>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="AID" />
+          </Key>
+          <Property Name="AID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNum" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="A_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Deliveries" Relationship="Self.FK__Delivery__AID__412EB0B6" FromRole="Agent" ToRole="Delivery" />
+          <NavigationProperty Name="GOrders" Relationship="Self.FK__GOrder__AID__44FF419A" FromRole="Agent" ToRole="GOrder" />
+        </EntityType>
+        <EntityType Name="Delivery">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="AID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Accountant" Relationship="Self.FK__Delivery__ID__403A8C7D" FromRole="Delivery" ToRole="Accountant" />
+          <NavigationProperty Name="Agent" Relationship="Self.FK__Delivery__AID__412EB0B6" FromRole="Delivery" ToRole="Agent" />
+        </EntityType>
+        <EntityType Name="Good">
+          <Key>
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="GID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Manufacture" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SellingPrice" Type="Int32" />
+          <NavigationProperty Name="GOrders" Relationship="Self.FK__GOrder__GID__440B1D61" FromRole="Good" ToRole="GOrder" />
+          <NavigationProperty Name="Imports" Relationship="Self.FK__Import__GID__3D5E1FD2" FromRole="Good" ToRole="Import" />
+        </EntityType>
+        <EntityType Name="GOrder">
+          <Key>
+            <PropertyRef Name="GID" />
+            <PropertyRef Name="AID" />
+          </Key>
+          <Property Name="GID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="TotalPrice" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Agent" Relationship="Self.FK__GOrder__AID__44FF419A" FromRole="GOrder" ToRole="Agent" />
+          <NavigationProperty Name="Good" Relationship="Self.FK__GOrder__GID__440B1D61" FromRole="GOrder" ToRole="Good" />
+        </EntityType>
+        <EntityType Name="Import">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="GID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="ImportDate" Type="DateTime" Precision="0" />
+          <Property Name="ImportPrice" Type="Int32" />
+          <NavigationProperty Name="Accountant" Relationship="Self.FK__Import__ID__3C69FB99" FromRole="Import" ToRole="Accountant" />
+          <NavigationProperty Name="Good" Relationship="Self.FK__Import__GID__3D5E1FD2" FromRole="Import" ToRole="Good" />
+        </EntityType>
+        <Association Name="FK__Delivery__ID__403A8C7D">
+          <End Role="Accountant" Type="Self.Accountant" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accountant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Delivery">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Import__ID__3C69FB99">
+          <End Role="Accountant" Type="Self.Accountant" Multiplicity="1" />
+          <End Role="Import" Type="Self.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accountant">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Import">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Delivery__AID__412EB0B6">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="AID" />
+            </Principal>
+            <Dependent Role="Delivery">
+              <PropertyRef Name="AID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GOrder__AID__44FF419A">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+          <End Role="GOrder" Type="Self.GOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="AID" />
+            </Principal>
+            <Dependent Role="GOrder">
+              <PropertyRef Name="AID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GOrder__GID__440B1D61">
+          <End Role="Good" Type="Self.Good" Multiplicity="1" />
+          <End Role="GOrder" Type="Self.GOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Good">
+              <PropertyRef Name="GID" />
+            </Principal>
+            <Dependent Role="GOrder">
+              <PropertyRef Name="GID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Import__GID__3D5E1FD2">
+          <End Role="Good" Type="Self.Good" Multiplicity="1" />
+          <End Role="Import" Type="Self.Import" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Good">
+              <PropertyRef Name="GID" />
+            </Principal>
+            <Dependent Role="Import">
+              <PropertyRef Name="GID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FinalSE" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accountants" EntityType="Self.Accountant" />
+          <EntitySet Name="Agents" EntityType="Self.Agent" />
+          <EntitySet Name="Deliveries" EntityType="Self.Delivery" />
+          <EntitySet Name="Goods" EntityType="Self.Good" />
+          <EntitySet Name="GOrders" EntityType="Self.GOrder" />
+          <EntitySet Name="Imports" EntityType="Self.Import" />
+          <AssociationSet Name="FK__Delivery__ID__403A8C7D" Association="Self.FK__Delivery__ID__403A8C7D">
+            <End Role="Accountant" EntitySet="Accountants" />
+            <End Role="Delivery" EntitySet="Deliveries" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Import__ID__3C69FB99" Association="Self.FK__Import__ID__3C69FB99">
+            <End Role="Accountant" EntitySet="Accountants" />
+            <End Role="Import" EntitySet="Imports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Delivery__AID__412EB0B6" Association="Self.FK__Delivery__AID__412EB0B6">
+            <End Role="Agent" EntitySet="Agents" />
+            <End Role="Delivery" EntitySet="Deliveries" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GOrder__AID__44FF419A" Association="Self.FK__GOrder__AID__44FF419A">
+            <End Role="Agent" EntitySet="Agents" />
+            <End Role="GOrder" EntitySet="GOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GOrder__GID__440B1D61" Association="Self.FK__GOrder__GID__440B1D61">
+            <End Role="Good" EntitySet="Goods" />
+            <End Role="GOrder" EntitySet="GOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Import__GID__3D5E1FD2" Association="Self.FK__Import__GID__3D5E1FD2">
+            <End Role="Good" EntitySet="Goods" />
+            <End Role="Import" EntitySet="Imports" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinalSEModelStoreContainer" CdmEntityContainer="FinalSE">
+          <EntitySetMapping Name="Accountants">
+            <EntityTypeMapping TypeName="FinalSEModel.Accountant">
+              <MappingFragment StoreEntitySet="Accountant">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AName" ColumnName="AName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agents">
+            <EntityTypeMapping TypeName="FinalSEModel.Agent">
+              <MappingFragment StoreEntitySet="Agent">
+                <ScalarProperty Name="AID" ColumnName="AID" />
+                <ScalarProperty Name="AName" ColumnName="AName" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+                <ScalarProperty Name="A_Address" ColumnName="A_Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deliveries">
+            <EntityTypeMapping TypeName="FinalSEModel.Delivery">
+              <MappingFragment StoreEntitySet="Delivery">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AID" ColumnName="AID" />
+                <ScalarProperty Name="GStatus" ColumnName="GStatus" />
+                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goods">
+            <EntityTypeMapping TypeName="FinalSEModel.Good">
+              <MappingFragment StoreEntitySet="Good">
+                <ScalarProperty Name="GID" ColumnName="GID" />
+                <ScalarProperty Name="GName" ColumnName="GName" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Manufacture" ColumnName="Manufacture" />
+                <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GOrders">
+            <EntityTypeMapping TypeName="FinalSEModel.GOrder">
+              <MappingFragment StoreEntitySet="GOrder">
+                <ScalarProperty Name="GID" ColumnName="GID" />
+                <ScalarProperty Name="AID" ColumnName="AID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imports">
+            <EntityTypeMapping TypeName="FinalSEModel.Import">
+              <MappingFragment StoreEntitySet="Import">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="ImportPrice" ColumnName="ImportPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

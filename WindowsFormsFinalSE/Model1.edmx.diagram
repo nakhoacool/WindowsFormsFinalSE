@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4dc30ba420d04f89be3591da553a5cc5" Name="Diagram1">
+        <EntityTypeShape EntityType="FinalSEModel.Accountant" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalSEModel.Agent" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalSEModel.Delivery" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalSEModel.Good" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalSEModel.GOrder" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalSEModel.Import" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FinalSEModel.FK__Delivery__ID__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalSEModel.FK__Import__ID__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalSEModel.FK__Delivery__AID__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalSEModel.FK__GOrder__AID__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalSEModel.FK__GOrder__GID__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalSEModel.FK__Import__GID__3D5E1FD2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
