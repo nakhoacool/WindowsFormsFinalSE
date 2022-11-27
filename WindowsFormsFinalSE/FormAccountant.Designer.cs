@@ -41,17 +41,17 @@
             this.dateTimePicker_AccBirth = new System.Windows.Forms.DateTimePicker();
             this.btn_AccAdd = new System.Windows.Forms.Button();
             this.dataGridView_Acc = new System.Windows.Forms.DataGridView();
-            this.finalSEDataSet = new WindowsFormsFinalSE.FinalSEDataSet();
-            this.accountantBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountantTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetTableAdapters.AccountantTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountantBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalSEDataSet = new WindowsFormsFinalSE.FinalSEDataSet();
+            this.accountantTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetTableAdapters.AccountantTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Acc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountantBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -164,20 +164,7 @@
             this.dataGridView_Acc.RowTemplate.Height = 24;
             this.dataGridView_Acc.Size = new System.Drawing.Size(679, 237);
             this.dataGridView_Acc.TabIndex = 11;
-            // 
-            // finalSEDataSet
-            // 
-            this.finalSEDataSet.DataSetName = "FinalSEDataSet";
-            this.finalSEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // accountantBindingSource
-            // 
-            this.accountantBindingSource.DataMember = "Accountant";
-            this.accountantBindingSource.DataSource = this.finalSEDataSet;
-            // 
-            // accountantTableAdapter
-            // 
-            this.accountantTableAdapter.ClearBeforeFill = true;
+            this.dataGridView_Acc.SelectionChanged += new System.EventHandler(this.dataGridView_Acc_SelectionChanged);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -224,6 +211,20 @@
             this.birthDayDataGridViewTextBoxColumn.ReadOnly = true;
             this.birthDayDataGridViewTextBoxColumn.Width = 125;
             // 
+            // accountantBindingSource
+            // 
+            this.accountantBindingSource.DataMember = "Accountant";
+            this.accountantBindingSource.DataSource = this.finalSEDataSet;
+            // 
+            // finalSEDataSet
+            // 
+            this.finalSEDataSet.DataSetName = "FinalSEDataSet";
+            this.finalSEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // accountantTableAdapter
+            // 
+            this.accountantTableAdapter.ClearBeforeFill = true;
+            // 
             // FormAccountant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -245,8 +246,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormAccountant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Acc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountantBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

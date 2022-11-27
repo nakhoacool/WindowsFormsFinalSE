@@ -43,5 +43,18 @@ namespace WindowsFormsFinalSE
             this.accountantTableAdapter.Fill(this.finalSEDataSet.Accountant);
 
         }
+
+        private void dataGridView_Acc_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView_Acc.SelectedRows.Count > 0)
+            {
+                txtBox_AccID.Text = dataGridView_Acc.SelectedRows[0].Cells[0].Value.ToString();
+                txtBox_AccName.Text = dataGridView_Acc.SelectedRows[0].Cells[1].Value.ToString();
+                txtBox_AccPhone.Text = dataGridView_Acc.SelectedRows[0].Cells[2].Value.ToString();
+                txtBox_AccEmail.Text = dataGridView_Acc.SelectedRows[0].Cells[3].Value.ToString();
+                dateTimePicker_AccBirth.Value = (DateTime)dataGridView_Acc.SelectedRows[0].Cells[4].Value;
+            }
+
+        }
     }
 }
