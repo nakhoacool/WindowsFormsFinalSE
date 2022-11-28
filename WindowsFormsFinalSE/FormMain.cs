@@ -17,15 +17,15 @@ namespace WindowsFormsFinalSE
             InitializeComponent();
         }
 
-        private void accountantToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAccountant formAccountant = new FormAccountant();
-            formAccountant.Show();
-        }
-
         private void MenuPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void iconAccountant_Click(object sender, EventArgs e)
+        {
+            FormAccountant formAccountant = new FormAccountant();
+            formAccountant.Show();
         }
     }
 }

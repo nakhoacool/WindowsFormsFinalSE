@@ -132,6 +132,7 @@
             this.iconAccountant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconAccountant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconAccountant.UseVisualStyleBackColor = true;
+            this.iconAccountant.Click += new System.EventHandler(this.iconAccountant_Click);
             // 
             // Logo
             // 
