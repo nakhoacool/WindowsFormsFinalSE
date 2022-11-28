@@ -28,79 +28,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.accountantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.MenuPanel = new System.Windows.Forms.Panel();
+            this.iconReport = new FontAwesome.Sharp.IconButton();
+            this.iconNote = new FontAwesome.Sharp.IconButton();
+            this.iconImport = new FontAwesome.Sharp.IconButton();
+            this.iconAccountant = new FontAwesome.Sharp.IconButton();
+            this.Logo = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.MenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // MenuPanel
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.categoryToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1157, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.MenuPanel.Controls.Add(this.iconReport);
+            this.MenuPanel.Controls.Add(this.iconNote);
+            this.MenuPanel.Controls.Add(this.iconImport);
+            this.MenuPanel.Controls.Add(this.iconAccountant);
+            this.MenuPanel.Controls.Add(this.Logo);
+            this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MenuPanel.Location = new System.Drawing.Point(0, 0);
+            this.MenuPanel.Name = "MenuPanel";
+            this.MenuPanel.Size = new System.Drawing.Size(200, 544);
+            this.MenuPanel.TabIndex = 1;
+            this.MenuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuPanel_Paint);
             // 
-            // fileToolStripMenuItem
+            // iconReport
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "&File";
+            this.iconReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconReport.FlatAppearance.BorderSize = 0;
+            this.iconReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconReport.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconReport.IconChar = FontAwesome.Sharp.IconChar.Readme;
+            this.iconReport.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconReport.Location = new System.Drawing.Point(0, 383);
+            this.iconReport.Name = "iconReport";
+            this.iconReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconReport.Size = new System.Drawing.Size(200, 80);
+            this.iconReport.TabIndex = 4;
+            this.iconReport.Text = "Report";
+            this.iconReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconReport.UseVisualStyleBackColor = true;
             // 
-            // exitToolStripMenuItem
+            // iconNote
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
-            this.exitToolStripMenuItem.Text = "&Exit";
+            this.iconNote.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconNote.FlatAppearance.BorderSize = 0;
+            this.iconNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconNote.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconNote.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
+            this.iconNote.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconNote.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconNote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconNote.Location = new System.Drawing.Point(0, 303);
+            this.iconNote.Name = "iconNote";
+            this.iconNote.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconNote.Size = new System.Drawing.Size(200, 80);
+            this.iconNote.TabIndex = 3;
+            this.iconNote.Text = "Delivery Note";
+            this.iconNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconNote.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconNote.UseVisualStyleBackColor = true;
             // 
-            // categoryToolStripMenuItem
+            // iconImport
             // 
-            this.categoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accountantToolStripMenuItem});
-            this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.categoryToolStripMenuItem.Text = "&Category";
+            this.iconImport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconImport.FlatAppearance.BorderSize = 0;
+            this.iconImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconImport.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconImport.IconChar = FontAwesome.Sharp.IconChar.Box;
+            this.iconImport.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconImport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconImport.Location = new System.Drawing.Point(0, 223);
+            this.iconImport.Name = "iconImport";
+            this.iconImport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconImport.Size = new System.Drawing.Size(200, 80);
+            this.iconImport.TabIndex = 2;
+            this.iconImport.Text = "Goods Received";
+            this.iconImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconImport.UseVisualStyleBackColor = true;
             // 
-            // accountantToolStripMenuItem
+            // iconAccountant
             // 
-            this.accountantToolStripMenuItem.Name = "accountantToolStripMenuItem";
-            this.accountantToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.accountantToolStripMenuItem.Text = "&Accountant";
-            this.accountantToolStripMenuItem.Click += new System.EventHandler(this.accountantToolStripMenuItem_Click);
+            this.iconAccountant.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconAccountant.FlatAppearance.BorderSize = 0;
+            this.iconAccountant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconAccountant.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconAccountant.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconAccountant.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconAccountant.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAccountant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconAccountant.Location = new System.Drawing.Point(0, 143);
+            this.iconAccountant.Name = "iconAccountant";
+            this.iconAccountant.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconAccountant.Size = new System.Drawing.Size(200, 80);
+            this.iconAccountant.TabIndex = 1;
+            this.iconAccountant.Text = "Accountant";
+            this.iconAccountant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconAccountant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconAccountant.UseVisualStyleBackColor = true;
+            // 
+            // Logo
+            // 
+            this.Logo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Logo.Location = new System.Drawing.Point(0, 0);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(200, 143);
+            this.Logo.TabIndex = 0;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(200, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(902, 544);
+            this.MainPanel.TabIndex = 2;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 421);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1102, 544);
+            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.MenuPanel);
             this.Name = "FormMain";
-            this.Text = "Form1";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Text = "Supplement Facts Products Management";
+            this.MenuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem categoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem accountantToolStripMenuItem;
+        private System.Windows.Forms.Panel MenuPanel;
+        private FontAwesome.Sharp.IconButton iconReport;
+        private FontAwesome.Sharp.IconButton iconNote;
+        private FontAwesome.Sharp.IconButton iconImport;
+        private FontAwesome.Sharp.IconButton iconAccountant;
+        private System.Windows.Forms.Panel Logo;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }
 

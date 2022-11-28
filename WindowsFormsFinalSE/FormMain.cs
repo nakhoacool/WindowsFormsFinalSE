@@ -22,5 +22,10 @@ namespace WindowsFormsFinalSE
             FormAccountant formAccountant = new FormAccountant();
             formAccountant.Show();
         }
+
+        private void MenuPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -229,7 +229,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 395);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1074, 417);
             this.Controls.Add(this.dataGridView_Acc);
             this.Controls.Add(this.btn_AccAdd);
             this.Controls.Add(this.dateTimePicker_AccBirth);
@@ -243,7 +244,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAccountant";
-            this.Text = "Form1";
+            this.Text = "Accountant";
             this.Load += new System.EventHandler(this.FormAccountant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Acc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountantBindingSource)).EndInit();
