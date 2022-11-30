@@ -49,6 +49,9 @@
             this.accountantBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finalSEDataSet = new WindowsFormsFinalSE.FinalSEDataSet();
             this.accountantTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetTableAdapters.AccountantTableAdapter();
+            this.btn_AccDelete = new System.Windows.Forms.Button();
+            this.btn_AccUpdate = new System.Windows.Forms.Button();
+            this.btn_AccClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Acc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSet)).BeginInit();
@@ -164,7 +167,7 @@
             this.dataGridView_Acc.RowTemplate.Height = 24;
             this.dataGridView_Acc.Size = new System.Drawing.Size(679, 237);
             this.dataGridView_Acc.TabIndex = 11;
-            this.dataGridView_Acc.SelectionChanged += new System.EventHandler(this.dataGridView_Acc_SelectionChanged);
+            this.dataGridView_Acc.Click += new System.EventHandler(this.dataGridView_Acc_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -225,12 +228,45 @@
             // 
             this.accountantTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_AccDelete
+            // 
+            this.btn_AccDelete.Location = new System.Drawing.Point(44, 363);
+            this.btn_AccDelete.Name = "btn_AccDelete";
+            this.btn_AccDelete.Size = new System.Drawing.Size(75, 42);
+            this.btn_AccDelete.TabIndex = 12;
+            this.btn_AccDelete.Text = "Delete";
+            this.btn_AccDelete.UseVisualStyleBackColor = true;
+            this.btn_AccDelete.Click += new System.EventHandler(this.btn_AccDelete_Click);
+            // 
+            // btn_AccUpdate
+            // 
+            this.btn_AccUpdate.Location = new System.Drawing.Point(157, 363);
+            this.btn_AccUpdate.Name = "btn_AccUpdate";
+            this.btn_AccUpdate.Size = new System.Drawing.Size(75, 42);
+            this.btn_AccUpdate.TabIndex = 13;
+            this.btn_AccUpdate.Text = "Update";
+            this.btn_AccUpdate.UseVisualStyleBackColor = true;
+            this.btn_AccUpdate.Click += new System.EventHandler(this.btn_AccUpdate_Click);
+            // 
+            // btn_AccClear
+            // 
+            this.btn_AccClear.Location = new System.Drawing.Point(157, 300);
+            this.btn_AccClear.Name = "btn_AccClear";
+            this.btn_AccClear.Size = new System.Drawing.Size(75, 42);
+            this.btn_AccClear.TabIndex = 14;
+            this.btn_AccClear.Text = "Clear";
+            this.btn_AccClear.UseVisualStyleBackColor = true;
+            this.btn_AccClear.Click += new System.EventHandler(this.btn_AccClear_Click);
+            // 
             // FormAccountant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1074, 417);
+            this.Controls.Add(this.btn_AccClear);
+            this.Controls.Add(this.btn_AccUpdate);
+            this.Controls.Add(this.btn_AccDelete);
             this.Controls.Add(this.dataGridView_Acc);
             this.Controls.Add(this.btn_AccAdd);
             this.Controls.Add(this.dateTimePicker_AccBirth);
@@ -276,5 +312,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_AccDelete;
+        private System.Windows.Forms.Button btn_AccUpdate;
+        private System.Windows.Forms.Button btn_AccClear;
     }
 }

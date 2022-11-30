@@ -16,6 +16,10 @@ namespace WindowsFormsFinalSE
         public FormAccountant()
         {
             InitializeComponent();
+            btn_AccAdd.Enabled = true;
+            btn_AccClear.Enabled = true;
+            btn_AccUpdate.Enabled = false;
+            btn_AccDelete.Enabled = false;
         }
         private void Reload()
         {
@@ -35,26 +39,109 @@ namespace WindowsFormsFinalSE
             db.SaveChanges();
             Reload();
             MessageBox.Show("Accountant added successfully");
+            Clear.ResetAllControls(this);
         }
 
         private void FormAccountant_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'finalSEDataSet.Accountant' table. You can move, or remove it, as needed.
             this.accountantTableAdapter.Fill(this.finalSEDataSet.Accountant);
+        }
+        private void dataGridView_Acc_Click(object sender, EventArgs e)
+        {
+            txtBox_AccID.Text = dataGridView_Acc.CurrentRow.Cells[0].Value.ToString();
+            txtBox_AccName.Text = dataGridView_Acc.CurrentRow.Cells[1].Value.ToString();
+            txtBox_AccPhone.Text = dataGridView_Acc.CurrentRow.Cells[2].Value.ToString();
+            txtBox_AccEmail.Text = dataGridView_Acc.CurrentRow.Cells[3].Value.ToString();
+            dateTimePicker_AccBirth.Value = (DateTime)dataGridView_Acc.CurrentRow.Cells[4].Value;
+
+            btn_AccAdd.Enabled = false;
+            btn_AccUpdate.Enabled = true;
+            btn_AccDelete.Enabled = true;
+        }
+
+
+        private void btn_AccDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string id = txtBox_AccID.Text.ToString();
+                Accountant accountant = db.Accountants.Find(id);
+                db.Accountants.Remove(accountant);
+                db.SaveChanges();
+                Reload();
+                MessageBox.Show("Accountant deleted successfully");
+                Clear.ResetAllControls(this);
+            }
 
         }
 
-        private void dataGridView_Acc_SelectionChanged(object sender, EventArgs e)
+        private void btn_AccUpdate_Click(object sender, EventArgs e)
         {
-            if (dataGridView_Acc.SelectedRows.Count > 0)
-            {
-                txtBox_AccID.Text = dataGridView_Acc.SelectedRows[0].Cells[0].Value.ToString();
-                txtBox_AccName.Text = dataGridView_Acc.SelectedRows[0].Cells[1].Value.ToString();
-                txtBox_AccPhone.Text = dataGridView_Acc.SelectedRows[0].Cells[2].Value.ToString();
-                txtBox_AccEmail.Text = dataGridView_Acc.SelectedRows[0].Cells[3].Value.ToString();
-                dateTimePicker_AccBirth.Value = (DateTime)dataGridView_Acc.SelectedRows[0].Cells[4].Value;
-            }
+            Accountant accountant = db.Accountants.Find(txtBox_AccID.Text);
+            accountant.AName = txtBox_AccName.Text.ToString();
+            accountant.Phone = txtBox_AccPhone.Text.ToString();
+            accountant.Email = txtBox_AccEmail.Text.ToString();
+            accountant.BirthDay = dateTimePicker_AccBirth.Value;
+            db.SaveChanges();
+            Reload();
+            MessageBox.Show("Accountant updated successfully");
+            Clear.ResetAllControls(this);
+        }
 
+        private void btn_AccClear_Click(object sender, EventArgs e)
+        {
+            Clear.ResetAllControls(this);
+
+            btn_AccAdd.Enabled = true;
+            btn_AccUpdate.Enabled = false;
+            btn_AccDelete.Enabled = false;
+        }
+    }
+    public class Clear
+    {
+        public static void ResetAllControls(Control form)
+        {
+            foreach (Control control in form.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    textBox.Text = null;
+                }
+
+                if (control is ComboBox)
+                {
+                    ComboBox comboBox = (ComboBox)control;
+                    if (comboBox.Items.Count > 0)
+                        comboBox.SelectedIndex = 0;
+                }
+
+                if (control is CheckBox)
+                {
+                    CheckBox checkBox = (CheckBox)control;
+                    checkBox.Checked = false;
+                }
+
+                if (control is ListBox)
+                {
+                    ListBox listBox = (ListBox)control;
+                    listBox.ClearSelected();
+                }
+
+                if (control is DateTimePicker)
+                {
+                    DateTimePicker dateTimePicker = (DateTimePicker)control;
+                    dateTimePicker.Value = DateTime.Now;
+                }
+
+                if (control is DataGridView)
+                {
+                    DataGridView dataGridView = (DataGridView)control;
+                    dataGridView.ClearSelection();
+                }
+            }
         }
     }
 }
