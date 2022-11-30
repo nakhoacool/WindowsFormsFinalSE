@@ -81,6 +81,7 @@ namespace WindowsFormsFinalSE
         private void iconImport_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new FormGoods());
         }
 
         private void iconNote_Click(object sender, EventArgs e)

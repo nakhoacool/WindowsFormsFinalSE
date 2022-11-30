@@ -91,6 +91,12 @@
     <Compile Include="FormAgent.Designer.cs">
       <DependentUpon>FormAgent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGoods.Designer.cs">
+      <DependentUpon>FormGoods.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FinalSEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FinalSEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accountant">
           <Key>
             <PropertyRef Name="ID" />
@@ -43,6 +43,7 @@
           <Property Name="Quantity" Type="int" />
           <Property Name="Manufacture" Type="nvarchar" MaxLength="1" />
           <Property Name="SellingPrice" Type="int" />
+          <Property Name="GPhoto" Type="image" />
         </EntityType>
         <EntityType Name="GOrder">
           <Key>
@@ -171,8 +172,7 @@
             <End Role="Import" EntitySet="Import" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FinalSEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -222,6 +222,7 @@
           <Property Name="SellingPrice" Type="Int32" />
           <NavigationProperty Name="GOrders" Relationship="Self.FK__GOrder__GID__440B1D61" FromRole="Good" ToRole="GOrder" />
           <NavigationProperty Name="Imports" Relationship="Self.FK__Import__GID__3D5E1FD2" FromRole="Good" ToRole="Import" />
+          <Property Name="GPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="GOrder">
           <Key>
@@ -394,6 +395,7 @@
           <EntitySetMapping Name="Goods">
             <EntityTypeMapping TypeName="FinalSEModel.Good">
               <MappingFragment StoreEntitySet="Good">
+                <ScalarProperty Name="GPhoto" ColumnName="GPhoto" />
                 <ScalarProperty Name="GID" ColumnName="GID" />
                 <ScalarProperty Name="GName" ColumnName="GName" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />

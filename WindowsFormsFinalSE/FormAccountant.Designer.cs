@@ -52,6 +52,7 @@
             this.btn_AccDelete = new System.Windows.Forms.Button();
             this.btn_AccUpdate = new System.Windows.Forms.Button();
             this.btn_AccClear = new System.Windows.Forms.Button();
+            this.btn_AccSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Acc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountantBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSet)).BeginInit();
@@ -258,12 +259,23 @@
             this.btn_AccClear.UseVisualStyleBackColor = true;
             this.btn_AccClear.Click += new System.EventHandler(this.btn_AccClear_Click);
             // 
+            // btn_AccSearch
+            // 
+            this.btn_AccSearch.Location = new System.Drawing.Point(262, 300);
+            this.btn_AccSearch.Name = "btn_AccSearch";
+            this.btn_AccSearch.Size = new System.Drawing.Size(75, 45);
+            this.btn_AccSearch.TabIndex = 15;
+            this.btn_AccSearch.Text = "Search";
+            this.btn_AccSearch.UseVisualStyleBackColor = true;
+            this.btn_AccSearch.Click += new System.EventHandler(this.btn_AccSearch_Click);
+            // 
             // FormAccountant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1074, 417);
+            this.Controls.Add(this.btn_AccSearch);
             this.Controls.Add(this.btn_AccClear);
             this.Controls.Add(this.btn_AccUpdate);
             this.Controls.Add(this.btn_AccDelete);
@@ -315,5 +327,6 @@
         private System.Windows.Forms.Button btn_AccDelete;
         private System.Windows.Forms.Button btn_AccUpdate;
         private System.Windows.Forms.Button btn_AccClear;
+        private System.Windows.Forms.Button btn_AccSearch;
     }
 }

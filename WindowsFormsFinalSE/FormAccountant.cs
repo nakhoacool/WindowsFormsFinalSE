@@ -44,7 +44,6 @@ namespace WindowsFormsFinalSE
 
         private void FormAccountant_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'finalSEDataSet.Accountant' table. You can move, or remove it, as needed.
             this.accountantTableAdapter.Fill(this.finalSEDataSet.Accountant);
         }
         private void dataGridView_Acc_Click(object sender, EventArgs e)
@@ -93,10 +92,40 @@ namespace WindowsFormsFinalSE
         private void btn_AccClear_Click(object sender, EventArgs e)
         {
             Clear.ResetAllControls(this);
-
+            Reload();
             btn_AccAdd.Enabled = true;
             btn_AccUpdate.Enabled = false;
             btn_AccDelete.Enabled = false;
+        }
+
+        private void btn_AccSearch_Click(object sender, EventArgs e)
+        {
+
+            if (txtBox_AccID.Text != "")
+            {
+                dataGridView_Acc.DataSource = null;
+                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.ID == txtBox_AccID.Text).ToList();
+            }
+            else if (txtBox_AccName.Text != "")
+            {
+                dataGridView_Acc.DataSource = null;
+                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.AName == txtBox_AccName.Text).ToList();
+            }
+            else if (txtBox_AccPhone.Text != "")
+            {
+                dataGridView_Acc.DataSource = null;
+                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.Phone == txtBox_AccPhone.Text).ToList();
+            }
+            else if (txtBox_AccEmail.Text != "")
+            {
+                dataGridView_Acc.DataSource = null;
+                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.Email == txtBox_AccEmail.Text).ToList();
+            }
+            else
+            {
+                dataGridView_Acc.DataSource = null;
+                dataGridView_Acc.DataSource = db.Accountants.ToList();
+            }
         }
     }
     public class Clear
