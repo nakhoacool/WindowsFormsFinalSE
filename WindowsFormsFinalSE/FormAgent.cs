@@ -29,6 +29,8 @@ namespace WindowsFormsFinalSE
 
         private void FormAgent_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'finalSEDataSetAgent.Agent' table. You can move, or remove it, as needed.
+            this.agentTableAdapter.Fill(this.finalSEDataSetAgent.Agent);
 
         }
 

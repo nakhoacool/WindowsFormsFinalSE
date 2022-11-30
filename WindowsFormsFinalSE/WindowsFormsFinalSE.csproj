@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSEDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FinalSEDataSetAgent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormAccountant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +167,17 @@
     </None>
     <None Include="FinalSEDataSet.xss">
       <DependentUpon>FinalSEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSetAgent.xsc">
+      <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSetAgent.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalSEDataSetAgent.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalSEDataSetAgent.xss">
+      <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>
     </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>

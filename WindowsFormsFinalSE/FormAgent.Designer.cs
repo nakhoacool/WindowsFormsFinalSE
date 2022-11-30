@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
@@ -41,8 +42,17 @@
             this.lb_Name = new System.Windows.Forms.Label();
             this.lb_ID = new System.Windows.Forms.Label();
             this.dataGridView_Agent = new System.Windows.Forms.DataGridView();
+            this.finalSEDataSetAgent = new WindowsFormsFinalSE.FinalSEDataSetAgent();
+            this.agentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.agentTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetAgentTableAdapters.AgentTableAdapter();
+            this.aIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Agent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetAgent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -158,7 +168,16 @@
             // 
             // dataGridView_Agent
             // 
+            this.dataGridView_Agent.AllowUserToAddRows = false;
+            this.dataGridView_Agent.AllowUserToDeleteRows = false;
+            this.dataGridView_Agent.AutoGenerateColumns = false;
             this.dataGridView_Agent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Agent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aIDDataGridViewTextBoxColumn,
+            this.aNameDataGridViewTextBoxColumn,
+            this.phoneNumDataGridViewTextBoxColumn,
+            this.aAddressDataGridViewTextBoxColumn});
+            this.dataGridView_Agent.DataSource = this.agentBindingSource;
             this.dataGridView_Agent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_Agent.Location = new System.Drawing.Point(465, 0);
             this.dataGridView_Agent.Name = "dataGridView_Agent";
@@ -168,6 +187,56 @@
             this.dataGridView_Agent.Size = new System.Drawing.Size(690, 450);
             this.dataGridView_Agent.TabIndex = 1;
             this.dataGridView_Agent.SelectionChanged += new System.EventHandler(this.dataGridView_Agent_SelectionChanged);
+            // 
+            // finalSEDataSetAgent
+            // 
+            this.finalSEDataSetAgent.DataSetName = "FinalSEDataSetAgent";
+            this.finalSEDataSetAgent.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // agentBindingSource
+            // 
+            this.agentBindingSource.DataMember = "Agent";
+            this.agentBindingSource.DataSource = this.finalSEDataSetAgent;
+            // 
+            // agentTableAdapter
+            // 
+            this.agentTableAdapter.ClearBeforeFill = true;
+            // 
+            // aIDDataGridViewTextBoxColumn
+            // 
+            this.aIDDataGridViewTextBoxColumn.DataPropertyName = "AID";
+            this.aIDDataGridViewTextBoxColumn.HeaderText = "AID";
+            this.aIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aIDDataGridViewTextBoxColumn.Name = "aIDDataGridViewTextBoxColumn";
+            this.aIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aNameDataGridViewTextBoxColumn
+            // 
+            this.aNameDataGridViewTextBoxColumn.DataPropertyName = "AName";
+            this.aNameDataGridViewTextBoxColumn.HeaderText = "AName";
+            this.aNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aNameDataGridViewTextBoxColumn.Name = "aNameDataGridViewTextBoxColumn";
+            this.aNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // phoneNumDataGridViewTextBoxColumn
+            // 
+            this.phoneNumDataGridViewTextBoxColumn.DataPropertyName = "PhoneNum";
+            this.phoneNumDataGridViewTextBoxColumn.HeaderText = "PhoneNum";
+            this.phoneNumDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.phoneNumDataGridViewTextBoxColumn.Name = "phoneNumDataGridViewTextBoxColumn";
+            this.phoneNumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneNumDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aAddressDataGridViewTextBoxColumn
+            // 
+            this.aAddressDataGridViewTextBoxColumn.DataPropertyName = "A_Address";
+            this.aAddressDataGridViewTextBoxColumn.HeaderText = "A_Address";
+            this.aAddressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aAddressDataGridViewTextBoxColumn.Name = "aAddressDataGridViewTextBoxColumn";
+            this.aAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.aAddressDataGridViewTextBoxColumn.Width = 125;
             // 
             // FormAgent
             // 
@@ -182,6 +251,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Agent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetAgent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,6 +272,12 @@
         private System.Windows.Forms.Label lb_Name;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
-        
+        private FinalSEDataSetAgent finalSEDataSetAgent;
+        private System.Windows.Forms.BindingSource agentBindingSource;
+        private FinalSEDataSetAgentTableAdapters.AgentTableAdapter agentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aAddressDataGridViewTextBoxColumn;
     }
 }
