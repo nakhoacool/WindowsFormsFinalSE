@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSEDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FinalSEDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalSEDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FinalSEDataSetAgent.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +145,9 @@
     <EmbeddedResource Include="FormAgent.resx">
       <DependentUpon>FormAgent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGoods.resx">
+      <DependentUpon>FormGoods.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +175,17 @@
     </None>
     <None Include="FinalSEDataSet.xss">
       <DependentUpon>FinalSEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet1.xsc">
+      <DependentUpon>FinalSEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalSEDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalSEDataSet1.xss">
+      <DependentUpon>FinalSEDataSet1.xsd</DependentUpon>
     </None>
     <None Include="FinalSEDataSetAgent.xsc">
       <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>

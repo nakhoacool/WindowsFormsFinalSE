@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Clear = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -42,21 +44,23 @@
             this.lb_Name = new System.Windows.Forms.Label();
             this.lb_ID = new System.Windows.Forms.Label();
             this.dataGridView_Agent = new System.Windows.Forms.DataGridView();
-            this.finalSEDataSetAgent = new WindowsFormsFinalSE.FinalSEDataSetAgent();
-            this.agentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.agentTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetAgentTableAdapters.AgentTableAdapter();
             this.aIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.agentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalSEDataSetAgent = new WindowsFormsFinalSE.FinalSEDataSetAgent();
+            this.agentTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetAgentTableAdapters.AgentTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Agent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetAgent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetAgent)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_Clear);
+            this.panel1.Controls.Add(this.btn_Search);
             this.panel1.Controls.Add(this.btn_Delete);
             this.panel1.Controls.Add(this.btn_Edit);
             this.panel1.Controls.Add(this.btn_Add);
@@ -74,6 +78,26 @@
             this.panel1.Size = new System.Drawing.Size(465, 450);
             this.panel1.TabIndex = 0;
             // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(166, 382);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(91, 39);
+            this.btn_Clear.TabIndex = 12;
+            this.btn_Clear.Text = "Clear";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(29, 382);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(91, 39);
+            this.btn_Search.TabIndex = 11;
+            this.btn_Search.Text = "Search";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
             // btn_Delete
             // 
             this.btn_Delete.Location = new System.Drawing.Point(304, 313);
@@ -82,6 +106,7 @@
             this.btn_Delete.TabIndex = 10;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
@@ -91,6 +116,7 @@
             this.btn_Edit.TabIndex = 9;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Add
             // 
@@ -186,21 +212,7 @@
             this.dataGridView_Agent.RowTemplate.Height = 24;
             this.dataGridView_Agent.Size = new System.Drawing.Size(690, 450);
             this.dataGridView_Agent.TabIndex = 1;
-            this.dataGridView_Agent.SelectionChanged += new System.EventHandler(this.dataGridView_Agent_SelectionChanged);
-            // 
-            // finalSEDataSetAgent
-            // 
-            this.finalSEDataSetAgent.DataSetName = "FinalSEDataSetAgent";
-            this.finalSEDataSetAgent.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // agentBindingSource
-            // 
-            this.agentBindingSource.DataMember = "Agent";
-            this.agentBindingSource.DataSource = this.finalSEDataSetAgent;
-            // 
-            // agentTableAdapter
-            // 
-            this.agentTableAdapter.ClearBeforeFill = true;
+            this.dataGridView_Agent.Click += new System.EventHandler(this.dataGridView_Agent_Click);
             // 
             // aIDDataGridViewTextBoxColumn
             // 
@@ -238,6 +250,20 @@
             this.aAddressDataGridViewTextBoxColumn.ReadOnly = true;
             this.aAddressDataGridViewTextBoxColumn.Width = 125;
             // 
+            // agentBindingSource
+            // 
+            this.agentBindingSource.DataMember = "Agent";
+            this.agentBindingSource.DataSource = this.finalSEDataSetAgent;
+            // 
+            // finalSEDataSetAgent
+            // 
+            this.finalSEDataSetAgent.DataSetName = "FinalSEDataSetAgent";
+            this.finalSEDataSetAgent.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // agentTableAdapter
+            // 
+            this.agentTableAdapter.ClearBeforeFill = true;
+            // 
             // FormAgent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,8 +277,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Agent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetAgent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetAgent)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +305,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn aNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_Clear;
+        private System.Windows.Forms.Button btn_Search;
     }
 }
