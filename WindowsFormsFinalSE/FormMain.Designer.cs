@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.iconAgent = new FontAwesome.Sharp.IconButton();
             this.iconReport = new FontAwesome.Sharp.IconButton();
             this.iconNote = new FontAwesome.Sharp.IconButton();
             this.iconImport = new FontAwesome.Sharp.IconButton();
@@ -36,11 +37,11 @@
             this.Logo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.panelForm = new System.Windows.Forms.Panel();
+            this.panelShadow = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            this.panelShadow = new System.Windows.Forms.Panel();
-            this.panelForm = new System.Windows.Forms.Panel();
             this.MenuPanel.SuspendLayout();
             this.Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -52,6 +53,7 @@
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.MenuPanel.Controls.Add(this.iconAgent);
             this.MenuPanel.Controls.Add(this.iconReport);
             this.MenuPanel.Controls.Add(this.iconNote);
             this.MenuPanel.Controls.Add(this.iconImport);
@@ -60,8 +62,29 @@
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 0);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(200, 544);
+            this.MenuPanel.Size = new System.Drawing.Size(200, 553);
             this.MenuPanel.TabIndex = 1;
+            // 
+            // iconAgent
+            // 
+            this.iconAgent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconAgent.FlatAppearance.BorderSize = 0;
+            this.iconAgent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconAgent.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconAgent.IconChar = FontAwesome.Sharp.IconChar.Person;
+            this.iconAgent.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconAgent.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconAgent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconAgent.Location = new System.Drawing.Point(0, 463);
+            this.iconAgent.Name = "iconAgent";
+            this.iconAgent.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconAgent.Size = new System.Drawing.Size(200, 80);
+            this.iconAgent.TabIndex = 5;
+            this.iconAgent.Text = "Agent";
+            this.iconAgent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconAgent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconAgent.UseVisualStyleBackColor = true;
+            this.iconAgent.Click += new System.EventHandler(this.iconAgent_Click);
             // 
             // iconReport
             // 
@@ -175,8 +198,26 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(200, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(902, 544);
+            this.MainPanel.Size = new System.Drawing.Size(1132, 553);
             this.MainPanel.TabIndex = 2;
+            // 
+            // panelForm
+            // 
+            this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelForm.Location = new System.Drawing.Point(0, 84);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(1132, 469);
+            this.panelForm.TabIndex = 2;
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShadow.Location = new System.Drawing.Point(0, 75);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1132, 9);
+            this.panelShadow.TabIndex = 1;
             // 
             // panelTitleBar
             // 
@@ -186,7 +227,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(902, 75);
+            this.panelTitleBar.Size = new System.Drawing.Size(1132, 75);
             this.panelTitleBar.TabIndex = 0;
             // 
             // lblTitleChildForm
@@ -212,30 +253,12 @@
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
-            // panelShadow
-            // 
-            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(0, 75);
-            this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(902, 9);
-            this.panelShadow.TabIndex = 1;
-            // 
-            // panelForm
-            // 
-            this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelForm.Location = new System.Drawing.Point(0, 84);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(902, 460);
-            this.panelForm.TabIndex = 2;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1102, 544);
+            this.ClientSize = new System.Drawing.Size(1332, 553);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.MenuPanel);
             this.Name = "FormMain";
@@ -266,6 +289,7 @@
         private System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Panel panelShadow;
+        private FontAwesome.Sharp.IconButton iconAgent;
     }
 }
 

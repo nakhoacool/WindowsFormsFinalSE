@@ -138,7 +138,7 @@
             // 
             this.btn_AccAdd.Location = new System.Drawing.Point(44, 300);
             this.btn_AccAdd.Name = "btn_AccAdd";
-            this.btn_AccAdd.Size = new System.Drawing.Size(75, 23);
+            this.btn_AccAdd.Size = new System.Drawing.Size(75, 42);
             this.btn_AccAdd.TabIndex = 10;
             this.btn_AccAdd.Text = "Add";
             this.btn_AccAdd.UseVisualStyleBackColor = true;
