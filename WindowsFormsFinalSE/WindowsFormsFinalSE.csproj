@@ -84,6 +84,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSEDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FinalSEDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalSEDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FinalSEDataSetAgent.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -186,6 +191,17 @@
     </None>
     <None Include="FinalSEDataSet1.xss">
       <DependentUpon>FinalSEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet2.xsc">
+      <DependentUpon>FinalSEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalSEDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalSEDataSet2.xss">
+      <DependentUpon>FinalSEDataSet2.xsd</DependentUpon>
     </None>
     <None Include="FinalSEDataSetAgent.xsc">
       <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>

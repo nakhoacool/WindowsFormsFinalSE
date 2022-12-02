@@ -131,7 +131,5 @@ namespace WindowsFormsFinalSE
             childForm.Show();
             lblTitleChildForm.Text = childForm.Text;
         }
-
-
     }
 }
