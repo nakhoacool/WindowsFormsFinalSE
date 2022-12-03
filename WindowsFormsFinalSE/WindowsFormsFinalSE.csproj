@@ -71,6 +71,7 @@
     <Compile Include="Agent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Class\Clear.cs" />
     <Compile Include="Delivery.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

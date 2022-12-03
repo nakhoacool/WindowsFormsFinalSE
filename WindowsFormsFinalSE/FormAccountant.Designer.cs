@@ -168,7 +168,7 @@
             this.dataGridView_Acc.RowTemplate.Height = 24;
             this.dataGridView_Acc.Size = new System.Drawing.Size(679, 237);
             this.dataGridView_Acc.TabIndex = 11;
-            this.dataGridView_Acc.Click += new System.EventHandler(this.dataGridView_Acc_Click);
+            this.dataGridView_Acc.SelectionChanged += new System.EventHandler(this.dataGridView_Acc_SelectionChanged);
             // 
             // iDDataGridViewTextBoxColumn
             // 

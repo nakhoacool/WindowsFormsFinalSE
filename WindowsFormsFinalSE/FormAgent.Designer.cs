@@ -212,7 +212,7 @@
             this.dataGridView_Agent.RowTemplate.Height = 24;
             this.dataGridView_Agent.Size = new System.Drawing.Size(690, 450);
             this.dataGridView_Agent.TabIndex = 1;
-            this.dataGridView_Agent.Click += new System.EventHandler(this.dataGridView_Agent_Click);
+            this.dataGridView_Agent.SelectionChanged += new System.EventHandler(this.dataGridView_Agent_SelectionChanged);
             // 
             // aIDDataGridViewTextBoxColumn
             // 

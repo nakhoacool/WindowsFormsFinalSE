@@ -39,26 +39,13 @@ namespace WindowsFormsFinalSE
             db.SaveChanges();
             Reload();
             MessageBox.Show("Accountant added successfully");
-            Clear.ResetAllControls(this);
+            Class.Clear.ResetAllControls(this);
         }
 
         private void FormAccountant_Load(object sender, EventArgs e)
         {
             this.accountantTableAdapter.Fill(this.finalSEDataSet.Accountant);
         }
-        private void dataGridView_Acc_Click(object sender, EventArgs e)
-        {
-            txtBox_AccID.Text = dataGridView_Acc.CurrentRow.Cells[0].Value.ToString();
-            txtBox_AccName.Text = dataGridView_Acc.CurrentRow.Cells[1].Value.ToString();
-            txtBox_AccPhone.Text = dataGridView_Acc.CurrentRow.Cells[2].Value.ToString();
-            txtBox_AccEmail.Text = dataGridView_Acc.CurrentRow.Cells[3].Value.ToString();
-            dateTimePicker_AccBirth.Value = (DateTime)dataGridView_Acc.CurrentRow.Cells[4].Value;
-
-            btn_AccAdd.Enabled = false;
-            btn_AccUpdate.Enabled = true;
-            btn_AccDelete.Enabled = true;
-        }
-
 
         private void btn_AccDelete_Click(object sender, EventArgs e)
         {
@@ -71,7 +58,7 @@ namespace WindowsFormsFinalSE
                 db.SaveChanges();
                 Reload();
                 MessageBox.Show("Accountant deleted successfully");
-                Clear.ResetAllControls(this);
+                Class.Clear.ResetAllControls(this);
             }
 
         }
@@ -86,12 +73,12 @@ namespace WindowsFormsFinalSE
             db.SaveChanges();
             Reload();
             MessageBox.Show("Accountant updated successfully");
-            Clear.ResetAllControls(this);
+            Class.Clear.ResetAllControls(this);
         }
 
         private void btn_AccClear_Click(object sender, EventArgs e)
         {
-            Clear.ResetAllControls(this);
+            Class.Clear.ResetAllControls(this);
             Reload();
             btn_AccAdd.Enabled = true;
             btn_AccUpdate.Enabled = false;
@@ -127,49 +114,20 @@ namespace WindowsFormsFinalSE
                 dataGridView_Acc.DataSource = db.Accountants.ToList();
             }
         }
-    }
-    public class Clear
-    {
-        public static void ResetAllControls(Control form)
+
+        private void dataGridView_Acc_SelectionChanged(object sender, EventArgs e)
         {
-            foreach (Control control in form.Controls)
+            if (dataGridView_Acc.SelectedRows.Count > 0)
             {
-                if (control is TextBox)
-                {
-                    TextBox textBox = (TextBox)control;
-                    textBox.Text = null;
-                }
+                txtBox_AccID.Text = dataGridView_Acc.SelectedRows[0].Cells[0].Value.ToString();
+                txtBox_AccName.Text = dataGridView_Acc.SelectedRows[0].Cells[1].Value.ToString();
+                txtBox_AccPhone.Text = dataGridView_Acc.SelectedRows[0].Cells[2].Value.ToString();
+                txtBox_AccEmail.Text = dataGridView_Acc.SelectedRows[0].Cells[3].Value.ToString();
+                dateTimePicker_AccBirth.Value = (DateTime)dataGridView_Acc.SelectedRows[0].Cells[4].Value;
 
-                if (control is ComboBox)
-                {
-                    ComboBox comboBox = (ComboBox)control;
-                    if (comboBox.Items.Count > 0)
-                        comboBox.SelectedIndex = 0;
-                }
-
-                if (control is CheckBox)
-                {
-                    CheckBox checkBox = (CheckBox)control;
-                    checkBox.Checked = false;
-                }
-
-                if (control is ListBox)
-                {
-                    ListBox listBox = (ListBox)control;
-                    listBox.ClearSelected();
-                }
-
-                if (control is DateTimePicker)
-                {
-                    DateTimePicker dateTimePicker = (DateTimePicker)control;
-                    dateTimePicker.Value = DateTime.Now;
-                }
-
-                if (control is DataGridView)
-                {
-                    DataGridView dataGridView = (DataGridView)control;
-                    dataGridView.ClearSelection();
-                }
+                btn_AccAdd.Enabled = false;
+                btn_AccUpdate.Enabled = true;
+                btn_AccDelete.Enabled = true;
             }
         }
     }
