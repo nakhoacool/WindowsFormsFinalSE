@@ -198,7 +198,7 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(200, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1132, 553);
+            this.MainPanel.Size = new System.Drawing.Size(1198, 553);
             this.MainPanel.TabIndex = 2;
             // 
             // panelForm
@@ -207,7 +207,7 @@
             this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForm.Location = new System.Drawing.Point(0, 84);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(1132, 469);
+            this.panelForm.Size = new System.Drawing.Size(1198, 469);
             this.panelForm.TabIndex = 2;
             // 
             // panelShadow
@@ -216,7 +216,7 @@
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(0, 75);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1132, 9);
+            this.panelShadow.Size = new System.Drawing.Size(1198, 9);
             this.panelShadow.TabIndex = 1;
             // 
             // panelTitleBar
@@ -227,7 +227,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1132, 75);
+            this.panelTitleBar.Size = new System.Drawing.Size(1198, 75);
             this.panelTitleBar.TabIndex = 0;
             // 
             // lblTitleChildForm
@@ -258,7 +258,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1332, 553);
+            this.ClientSize = new System.Drawing.Size(1398, 553);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.MenuPanel);
             this.Name = "FormMain";

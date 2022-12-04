@@ -90,6 +90,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSEDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FinalSEDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalSEDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinalSEDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalSEDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinalSEDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalSEDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FinalSEDataSetAgent.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -203,6 +218,39 @@
     </None>
     <None Include="FinalSEDataSet2.xss">
       <DependentUpon>FinalSEDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet3.xsc">
+      <DependentUpon>FinalSEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalSEDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalSEDataSet3.xss">
+      <DependentUpon>FinalSEDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet4.xsc">
+      <DependentUpon>FinalSEDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalSEDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalSEDataSet4.xss">
+      <DependentUpon>FinalSEDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet5.xsc">
+      <DependentUpon>FinalSEDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalSEDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalSEDataSet5.xss">
+      <DependentUpon>FinalSEDataSet5.xsd</DependentUpon>
     </None>
     <None Include="FinalSEDataSetAgent.xsc">
       <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>

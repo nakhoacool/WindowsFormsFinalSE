@@ -197,6 +197,7 @@
             this.dataGridView_Agent.AllowUserToAddRows = false;
             this.dataGridView_Agent.AllowUserToDeleteRows = false;
             this.dataGridView_Agent.AutoGenerateColumns = false;
+            this.dataGridView_Agent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_Agent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Agent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.aIDDataGridViewTextBoxColumn,
@@ -221,7 +222,6 @@
             this.aIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.aIDDataGridViewTextBoxColumn.Name = "aIDDataGridViewTextBoxColumn";
             this.aIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // aNameDataGridViewTextBoxColumn
             // 
@@ -230,7 +230,6 @@
             this.aNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.aNameDataGridViewTextBoxColumn.Name = "aNameDataGridViewTextBoxColumn";
             this.aNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // phoneNumDataGridViewTextBoxColumn
             // 
@@ -239,7 +238,6 @@
             this.phoneNumDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phoneNumDataGridViewTextBoxColumn.Name = "phoneNumDataGridViewTextBoxColumn";
             this.phoneNumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneNumDataGridViewTextBoxColumn.Width = 125;
             // 
             // aAddressDataGridViewTextBoxColumn
             // 
@@ -248,7 +246,6 @@
             this.aAddressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.aAddressDataGridViewTextBoxColumn.Name = "aAddressDataGridViewTextBoxColumn";
             this.aAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aAddressDataGridViewTextBoxColumn.Width = 125;
             // 
             // agentBindingSource
             // 
