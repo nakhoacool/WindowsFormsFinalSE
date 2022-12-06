@@ -68,6 +68,11 @@
     <Compile Include="Accountant.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="accoutantimportDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>accoutantimportDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Agent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -79,31 +84,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSEDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FinalSEDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalSEDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FinalSEDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalSEDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FinalSEDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalSEDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FinalSEDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalSEDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FinalSEDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalSEDataSet5.xsd</DependentUpon>
     </Compile>
     <Compile Include="FinalSEDataSetAgent.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -137,11 +117,21 @@
     <Compile Include="Good.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="goodimportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>goodimportDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GOrder.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Import.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImportDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -186,6 +176,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="accoutantimportDataset.xsc">
+      <DependentUpon>accoutantimportDataset.xsd</DependentUpon>
+    </None>
+    <None Include="accoutantimportDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>accoutantimportDataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="accoutantimportDataset.xss">
+      <DependentUpon>accoutantimportDataset.xsd</DependentUpon>
+    </None>
     <None Include="FinalSEDataSet.xsc">
       <DependentUpon>FinalSEDataSet.xsd</DependentUpon>
     </None>
@@ -197,61 +198,6 @@
     <None Include="FinalSEDataSet.xss">
       <DependentUpon>FinalSEDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FinalSEDataSet1.xsc">
-      <DependentUpon>FinalSEDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinalSEDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinalSEDataSet1.xss">
-      <DependentUpon>FinalSEDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet2.xsc">
-      <DependentUpon>FinalSEDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinalSEDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinalSEDataSet2.xss">
-      <DependentUpon>FinalSEDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet3.xsc">
-      <DependentUpon>FinalSEDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinalSEDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinalSEDataSet3.xss">
-      <DependentUpon>FinalSEDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet4.xsc">
-      <DependentUpon>FinalSEDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinalSEDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinalSEDataSet4.xss">
-      <DependentUpon>FinalSEDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet5.xsc">
-      <DependentUpon>FinalSEDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinalSEDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinalSEDataSet5.xss">
-      <DependentUpon>FinalSEDataSet5.xsd</DependentUpon>
-    </None>
     <None Include="FinalSEDataSetAgent.xsc">
       <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>
     </None>
@@ -262,6 +208,28 @@
     </None>
     <None Include="FinalSEDataSetAgent.xss">
       <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>
+    </None>
+    <None Include="goodimportDataSet.xsc">
+      <DependentUpon>goodimportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="goodimportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>goodimportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="goodimportDataSet.xss">
+      <DependentUpon>goodimportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ImportDataSet.xsc">
+      <DependentUpon>ImportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ImportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ImportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ImportDataSet.xss">
+      <DependentUpon>ImportDataSet.xsd</DependentUpon>
     </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>

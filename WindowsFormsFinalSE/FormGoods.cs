@@ -16,31 +16,60 @@ namespace WindowsFormsFinalSE
         public FormGoods()
         {
             InitializeComponent();
+            
+           
         }
 
         private void FormGoods_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'finalSEDataSet5.Good' table. You can move, or remove it, as needed.
-            this.goodTableAdapter.Fill(this.finalSEDataSet5.Good);
-            // TODO: This line of code loads data into the 'finalSEDataSet4.Accountant' table. You can move, or remove it, as needed.
-            this.accountantTableAdapter.Fill(this.finalSEDataSet4.Accountant);
-            // TODO: This line of code loads data into the 'finalSEDataSet3.Import' table. You can move, or remove it, as needed.
-            this.importTableAdapter.Fill(this.finalSEDataSet3.Import);
-
+            // TODO: This line of code loads data into the 'goodimportDataSet.Good' table. You can move, or remove it, as needed.
+            this.goodTableAdapter.Fill(this.goodimportDataSet.Good);
+            // TODO: This line of code loads data into the 'accoutantimportDataset.Accountant' table. You can move, or remove it, as needed.
+            this.accountantTableAdapter.Fill(this.accoutantimportDataset.Accountant);
+            // TODO: This line of code loads data into the 'accoutantimportDataset.Accountant' table. You can move, or remove it, as needed.
+            this.accountantTableAdapter.Fill(this.accoutantimportDataset.Accountant);
+            // TODO: This line of code loads data into the 'goodimportDataSet.Good' table. You can move, or remove it, as needed.
+            this.goodTableAdapter.Fill(this.goodimportDataSet.Good);
+      
+            // TODO: This line of code loads data into the 'importDataSet.Import' table. You can move, or remove it, as needed.
+            this.importTableAdapter.Fill(this.importDataSet.Import);
+            comboBoxID.SelectedIndex = -1;
+            comboBoxGID.SelectedIndex = -1;
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.accountantTableAdapter.FillBy(this.finalSEDataSet4.Accountant);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+       
 
+       
+
+        
+
+        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Accountant accountant = new Accountant();
+            String str = this.comboBoxID.GetItemText(this.comboBoxID.SelectedItem);
+
+            if (comboBoxID.Text == "") { txtName.Text = ""; }
+
+            else {
+                accountant = (Accountant) db.Accountants.Find(str);
+                txtName.Text = accountant.AName;
+            }
+                
+        }
+
+        private void txtGName_TextChanged(object sender, EventArgs e)
+        {
+            Good good = new Good();
+            String str = this.comboBoxGID.GetItemText(this.comboBoxGID.SelectedItem);
+
+            if(comboBoxGID.Text == "") { txtGName.Text = ""; }
+
+            else
+            {
+                good = (Good)db.Goods.Find(str);
+                txtGName.Text = good.GName;
+            }
         }
     }
 }

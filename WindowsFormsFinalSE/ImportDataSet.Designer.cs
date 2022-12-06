@@ -20,9 +20,9 @@ namespace WindowsFormsFinalSE {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FinalSEDataSet3")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ImportDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FinalSEDataSet3 : global::System.Data.DataSet {
+    public partial class ImportDataSet : global::System.Data.DataSet {
         
         private ImportDataTable tableImport;
         
@@ -30,7 +30,7 @@ namespace WindowsFormsFinalSE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public FinalSEDataSet3() {
+        public ImportDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace WindowsFormsFinalSE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected FinalSEDataSet3(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ImportDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FinalSEDataSet3 cln = ((FinalSEDataSet3)(base.Clone()));
+            ImportDataSet cln = ((ImportDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FinalSEDataSet3";
+            this.DataSetName = "ImportDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FinalSEDataSet3.xsd";
+            this.Namespace = "http://tempuri.org/ImportDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableImport = new ImportDataTable();
@@ -225,7 +225,7 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FinalSEDataSet3 ds = new FinalSEDataSet3();
+            ImportDataSet ds = new ImportDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -544,7 +544,7 @@ namespace WindowsFormsFinalSE {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FinalSEDataSet3 ds = new FinalSEDataSet3();
+                ImportDataSet ds = new ImportDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -804,7 +804,7 @@ namespace WindowsFormsFinalSE {
         }
     }
 }
-namespace WindowsFormsFinalSE.FinalSEDataSet3TableAdapters {
+namespace WindowsFormsFinalSE.ImportDataSetTableAdapters {
     
     
     /// <summary>
@@ -1008,7 +1008,7 @@ SELECT ImportID, ID, GID, Quantity, ImportDate, Price FROM Import WHERE (ImportI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FinalSEDataSet3.ImportDataTable dataTable) {
+        public virtual int Fill(ImportDataSet.ImportDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1021,9 +1021,9 @@ SELECT ImportID, ID, GID, Quantity, ImportDate, Price FROM Import WHERE (ImportI
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FinalSEDataSet3.ImportDataTable GetData() {
+        public virtual ImportDataSet.ImportDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FinalSEDataSet3.ImportDataTable dataTable = new FinalSEDataSet3.ImportDataTable();
+            ImportDataSet.ImportDataTable dataTable = new ImportDataSet.ImportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1031,14 +1031,14 @@ SELECT ImportID, ID, GID, Quantity, ImportDate, Price FROM Import WHERE (ImportI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FinalSEDataSet3.ImportDataTable dataTable) {
+        public virtual int Update(ImportDataSet.ImportDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FinalSEDataSet3 dataSet) {
+        public virtual int Update(ImportDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Import");
         }
         
@@ -1384,7 +1384,7 @@ SELECT ImportID, ID, GID, Quantity, ImportDate, Price FROM Import WHERE (ImportI
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(FinalSEDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ImportDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._importTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Import.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1403,7 +1403,7 @@ SELECT ImportID, ID, GID, Quantity, ImportDate, Price FROM Import WHERE (ImportI
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(FinalSEDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ImportDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._importTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Import.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1421,7 +1421,7 @@ SELECT ImportID, ID, GID, Quantity, ImportDate, Price FROM Import WHERE (ImportI
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(FinalSEDataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ImportDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._importTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Import.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1463,7 +1463,7 @@ SELECT ImportID, ID, GID, Quantity, ImportDate, Price FROM Import WHERE (ImportI
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(FinalSEDataSet3 dataSet) {
+        public virtual int UpdateAll(ImportDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

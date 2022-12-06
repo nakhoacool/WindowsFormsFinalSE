@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="FinalSEDataSet3" targetNamespace="http://tempuri.org/FinalSEDataSet3.xsd" xmlns:mstns="http://tempuri.org/FinalSEDataSet3.xsd" xmlns="http://tempuri.org/FinalSEDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="ImportDataSet" targetNamespace="http://tempuri.org/ImportDataSet.xsd" xmlns:mstns="http://tempuri.org/ImportDataSet.xsd" xmlns="http://tempuri.org/ImportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -90,7 +90,7 @@ SELECT ImportID, ID, GID, Quantity, ImportDate, Price FROM Import WHERE (ImportI
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="FinalSEDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="FinalSEDataSet3" msprop:Generator_DataSetName="FinalSEDataSet3">
+  <xs:element name="ImportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="ImportDataSet" msprop:Generator_DataSetName="ImportDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Import" msprop:Generator_RowEvHandlerName="ImportRowChangeEventHandler" msprop:Generator_RowDeletedName="ImportRowDeleted" msprop:Generator_RowDeletingName="ImportRowDeleting" msprop:Generator_RowEvArgName="ImportRowChangeEvent" msprop:Generator_TablePropName="Import" msprop:Generator_RowChangedName="ImportRowChanged" msprop:Generator_RowChangingName="ImportRowChanging" msprop:Generator_TableClassName="ImportDataTable" msprop:Generator_RowClassName="ImportRow" msprop:Generator_TableVarName="tableImport" msprop:Generator_UserTableName="Import">

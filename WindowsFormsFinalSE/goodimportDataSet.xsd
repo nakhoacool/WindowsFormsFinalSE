@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="FinalSEDataSet5" targetNamespace="http://tempuri.org/FinalSEDataSet5.xsd" xmlns:mstns="http://tempuri.org/FinalSEDataSet5.xsd" xmlns="http://tempuri.org/FinalSEDataSet5.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="goodimportDataSet" targetNamespace="http://tempuri.org/goodimportDataSet.xsd" xmlns:mstns="http://tempuri.org/goodimportDataSet.xsd" xmlns="http://tempuri.org/goodimportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -55,7 +55,7 @@ SELECT GID FROM Good WHERE (GID = @GID)</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="FinalSEDataSet5" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="FinalSEDataSet5" msprop:Generator_DataSetName="FinalSEDataSet5">
+  <xs:element name="goodimportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="goodimportDataSet" msprop:Generator_DataSetName="goodimportDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Good" msprop:Generator_RowEvHandlerName="GoodRowChangeEventHandler" msprop:Generator_RowDeletedName="GoodRowDeleted" msprop:Generator_RowDeletingName="GoodRowDeleting" msprop:Generator_RowEvArgName="GoodRowChangeEvent" msprop:Generator_TablePropName="Good" msprop:Generator_RowChangedName="GoodRowChanged" msprop:Generator_RowChangingName="GoodRowChanging" msprop:Generator_TableClassName="GoodDataTable" msprop:Generator_RowClassName="GoodRow" msprop:Generator_TableVarName="tableGood" msprop:Generator_UserTableName="Good">
