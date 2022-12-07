@@ -476,7 +476,7 @@ namespace WindowsFormsFinalSE {
                 this.columnGID.Unique = true;
                 this.columnGID.MaxLength = 6;
                 this.columnGName.MaxLength = 50;
-                this.columnManufacture.MaxLength = 1;
+                this.columnManufacture.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -110,7 +110,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
               <xs:element name="Manufacture" msprop:Generator_ColumnPropNameInRow="Manufacture" msprop:Generator_ColumnPropNameInTable="ManufactureColumn" msprop:Generator_ColumnVarNameInTable="columnManufacture" msprop:Generator_UserColumnName="Manufacture" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="1" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
