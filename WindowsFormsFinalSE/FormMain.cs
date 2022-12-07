@@ -69,7 +69,7 @@ namespace WindowsFormsFinalSE
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
-            //public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color6 = Color.FromArgb(24, 161, 251);
         }
 
         private void iconAccountant_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace WindowsFormsFinalSE
         private void iconImport_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new FormGoods());
+            OpenChildForm(new FormImport());
         }
 
         private void iconNote_Click(object sender, EventArgs e)
@@ -98,6 +98,12 @@ namespace WindowsFormsFinalSE
         {
             ActivateButton(sender, RGBColors.color5);
             OpenChildForm(new FormAgent());
+        }
+
+        private void iconGoods_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new FormGoods());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -131,5 +137,6 @@ namespace WindowsFormsFinalSE
             childForm.Show();
             lblTitleChildForm.Text = childForm.Text;
         }
+
     }
 }

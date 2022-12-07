@@ -42,6 +42,7 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.iconGoods = new FontAwesome.Sharp.IconButton();
             this.MenuPanel.SuspendLayout();
             this.Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -53,6 +54,7 @@
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.MenuPanel.Controls.Add(this.iconGoods);
             this.MenuPanel.Controls.Add(this.iconAgent);
             this.MenuPanel.Controls.Add(this.iconReport);
             this.MenuPanel.Controls.Add(this.iconNote);
@@ -62,7 +64,7 @@
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 0);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(200, 553);
+            this.MenuPanel.Size = new System.Drawing.Size(200, 628);
             this.MenuPanel.TabIndex = 1;
             // 
             // iconAgent
@@ -198,7 +200,7 @@
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(200, 0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1198, 553);
+            this.MainPanel.Size = new System.Drawing.Size(1198, 628);
             this.MainPanel.TabIndex = 2;
             // 
             // panelForm
@@ -207,7 +209,7 @@
             this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForm.Location = new System.Drawing.Point(0, 84);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(1198, 469);
+            this.panelForm.Size = new System.Drawing.Size(1198, 544);
             this.panelForm.TabIndex = 2;
             // 
             // panelShadow
@@ -253,12 +255,33 @@
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
+            // iconGoods
+            // 
+            this.iconGoods.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconGoods.FlatAppearance.BorderSize = 0;
+            this.iconGoods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconGoods.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconGoods.IconChar = FontAwesome.Sharp.IconChar.Person;
+            this.iconGoods.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconGoods.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconGoods.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconGoods.Location = new System.Drawing.Point(0, 543);
+            this.iconGoods.Name = "iconGoods";
+            this.iconGoods.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconGoods.Size = new System.Drawing.Size(200, 80);
+            this.iconGoods.TabIndex = 6;
+            this.iconGoods.Text = "Goods";
+            this.iconGoods.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconGoods.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconGoods.UseVisualStyleBackColor = true;
+            this.iconGoods.Click += new System.EventHandler(this.iconGoods_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1398, 553);
+            this.ClientSize = new System.Drawing.Size(1398, 628);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.MenuPanel);
             this.Name = "FormMain";
@@ -290,6 +313,7 @@
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Panel panelShadow;
         private FontAwesome.Sharp.IconButton iconAgent;
+        private FontAwesome.Sharp.IconButton iconGoods;
     }
 }
 

@@ -31,8 +31,8 @@
           </Key>
           <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="AID" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="GStatus" Type="varchar" MaxLength="1" />
-          <Property Name="PaymentStatus" Type="varchar" MaxLength="1" />
+          <Property Name="GStatus" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentStatus" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Good">
           <Key>
@@ -41,7 +41,7 @@
           <Property Name="GID" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="GName" Type="nvarchar" MaxLength="50" />
           <Property Name="Quantity" Type="int" />
-          <Property Name="Manufacture" Type="nvarchar" MaxLength="1" />
+          <Property Name="Manufacture" Type="nvarchar" MaxLength="50" />
           <Property Name="SellingPrice" Type="int" />
           <Property Name="GPhoto" Type="image" />
         </EntityType>
@@ -55,7 +55,7 @@
           <Property Name="Quantity" Type="int" />
           <Property Name="TotalPrice" Type="int" />
           <Property Name="OrderDate" Type="date" />
-          <Property Name="PaymentMethod" Type="varchar" MaxLength="1" />
+          <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -206,8 +206,8 @@
           </Key>
           <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="GStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="PaymentStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="GStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Accountant" Relationship="Self.FK__Delivery__ID__403A8C7D" FromRole="Delivery" ToRole="Accountant" />
           <NavigationProperty Name="Agent" Relationship="Self.FK__Delivery__AID__412EB0B6" FromRole="Delivery" ToRole="Agent" />
         </EntityType>
@@ -218,7 +218,7 @@
           <Property Name="GID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="GName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Quantity" Type="Int32" />
-          <Property Name="Manufacture" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Manufacture" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SellingPrice" Type="Int32" />
           <NavigationProperty Name="GOrders" Relationship="Self.FK__GOrder__GID__440B1D61" FromRole="Good" ToRole="GOrder" />
           <NavigationProperty Name="Imports" Relationship="Self.FK__Import__GID__3D5E1FD2" FromRole="Good" ToRole="Import" />
@@ -234,7 +234,7 @@
           <Property Name="Quantity" Type="Int32" />
           <Property Name="TotalPrice" Type="Int32" />
           <Property Name="OrderDate" Type="DateTime" Precision="0" />
-          <Property Name="PaymentMethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Agent" Relationship="Self.FK__GOrder__AID__44FF419A" FromRole="GOrder" ToRole="Agent" />
           <NavigationProperty Name="Good" Relationship="Self.FK__GOrder__GID__440B1D61" FromRole="GOrder" ToRole="Good" />
         </EntityType>

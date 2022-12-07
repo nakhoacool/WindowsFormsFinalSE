@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,63 +16,62 @@ namespace WindowsFormsFinalSE
     public partial class FormGoods : Form
     {
         FinalSE db = new FinalSE();
+
+        private void Reload()
+        {
+            goodGridView.DataSource = null;
+            goodGridView.DataSource = db.Goods.ToList();
+        }
+
+        private byte[] ConvertImagetoByte(string path)
+        {
+            byte[] data = null;
+            FileInfo fInfo = new FileInfo(path);
+            long numBytes = fInfo.Length;
+            FileStream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fileStream);
+            data = br.ReadBytes((int)numBytes);
+            return data;
+        }
+
         public FormGoods()
         {
             InitializeComponent();
-            
-           
         }
 
         private void FormGoods_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'goodimportDataSet.Good' table. You can move, or remove it, as needed.
-            this.goodTableAdapter.Fill(this.goodimportDataSet.Good);
-            // TODO: This line of code loads data into the 'accoutantimportDataset.Accountant' table. You can move, or remove it, as needed.
-            this.accountantTableAdapter.Fill(this.accoutantimportDataset.Accountant);
-            // TODO: This line of code loads data into the 'accoutantimportDataset.Accountant' table. You can move, or remove it, as needed.
-            this.accountantTableAdapter.Fill(this.accoutantimportDataset.Accountant);
-            // TODO: This line of code loads data into the 'goodimportDataSet.Good' table. You can move, or remove it, as needed.
-            this.goodTableAdapter.Fill(this.goodimportDataSet.Good);
-      
-            // TODO: This line of code loads data into the 'importDataSet.Import' table. You can move, or remove it, as needed.
-            this.importTableAdapter.Fill(this.importDataSet.Import);
-            comboBoxID.SelectedIndex = -1;
-            comboBoxGID.SelectedIndex = -1;
+            // TODO: This line of code loads data into the 'finalSEDataSetGoods.Good' table. You can move, or remove it, as needed.
+            this.goodTableAdapter.Fill(this.finalSEDataSetGoods.Good);
 
         }
 
-       
-
-       
-
-        
-
-        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonGoodBrowse_Click(object sender, EventArgs e)
         {
-            Accountant accountant = new Accountant();
-            String str = this.comboBoxID.GetItemText(this.comboBoxID.SelectedItem);
-
-            if (comboBoxID.Text == "") { txtName.Text = ""; }
-
-            else {
-                accountant = (Accountant) db.Accountants.Find(str);
-                txtName.Text = accountant.AName;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Browse Image Files";
+            openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxGoodPhoto.ImageLocation = openFileDialog.FileName;
             }
-                
         }
 
-        private void txtGName_TextChanged(object sender, EventArgs e)
+        private void buttonGoodSave_Click(object sender, EventArgs e)
         {
             Good good = new Good();
-            String str = this.comboBoxGID.GetItemText(this.comboBoxGID.SelectedItem);
-
-            if(comboBoxGID.Text == "") { txtGName.Text = ""; }
-
-            else
-            {
-                good = (Good)db.Goods.Find(str);
-                txtGName.Text = good.GName;
-            }
+            good.GID = textBoxGoodID.Text.ToString();
+            good.GName = textBoxGoodName.Text.ToString();
+            good.Quantity = Int16.Parse(textBoxGoodQuantity.Text.ToString());
+            good.Manufacture = textBoxGoodManu.Text.ToString();
+            good.SellingPrice = Int16.Parse(textBoxGoodSell.Text.ToString());
+            good.GPhoto = ConvertImagetoByte(pictureBoxGoodPhoto.ImageLocation);
+            db.Goods.Add(good);
+            db.SaveChanges();
+            Reload();
+            MessageBox.Show("Good added successfully");
+            Class.Clear.ResetAllControls(this);
         }
     }
 }

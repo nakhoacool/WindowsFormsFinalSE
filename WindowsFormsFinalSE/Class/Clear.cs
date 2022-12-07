@@ -49,6 +49,12 @@ namespace WindowsFormsFinalSE.Class
                     DataGridView dataGridView = (DataGridView)control;
                     dataGridView.ClearSelection();
                 }
+
+                if (control is PictureBox)
+                {
+                    PictureBox pictureBox = (PictureBox)control;
+                    pictureBox.Image = null;
+                }
             }
         }
     }
