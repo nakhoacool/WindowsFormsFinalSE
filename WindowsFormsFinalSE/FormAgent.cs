@@ -112,22 +112,21 @@ namespace WindowsFormsFinalSE
             else if (txtName.Text != "")
             {
                 dataGridView_Agent.DataSource = null;
-                dataGridView_Agent.DataSource = db.Agents.Where(x => x.AName == txtName.Text).ToList();
+                dataGridView_Agent.DataSource = db.Agents.Where(x => x.AName == txtName.Text || x.AName.Contains(txtName.Text)).ToList();
             }
             else if (txtPhone.Text != "")
             {
                 dataGridView_Agent.DataSource = null;
-                dataGridView_Agent.DataSource = db.Agents.Where(x => x.PhoneNum == txtPhone.Text).ToList();
+                dataGridView_Agent.DataSource = db.Agents.Where(x => x.PhoneNum == txtPhone.Text || x.PhoneNum.Contains(txtPhone.Text)).ToList();
             }
             else if (txtAddress.Text != "")
             {
                 dataGridView_Agent.DataSource = null;
-                dataGridView_Agent.DataSource = db.Agents.Where(x => x.A_Address == txtAddress.Text).ToList();
+                dataGridView_Agent.DataSource = db.Agents.Where(x => x.A_Address == txtAddress.Text || x.A_Address.Contains(txtAddress.Text)).ToList();
             }
             else
             {
-                dataGridView_Agent.DataSource = null;
-                dataGridView_Agent.DataSource = db.Agents.ToList();
+                Reload();
             }
         }
 

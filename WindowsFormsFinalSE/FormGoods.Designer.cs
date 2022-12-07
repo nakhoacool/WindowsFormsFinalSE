@@ -44,21 +44,23 @@
             this.textBoxGoodQuantity = new System.Windows.Forms.TextBox();
             this.textBoxGoodSell = new System.Windows.Forms.TextBox();
             this.goodGridView = new System.Windows.Forms.DataGridView();
-            this.finalSEDataSetGoods = new WindowsFormsFinalSE.FinalSEDataSetGoods();
-            this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.goodTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetGoodsTableAdapters.GoodTableAdapter();
             this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufactureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gPhotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalSEDataSetGoods = new WindowsFormsFinalSE.FinalSEDataSetGoods();
+            this.goodTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetGoodsTableAdapters.GoodTableAdapter();
             this.buttonGoodDelete = new System.Windows.Forms.Button();
             this.buttonGoodClear = new System.Windows.Forms.Button();
+            this.buttonGoodEdit = new System.Windows.Forms.Button();
+            this.buttonGoodSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGoodPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetGoods)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,7 +159,7 @@
             // 
             // buttonGoodSave
             // 
-            this.buttonGoodSave.Location = new System.Drawing.Point(331, 476);
+            this.buttonGoodSave.Location = new System.Drawing.Point(331, 440);
             this.buttonGoodSave.Name = "buttonGoodSave";
             this.buttonGoodSave.Size = new System.Drawing.Size(99, 44);
             this.buttonGoodSave.TabIndex = 14;
@@ -198,23 +200,9 @@
             this.goodGridView.ReadOnly = true;
             this.goodGridView.RowHeadersWidth = 51;
             this.goodGridView.RowTemplate.Height = 24;
-            this.goodGridView.Size = new System.Drawing.Size(811, 411);
+            this.goodGridView.Size = new System.Drawing.Size(811, 375);
             this.goodGridView.TabIndex = 17;
             this.goodGridView.SelectionChanged += new System.EventHandler(this.goodGridView_SelectionChanged);
-            // 
-            // finalSEDataSetGoods
-            // 
-            this.finalSEDataSetGoods.DataSetName = "FinalSEDataSetGoods";
-            this.finalSEDataSetGoods.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // goodBindingSource
-            // 
-            this.goodBindingSource.DataMember = "Good";
-            this.goodBindingSource.DataSource = this.finalSEDataSetGoods;
-            // 
-            // goodTableAdapter
-            // 
-            this.goodTableAdapter.ClearBeforeFill = true;
             // 
             // gIDDataGridViewTextBoxColumn
             // 
@@ -270,9 +258,23 @@
             this.gPhotoDataGridViewImageColumn.ReadOnly = true;
             this.gPhotoDataGridViewImageColumn.Width = 125;
             // 
+            // goodBindingSource
+            // 
+            this.goodBindingSource.DataMember = "Good";
+            this.goodBindingSource.DataSource = this.finalSEDataSetGoods;
+            // 
+            // finalSEDataSetGoods
+            // 
+            this.finalSEDataSetGoods.DataSetName = "FinalSEDataSetGoods";
+            this.finalSEDataSetGoods.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // goodTableAdapter
+            // 
+            this.goodTableAdapter.ClearBeforeFill = true;
+            // 
             // buttonGoodDelete
             // 
-            this.buttonGoodDelete.Location = new System.Drawing.Point(454, 476);
+            this.buttonGoodDelete.Location = new System.Drawing.Point(331, 490);
             this.buttonGoodDelete.Name = "buttonGoodDelete";
             this.buttonGoodDelete.Size = new System.Drawing.Size(99, 44);
             this.buttonGoodDelete.TabIndex = 18;
@@ -282,7 +284,7 @@
             // 
             // buttonGoodClear
             // 
-            this.buttonGoodClear.Location = new System.Drawing.Point(579, 476);
+            this.buttonGoodClear.Location = new System.Drawing.Point(567, 440);
             this.buttonGoodClear.Name = "buttonGoodClear";
             this.buttonGoodClear.Size = new System.Drawing.Size(99, 44);
             this.buttonGoodClear.TabIndex = 19;
@@ -290,11 +292,33 @@
             this.buttonGoodClear.UseVisualStyleBackColor = true;
             this.buttonGoodClear.Click += new System.EventHandler(this.buttonGoodClear_Click);
             // 
+            // buttonGoodEdit
+            // 
+            this.buttonGoodEdit.Location = new System.Drawing.Point(450, 491);
+            this.buttonGoodEdit.Name = "buttonGoodEdit";
+            this.buttonGoodEdit.Size = new System.Drawing.Size(99, 44);
+            this.buttonGoodEdit.TabIndex = 20;
+            this.buttonGoodEdit.Text = "Edit";
+            this.buttonGoodEdit.UseVisualStyleBackColor = true;
+            this.buttonGoodEdit.Click += new System.EventHandler(this.buttonGoodEdit_Click);
+            // 
+            // buttonGoodSearch
+            // 
+            this.buttonGoodSearch.Location = new System.Drawing.Point(450, 440);
+            this.buttonGoodSearch.Name = "buttonGoodSearch";
+            this.buttonGoodSearch.Size = new System.Drawing.Size(99, 44);
+            this.buttonGoodSearch.TabIndex = 21;
+            this.buttonGoodSearch.Text = "Search";
+            this.buttonGoodSearch.UseVisualStyleBackColor = true;
+            this.buttonGoodSearch.Click += new System.EventHandler(this.buttonGoodSearch_Click);
+            // 
             // FormGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 536);
+            this.ClientSize = new System.Drawing.Size(1154, 541);
+            this.Controls.Add(this.buttonGoodSearch);
+            this.Controls.Add(this.buttonGoodEdit);
             this.Controls.Add(this.buttonGoodClear);
             this.Controls.Add(this.buttonGoodDelete);
             this.Controls.Add(this.goodGridView);
@@ -317,8 +341,8 @@
             this.Load += new System.EventHandler(this.FormGoods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGoodPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetGoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetGoods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +376,7 @@
         private System.Windows.Forms.DataGridViewImageColumn gPhotoDataGridViewImageColumn;
         private System.Windows.Forms.Button buttonGoodDelete;
         private System.Windows.Forms.Button buttonGoodClear;
+        private System.Windows.Forms.Button buttonGoodEdit;
+        private System.Windows.Forms.Button buttonGoodSearch;
     }
 }

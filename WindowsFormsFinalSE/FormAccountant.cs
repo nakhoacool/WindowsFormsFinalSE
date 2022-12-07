@@ -96,22 +96,21 @@ namespace WindowsFormsFinalSE
             else if (txtBox_AccName.Text != "")
             {
                 dataGridView_Acc.DataSource = null;
-                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.AName == txtBox_AccName.Text).ToList();
+                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.AName == txtBox_AccName.Text || x.AName.Contains(txtBox_AccName.Text)).ToList();
             }
             else if (txtBox_AccPhone.Text != "")
             {
                 dataGridView_Acc.DataSource = null;
-                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.Phone == txtBox_AccPhone.Text).ToList();
+                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.Phone == txtBox_AccPhone.Text || x.Phone.Contains(txtBox_AccPhone.Text)).ToList();
             }
             else if (txtBox_AccEmail.Text != "")
             {
                 dataGridView_Acc.DataSource = null;
-                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.Email == txtBox_AccEmail.Text).ToList();
+                dataGridView_Acc.DataSource = db.Accountants.Where(x => x.Email == txtBox_AccEmail.Text || x.Email.Contains(txtBox_AccEmail.Text)).ToList();
             }
             else
             {
-                dataGridView_Acc.DataSource = null;
-                dataGridView_Acc.DataSource = db.Accountants.ToList();
+                Reload();
             }
         }
 

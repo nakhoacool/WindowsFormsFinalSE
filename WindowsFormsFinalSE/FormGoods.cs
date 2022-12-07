@@ -48,6 +48,10 @@ namespace WindowsFormsFinalSE
         public FormGoods()
         {
             InitializeComponent();
+            buttonGoodSave.Enabled = true;
+            buttonGoodClear.Enabled = true;
+            buttonGoodDelete.Enabled = false;
+            buttonGoodEdit.Enabled = false;
         }
 
         private void FormGoods_Load(object sender, EventArgs e)
@@ -73,9 +77,9 @@ namespace WindowsFormsFinalSE
             Good good = new Good();
             good.GID = textBoxGoodID.Text.ToString();
             good.GName = textBoxGoodName.Text.ToString();
-            good.Quantity = Int16.Parse(textBoxGoodQuantity.Text.ToString());
+            good.Quantity = int.Parse(textBoxGoodQuantity.Text.ToString());
             good.Manufacture = textBoxGoodManu.Text.ToString();
-            good.SellingPrice = Int16.Parse(textBoxGoodSell.Text.ToString());
+            good.SellingPrice = int.Parse(textBoxGoodSell.Text.ToString());
             good.GPhoto = ConvertImagetoByte(pictureBoxGoodPhoto.ImageLocation);
             db.Goods.Add(good);
             db.SaveChanges();
@@ -94,6 +98,10 @@ namespace WindowsFormsFinalSE
                 textBoxGoodManu.Text = goodGridView.SelectedRows[0].Cells[3].Value.ToString();
                 textBoxGoodSell.Text = goodGridView.SelectedRows[0].Cells[4].Value.ToString();
                 pictureBoxGoodPhoto.Image = ConvertBytetoImage((byte[])goodGridView.SelectedRows[0].Cells[5].Value);
+
+                buttonGoodSave.Enabled = false;
+                buttonGoodDelete.Enabled = true;
+                buttonGoodEdit.Enabled = true;
             }
         }
 
@@ -112,7 +120,61 @@ namespace WindowsFormsFinalSE
         {
             Class.Clear.ResetAllControls(this);
             Reload();
+            buttonGoodSave.Enabled = true;
+            buttonGoodDelete.Enabled = false;
+            buttonGoodEdit.Enabled = false;
+        }
 
+        private void buttonGoodEdit_Click(object sender, EventArgs e)
+        {
+            string id = textBoxGoodID.Text.ToString();
+            Good good = db.Goods.Find(id);
+            good.GID = textBoxGoodID.Text.ToString();
+            good.GName = textBoxGoodName.Text.ToString();
+            good.Quantity = int.Parse(textBoxGoodQuantity.Text.ToString());
+            good.Manufacture = textBoxGoodManu.Text.ToString();
+            good.SellingPrice = int.Parse(textBoxGoodSell.Text.ToString());
+            if (pictureBoxGoodPhoto.ImageLocation != null)
+            {
+                good.GPhoto = ConvertImagetoByte(pictureBoxGoodPhoto.ImageLocation);
+            }
+            db.SaveChanges();
+            Reload();
+            MessageBox.Show("Good updated successfully");
+            Class.Clear.ResetAllControls(this);
+        }
+
+        private void buttonGoodSearch_Click(object sender, EventArgs e)
+        {
+            if (textBoxGoodID.Text != "")
+            {
+                goodGridView.DataSource = null;
+                goodGridView.DataSource = db.Goods.Where(x => x.GID == textBoxGoodID.Text).ToList();
+            }
+            else if (textBoxGoodName.Text != "")
+            {
+                goodGridView.DataSource = null;
+                goodGridView.DataSource = db.Goods.Where(x => x.GName == textBoxGoodName.Text || x.GName.Contains(textBoxGoodName.Text)).ToList();
+            }
+            else if (textBoxGoodQuantity.Text != "")
+            {
+                goodGridView.DataSource = null;
+                goodGridView.DataSource = db.Goods.Where(x => x.Quantity == int.Parse(textBoxGoodQuantity.Text)).ToList();
+            }
+            else if (textBoxGoodManu.Text != "")
+            {
+                goodGridView.DataSource = null;
+                goodGridView.DataSource = db.Goods.Where(x => x.Manufacture == textBoxGoodManu.Text || x.Manufacture.Contains(textBoxGoodManu.Text)).ToList();
+            }
+            else if (textBoxGoodSell.Text != "")
+            {
+                goodGridView.DataSource = null;
+                goodGridView.DataSource = db.Goods.Where(x => x.SellingPrice == int.Parse(textBoxGoodSell.Text)).ToList();
+            }
+            else
+            {
+                Reload();
+            }
         }
     }
 }
