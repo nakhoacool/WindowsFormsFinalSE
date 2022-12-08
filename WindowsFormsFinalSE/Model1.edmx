@@ -59,14 +59,14 @@
         </EntityType>
         <EntityType Name="Import">
           <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="GID" />
+            <PropertyRef Name="ImportID" />
           </Key>
-          <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="GID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="ImportID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="ID" Type="varchar" MaxLength="5" />
+          <Property Name="GID" Type="varchar" MaxLength="6" />
           <Property Name="Quantity" Type="int" />
           <Property Name="ImportDate" Type="date" />
-          <Property Name="ImportPrice" Type="int" />
+          <Property Name="totalPrice" Type="int" />
         </EntityType>
         <Association Name="FK__Delivery__AID__412EB0B6">
           <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
@@ -116,8 +116,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Import__GID__3D5E1FD2">
-          <End Role="Good" Type="Self.Good" Multiplicity="1" />
+        <Association Name="FK__Import__GID__4AB81AF0">
+          <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
           <End Role="Import" Type="Self.Import" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Good">
@@ -128,8 +128,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Import__ID__3C69FB99">
-          <End Role="Accountant" Type="Self.Accountant" Multiplicity="1" />
+        <Association Name="FK__Import__ID__49C3F6B7">
+          <End Role="Accountant" Type="Self.Accountant" Multiplicity="0..1" />
           <End Role="Import" Type="Self.Import" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accountant">
@@ -163,11 +163,11 @@
             <End Role="Good" EntitySet="Good" />
             <End Role="GOrder" EntitySet="GOrder" />
           </AssociationSet>
-          <AssociationSet Name="FK__Import__GID__3D5E1FD2" Association="Self.FK__Import__GID__3D5E1FD2">
+          <AssociationSet Name="FK__Import__GID__4AB81AF0" Association="Self.FK__Import__GID__4AB81AF0">
             <End Role="Good" EntitySet="Good" />
             <End Role="Import" EntitySet="Import" />
           </AssociationSet>
-          <AssociationSet Name="FK__Import__ID__3C69FB99" Association="Self.FK__Import__ID__3C69FB99">
+          <AssociationSet Name="FK__Import__ID__49C3F6B7" Association="Self.FK__Import__ID__49C3F6B7">
             <End Role="Accountant" EntitySet="Accountant" />
             <End Role="Import" EntitySet="Import" />
           </AssociationSet>
@@ -240,16 +240,16 @@
         </EntityType>
         <EntityType Name="Import">
           <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="GID" />
+            <PropertyRef Name="ImportID" />
           </Key>
           <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="GID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Quantity" Type="Int32" />
           <Property Name="ImportDate" Type="DateTime" Precision="0" />
-          <Property Name="ImportPrice" Type="Int32" />
           <NavigationProperty Name="Accountant" Relationship="Self.FK__Import__ID__3C69FB99" FromRole="Import" ToRole="Accountant" />
           <NavigationProperty Name="Good" Relationship="Self.FK__Import__GID__3D5E1FD2" FromRole="Import" ToRole="Good" />
+          <Property Name="ImportID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="totalPrice" Type="Int32" />
         </EntityType>
         <Association Name="FK__Delivery__ID__403A8C7D">
           <End Role="Accountant" Type="Self.Accountant" Multiplicity="1" />
@@ -419,11 +419,12 @@
           <EntitySetMapping Name="Imports">
             <EntityTypeMapping TypeName="FinalSEModel.Import">
               <MappingFragment StoreEntitySet="Import">
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+                <ScalarProperty Name="ImportID" ColumnName="ImportID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="GID" ColumnName="GID" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
-                <ScalarProperty Name="ImportPrice" ColumnName="ImportPrice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

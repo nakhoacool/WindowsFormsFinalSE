@@ -39,11 +39,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBoxGood = new System.Windows.Forms.GroupBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.lbQuantity = new System.Windows.Forms.Label();
             this.comboBoxGID = new System.Windows.Forms.ComboBox();
             this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.goodimportDataSet = new WindowsFormsFinalSE.goodimportDataSet();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerImport = new System.Windows.Forms.DateTimePicker();
             this.txtGName = new System.Windows.Forms.TextBox();
             this.txtImportID = new System.Windows.Forms.TextBox();
             this.lbDate = new System.Windows.Forms.Label();
@@ -59,19 +61,15 @@
             this.lbID = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ImportGridView = new System.Windows.Forms.DataGridView();
-            this.importIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountantTableAdapter = new WindowsFormsFinalSE.accoutantimportDatasetTableAdapters.AccountantTableAdapter();
+            this.goodTableAdapter = new WindowsFormsFinalSE.goodimportDataSetTableAdapters.GoodTableAdapter();
+            this.finalSEDataSetImport = new WindowsFormsFinalSE.FinalSEDataSetImport();
+            this.importBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.importTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters.ImportTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.importDataSet = new WindowsFormsFinalSE.ImportDataSet();
-            this.importTableAdapter = new WindowsFormsFinalSE.ImportDataSetTableAdapters.ImportTableAdapter();
-            this.accountantTableAdapter = new WindowsFormsFinalSE.accoutantimportDatasetTableAdapters.AccountantTableAdapter();
-            this.goodTableAdapter = new WindowsFormsFinalSE.goodimportDataSetTableAdapters.GoodTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbQuantity = new System.Windows.Forms.Label();
+            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -83,8 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.accoutantimportDataset)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetImport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.importBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.importDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,6 +108,7 @@
             this.btnImport.TabIndex = 5;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnClear
             // 
@@ -119,6 +118,7 @@
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnEdit
             // 
@@ -128,6 +128,7 @@
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -137,6 +138,7 @@
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtTotalPrice
             // 
@@ -177,11 +179,11 @@
             // 
             // groupBoxGood
             // 
-            this.groupBoxGood.Controls.Add(this.textBox1);
+            this.groupBoxGood.Controls.Add(this.txtQuantity);
             this.groupBoxGood.Controls.Add(this.lbQuantity);
             this.groupBoxGood.Controls.Add(this.comboBoxGID);
             this.groupBoxGood.Controls.Add(this.label1);
-            this.groupBoxGood.Controls.Add(this.dateTimePicker1);
+            this.groupBoxGood.Controls.Add(this.dateTimePickerImport);
             this.groupBoxGood.Controls.Add(this.txtGName);
             this.groupBoxGood.Controls.Add(this.txtImportID);
             this.groupBoxGood.Controls.Add(this.lbDate);
@@ -195,6 +197,24 @@
             this.groupBoxGood.TabStop = false;
             this.groupBoxGood.Text = "Goods infor:";
             // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(124, 174);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(121, 26);
+            this.txtQuantity.TabIndex = 11;
+            // 
+            // lbQuantity
+            // 
+            this.lbQuantity.AutoSize = true;
+            this.lbQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuantity.Location = new System.Drawing.Point(17, 180);
+            this.lbQuantity.Name = "lbQuantity";
+            this.lbQuantity.Size = new System.Drawing.Size(71, 20);
+            this.lbQuantity.TabIndex = 10;
+            this.lbQuantity.Text = "Quantity";
+            // 
             // comboBoxGID
             // 
             this.comboBoxGID.DataSource = this.goodBindingSource;
@@ -205,6 +225,7 @@
             this.comboBoxGID.Size = new System.Drawing.Size(121, 24);
             this.comboBoxGID.TabIndex = 9;
             this.comboBoxGID.ValueMember = "GID";
+            this.comboBoxGID.SelectedIndexChanged += new System.EventHandler(this.comboBoxGID_SelectedIndexChanged);
             // 
             // goodBindingSource
             // 
@@ -226,12 +247,12 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "double click to delete row";
             // 
-            // dateTimePicker1
+            // dateTimePickerImport
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(120, 230);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePickerImport.Location = new System.Drawing.Point(120, 230);
+            this.dateTimePickerImport.Name = "dateTimePickerImport";
+            this.dateTimePickerImport.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerImport.TabIndex = 7;
             // 
             // txtGName
             // 
@@ -241,7 +262,6 @@
             this.txtGName.ReadOnly = true;
             this.txtGName.Size = new System.Drawing.Size(230, 26);
             this.txtGName.TabIndex = 5;
-            this.txtGName.TextChanged += new System.EventHandler(this.txtGName_TextChanged);
             // 
             // txtImportID
             // 
@@ -371,26 +391,40 @@
             this.ImportGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ImportGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ImportGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.importIDDataGridViewTextBoxColumn,
             this.iDDataGridViewTextBoxColumn,
             this.gIDDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
-            this.importDateDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
+            this.totalPriceDataGridViewTextBoxColumn});
             this.ImportGridView.DataSource = this.importBindingSource;
             this.ImportGridView.Location = new System.Drawing.Point(3, 28);
             this.ImportGridView.Name = "ImportGridView";
             this.ImportGridView.RowHeadersWidth = 51;
             this.ImportGridView.RowTemplate.Height = 24;
+            this.ImportGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ImportGridView.Size = new System.Drawing.Size(779, 379);
             this.ImportGridView.TabIndex = 0;
             // 
-            // importIDDataGridViewTextBoxColumn
+            // accountantTableAdapter
             // 
-            this.importIDDataGridViewTextBoxColumn.DataPropertyName = "ImportID";
-            this.importIDDataGridViewTextBoxColumn.HeaderText = "ImportID";
-            this.importIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.importIDDataGridViewTextBoxColumn.Name = "importIDDataGridViewTextBoxColumn";
+            this.accountantTableAdapter.ClearBeforeFill = true;
+            // 
+            // goodTableAdapter
+            // 
+            this.goodTableAdapter.ClearBeforeFill = true;
+            // 
+            // finalSEDataSetImport
+            // 
+            this.finalSEDataSetImport.DataSetName = "FinalSEDataSetImport";
+            this.finalSEDataSetImport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // importBindingSource
+            // 
+            this.importBindingSource.DataMember = "Import";
+            this.importBindingSource.DataSource = this.finalSEDataSetImport;
+            // 
+            // importTableAdapter
+            // 
+            this.importTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -413,61 +447,14 @@
             this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             // 
-            // importDateDataGridViewTextBoxColumn
+            // totalPriceDataGridViewTextBoxColumn
             // 
-            this.importDateDataGridViewTextBoxColumn.DataPropertyName = "ImportDate";
-            this.importDateDataGridViewTextBoxColumn.HeaderText = "ImportDate";
-            this.importDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.importDateDataGridViewTextBoxColumn.Name = "importDateDataGridViewTextBoxColumn";
+            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "totalPrice";
+            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.totalPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
             // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // importBindingSource
-            // 
-            this.importBindingSource.DataMember = "Import";
-            this.importBindingSource.DataSource = this.importDataSet;
-            // 
-            // importDataSet
-            // 
-            this.importDataSet.DataSetName = "ImportDataSet";
-            this.importDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // importTableAdapter
-            // 
-            this.importTableAdapter.ClearBeforeFill = true;
-            // 
-            // accountantTableAdapter
-            // 
-            this.accountantTableAdapter.ClearBeforeFill = true;
-            // 
-            // goodTableAdapter
-            // 
-            this.goodTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(124, 174);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 26);
-            this.textBox1.TabIndex = 11;
-            // 
-            // lbQuantity
-            // 
-            this.lbQuantity.AutoSize = true;
-            this.lbQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuantity.Location = new System.Drawing.Point(17, 180);
-            this.lbQuantity.Name = "lbQuantity";
-            this.lbQuantity.Size = new System.Drawing.Size(71, 20);
-            this.lbQuantity.TabIndex = 10;
-            this.lbQuantity.Text = "Quantity";
-            // 
-            // FormGoods
+            // FormImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -475,7 +462,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "FormGoods";
+            this.Name = "FormImport";
             this.Text = "Goods Received";
             this.Load += new System.EventHandler(this.FormGoods_Load);
             this.panel1.ResumeLayout(false);
@@ -492,8 +479,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.accoutantimportDataset)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImportGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetImport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.importBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.importDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,7 +499,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBoxGood;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerImport;
         private System.Windows.Forms.TextBox txtGName;
         private System.Windows.Forms.TextBox txtImportID;
         private System.Windows.Forms.Label lbDate;
@@ -523,15 +510,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbID;
-        private ImportDataSet importDataSet;
-        private System.Windows.Forms.BindingSource importBindingSource;
-        private ImportDataSetTableAdapters.ImportTableAdapter importTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox comboBoxGID;
         private System.Windows.Forms.ComboBox comboBoxID;
         private accoutantimportDataset accoutantimportDataset;
@@ -540,7 +518,14 @@
         private goodimportDataSet goodimportDataSet;
         private System.Windows.Forms.BindingSource goodBindingSource;
         private goodimportDataSetTableAdapters.GoodTableAdapter goodTableAdapter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label lbQuantity;
+        private FinalSEDataSetImport finalSEDataSetImport;
+        private System.Windows.Forms.BindingSource importBindingSource;
+        private FinalSEDataSetImportTableAdapters.ImportTableAdapter importTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceDataGridViewTextBoxColumn;
     }
 }

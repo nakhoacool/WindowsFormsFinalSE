@@ -18,7 +18,8 @@ namespace WindowsFormsFinalSE
         public string GID { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<System.DateTime> ImportDate { get; set; }
-        public Nullable<int> ImportPrice { get; set; }
+        public string ImportID { get; set; }
+        public Nullable<int> totalPrice { get; set; }
     
         public virtual Accountant Accountant { get; set; }
         public virtual Good Good { get; set; }
