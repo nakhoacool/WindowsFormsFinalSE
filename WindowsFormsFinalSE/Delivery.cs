@@ -14,6 +14,7 @@ namespace WindowsFormsFinalSE
     
     public partial class Delivery
     {
+        public string DeliveryID { get; set; }
         public string ID { get; set; }
         public string AID { get; set; }
         public string GStatus { get; set; }

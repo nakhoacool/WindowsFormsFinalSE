@@ -25,6 +25,7 @@ namespace WindowsFormsFinalSE
         public string GName { get; set; }
         public Nullable<int> Quantity { get; set; }
         public string Manufacture { get; set; }
+        public Nullable<int> ImportPrice { get; set; }
         public Nullable<int> SellingPrice { get; set; }
         public byte[] GPhoto { get; set; }
     

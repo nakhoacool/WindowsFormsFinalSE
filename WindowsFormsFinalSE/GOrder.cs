@@ -14,6 +14,7 @@ namespace WindowsFormsFinalSE
     
     public partial class GOrder
     {
+        public string OID { get; set; }
         public string GID { get; set; }
         public string AID { get; set; }
         public Nullable<int> Quantity { get; set; }

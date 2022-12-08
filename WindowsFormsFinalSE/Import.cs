@@ -14,11 +14,11 @@ namespace WindowsFormsFinalSE
     
     public partial class Import
     {
+        public string ImportID { get; set; }
         public string ID { get; set; }
         public string GID { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<System.DateTime> ImportDate { get; set; }
-        public string ImportID { get; set; }
         public Nullable<int> totalPrice { get; set; }
     
         public virtual Accountant Accountant { get; set; }
