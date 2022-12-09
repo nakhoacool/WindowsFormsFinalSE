@@ -24,7 +24,7 @@ namespace WindowsFormsFinalSE {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class FinalSEDataSetImport : global::System.Data.DataSet {
         
-        private ImportDataTable tableImport;
+        private ImportDetailDataTable tableImportDetail;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace WindowsFormsFinalSE {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Import"] != null)) {
-                    base.Tables.Add(new ImportDataTable(ds.Tables["Import"]));
+                if ((ds.Tables["ImportDetail"] != null)) {
+                    base.Tables.Add(new ImportDetailDataTable(ds.Tables["ImportDetail"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace WindowsFormsFinalSE {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ImportDataTable Import {
+        public ImportDetailDataTable ImportDetail {
             get {
-                return this.tableImport;
+                return this.tableImportDetail;
             }
         }
         
@@ -152,8 +152,8 @@ namespace WindowsFormsFinalSE {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Import"] != null)) {
-                    base.Tables.Add(new ImportDataTable(ds.Tables["Import"]));
+                if ((ds.Tables["ImportDetail"] != null)) {
+                    base.Tables.Add(new ImportDetailDataTable(ds.Tables["ImportDetail"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableImport = ((ImportDataTable)(base.Tables["Import"]));
+            this.tableImportDetail = ((ImportDetailDataTable)(base.Tables["ImportDetail"]));
             if ((initTable == true)) {
-                if ((this.tableImport != null)) {
-                    this.tableImport.InitVars();
+                if ((this.tableImportDetail != null)) {
+                    this.tableImportDetail.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace WindowsFormsFinalSE {
             this.Namespace = "http://tempuri.org/FinalSEDataSetImport.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableImport = new ImportDataTable();
-            base.Tables.Add(this.tableImport);
+            this.tableImportDetail = new ImportDetailDataTable();
+            base.Tables.Add(this.tableImportDetail);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeImport() {
+        private bool ShouldSerializeImportDetail() {
             return false;
         }
         
@@ -270,27 +270,27 @@ namespace WindowsFormsFinalSE {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void ImportRowChangeEventHandler(object sender, ImportRowChangeEvent e);
+        public delegate void ImportDetailRowChangeEventHandler(object sender, ImportDetailRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ImportDataTable : global::System.Data.TypedTableBase<ImportRow> {
+        public partial class ImportDetailDataTable : global::System.Data.TypedTableBase<ImportDetailRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnImportID;
             
             private global::System.Data.DataColumn columnGID;
             
             private global::System.Data.DataColumn columnQuantity;
             
-            private global::System.Data.DataColumn columntotalPrice;
+            private global::System.Data.DataColumn columnprice;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ImportDataTable() {
-                this.TableName = "Import";
+            public ImportDetailDataTable() {
+                this.TableName = "ImportDetail";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +298,7 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal ImportDataTable(global::System.Data.DataTable table) {
+            internal ImportDetailDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,16 +315,16 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected ImportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ImportDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn ImportIDColumn {
                 get {
-                    return this.columnID;
+                    return this.columnImportID;
                 }
             }
             
@@ -346,9 +346,9 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn totalPriceColumn {
+            public global::System.Data.DataColumn priceColumn {
                 get {
-                    return this.columntotalPrice;
+                    return this.columnprice;
                 }
             }
             
@@ -363,48 +363,56 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ImportRow this[int index] {
+            public ImportDetailRow this[int index] {
                 get {
-                    return ((ImportRow)(this.Rows[index]));
+                    return ((ImportDetailRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ImportRowChangeEventHandler ImportRowChanging;
+            public event ImportDetailRowChangeEventHandler ImportDetailRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ImportRowChangeEventHandler ImportRowChanged;
+            public event ImportDetailRowChangeEventHandler ImportDetailRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ImportRowChangeEventHandler ImportRowDeleting;
+            public event ImportDetailRowChangeEventHandler ImportDetailRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event ImportRowChangeEventHandler ImportRowDeleted;
+            public event ImportDetailRowChangeEventHandler ImportDetailRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddImportRow(ImportRow row) {
+            public void AddImportDetailRow(ImportDetailRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ImportRow AddImportRow(string ID, string GID, int Quantity, int totalPrice) {
-                ImportRow rowImportRow = ((ImportRow)(this.NewRow()));
+            public ImportDetailRow AddImportDetailRow(string ImportID, string GID, int Quantity, int price) {
+                ImportDetailRow rowImportDetailRow = ((ImportDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        ImportID,
                         GID,
                         Quantity,
-                        totalPrice};
-                rowImportRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowImportRow);
-                return rowImportRow;
+                        price};
+                rowImportDetailRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowImportDetailRow);
+                return rowImportDetailRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ImportDetailRow FindByImportIDGID(string ImportID, string GID) {
+                return ((ImportDetailRow)(this.Rows.Find(new object[] {
+                            ImportID,
+                            GID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ImportDataTable cln = ((ImportDataTable)(base.Clone()));
+                ImportDetailDataTable cln = ((ImportDetailDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,57 +420,62 @@ namespace WindowsFormsFinalSE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ImportDataTable();
+                return new ImportDetailDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
+                this.columnImportID = base.Columns["ImportID"];
                 this.columnGID = base.Columns["GID"];
                 this.columnQuantity = base.Columns["Quantity"];
-                this.columntotalPrice = base.Columns["totalPrice"];
+                this.columnprice = base.Columns["price"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
+                this.columnImportID = new global::System.Data.DataColumn("ImportID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImportID);
                 this.columnGID = new global::System.Data.DataColumn("GID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGID);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
-                this.columntotalPrice = new global::System.Data.DataColumn("totalPrice", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntotalPrice);
-                this.columnID.MaxLength = 5;
+                this.columnprice = new global::System.Data.DataColumn("price", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprice);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnImportID,
+                                this.columnGID}, true));
+                this.columnImportID.AllowDBNull = false;
+                this.columnImportID.MaxLength = 6;
+                this.columnGID.AllowDBNull = false;
                 this.columnGID.MaxLength = 6;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ImportRow NewImportRow() {
-                return ((ImportRow)(this.NewRow()));
+            public ImportDetailRow NewImportDetailRow() {
+                return ((ImportDetailRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ImportRow(builder);
+                return new ImportDetailRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ImportRow);
+                return typeof(ImportDetailRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ImportRowChanged != null)) {
-                    this.ImportRowChanged(this, new ImportRowChangeEvent(((ImportRow)(e.Row)), e.Action));
+                if ((this.ImportDetailRowChanged != null)) {
+                    this.ImportDetailRowChanged(this, new ImportDetailRowChangeEvent(((ImportDetailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -470,8 +483,8 @@ namespace WindowsFormsFinalSE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ImportRowChanging != null)) {
-                    this.ImportRowChanging(this, new ImportRowChangeEvent(((ImportRow)(e.Row)), e.Action));
+                if ((this.ImportDetailRowChanging != null)) {
+                    this.ImportDetailRowChanging(this, new ImportDetailRowChangeEvent(((ImportDetailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -479,8 +492,8 @@ namespace WindowsFormsFinalSE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ImportRowDeleted != null)) {
-                    this.ImportRowDeleted(this, new ImportRowChangeEvent(((ImportRow)(e.Row)), e.Action));
+                if ((this.ImportDetailRowDeleted != null)) {
+                    this.ImportDetailRowDeleted(this, new ImportDetailRowChangeEvent(((ImportDetailRow)(e.Row)), e.Action));
                 }
             }
             
@@ -488,14 +501,14 @@ namespace WindowsFormsFinalSE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ImportRowDeleting != null)) {
-                    this.ImportRowDeleting(this, new ImportRowChangeEvent(((ImportRow)(e.Row)), e.Action));
+                if ((this.ImportDetailRowDeleting != null)) {
+                    this.ImportDetailRowDeleting(this, new ImportDetailRowChangeEvent(((ImportDetailRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveImportRow(ImportRow row) {
+            public void RemoveImportDetailRow(ImportDetailRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -522,7 +535,7 @@ namespace WindowsFormsFinalSE {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ImportDataTable";
+                attribute2.FixedValue = "ImportDetailDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -566,30 +579,25 @@ namespace WindowsFormsFinalSE {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ImportRow : global::System.Data.DataRow {
+        public partial class ImportDetailRow : global::System.Data.DataRow {
             
-            private ImportDataTable tableImport;
+            private ImportDetailDataTable tableImportDetail;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal ImportRow(global::System.Data.DataRowBuilder rb) : 
+            internal ImportDetailRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableImport = ((ImportDataTable)(this.Table));
+                this.tableImportDetail = ((ImportDetailDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ID {
+            public string ImportID {
                 get {
-                    try {
-                        return ((string)(this[this.tableImport.IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'Import\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableImportDetail.ImportIDColumn]));
                 }
                 set {
-                    this[this.tableImport.IDColumn] = value;
+                    this[this.tableImportDetail.ImportIDColumn] = value;
                 }
             }
             
@@ -597,15 +605,10 @@ namespace WindowsFormsFinalSE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string GID {
                 get {
-                    try {
-                        return ((string)(this[this.tableImport.GIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GID\' in table \'Import\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableImportDetail.GIDColumn]));
                 }
                 set {
-                    this[this.tableImport.GIDColumn] = value;
+                    this[this.tableImportDetail.GIDColumn] = value;
                 }
             }
             
@@ -614,79 +617,55 @@ namespace WindowsFormsFinalSE {
             public int Quantity {
                 get {
                     try {
-                        return ((int)(this[this.tableImport.QuantityColumn]));
+                        return ((int)(this[this.tableImportDetail.QuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'Import\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'ImportDetail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableImport.QuantityColumn] = value;
+                    this[this.tableImportDetail.QuantityColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int totalPrice {
+            public int price {
                 get {
                     try {
-                        return ((int)(this[this.tableImport.totalPriceColumn]));
+                        return ((int)(this[this.tableImportDetail.priceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'totalPrice\' in table \'Import\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'price\' in table \'ImportDetail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableImport.totalPriceColumn] = value;
+                    this[this.tableImportDetail.priceColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsIDNull() {
-                return this.IsNull(this.tableImport.IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetIDNull() {
-                this[this.tableImport.IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGIDNull() {
-                return this.IsNull(this.tableImport.GIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGIDNull() {
-                this[this.tableImport.GIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsQuantityNull() {
-                return this.IsNull(this.tableImport.QuantityColumn);
+                return this.IsNull(this.tableImportDetail.QuantityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetQuantityNull() {
-                this[this.tableImport.QuantityColumn] = global::System.Convert.DBNull;
+                this[this.tableImportDetail.QuantityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IstotalPriceNull() {
-                return this.IsNull(this.tableImport.totalPriceColumn);
+            public bool IspriceNull() {
+                return this.IsNull(this.tableImportDetail.priceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SettotalPriceNull() {
-                this[this.tableImport.totalPriceColumn] = global::System.Convert.DBNull;
+            public void SetpriceNull() {
+                this[this.tableImportDetail.priceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -694,22 +673,22 @@ namespace WindowsFormsFinalSE {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class ImportRowChangeEvent : global::System.EventArgs {
+        public class ImportDetailRowChangeEvent : global::System.EventArgs {
             
-            private ImportRow eventRow;
+            private ImportDetailRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ImportRowChangeEvent(ImportRow row, global::System.Data.DataRowAction action) {
+            public ImportDetailRowChangeEvent(ImportDetailRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ImportRow Row {
+            public ImportDetailRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -737,7 +716,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ImportTableAdapter : global::System.ComponentModel.Component {
+    public partial class ImportDetailTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -751,7 +730,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public ImportTableAdapter() {
+        public ImportDetailTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -848,12 +827,47 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Import";
-            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.DataSetTable = "ImportDetail";
+            tableMapping.ColumnMappings.Add("ImportID", "ImportID");
             tableMapping.ColumnMappings.Add("GID", "GID");
             tableMapping.ColumnMappings.Add("Quantity", "Quantity");
-            tableMapping.ColumnMappings.Add("totalPrice", "totalPrice");
+            tableMapping.ColumnMappings.Add("price", "price");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ImportDetail] WHERE (([ImportID] = @Original_ImportID) AND ([GID] = @Original_GID) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ImportID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ImportDetail] ([ImportID], [GID], [Quantity], [price]) VALUES " +
+                "(@ImportID, @GID, @Quantity, @price);\r\nSELECT ImportID, GID, Quantity, price FRO" +
+                "M ImportDetail WHERE (GID = @GID) AND (ImportID = @ImportID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImportID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ImportDetail] SET [ImportID] = @ImportID, [GID] = @GID, [Quantity] = @Quantity, [price] = @price WHERE (([ImportID] = @Original_ImportID) AND ([GID] = @Original_GID) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)));
+SELECT ImportID, GID, Quantity, price FROM ImportDetail WHERE (GID = @GID) AND (ImportID = @ImportID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImportID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ImportID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -869,7 +883,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, GID, Quantity, totalPrice FROM dbo.Import";
+            this._commandCollection[0].CommandText = "SELECT ImportID, GID, Quantity, price FROM dbo.ImportDetail";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -877,7 +891,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FinalSEDataSetImport.ImportDataTable dataTable) {
+        public virtual int Fill(FinalSEDataSetImport.ImportDetailDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -890,11 +904,215 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FinalSEDataSetImport.ImportDataTable GetData() {
+        public virtual FinalSEDataSetImport.ImportDetailDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FinalSEDataSetImport.ImportDataTable dataTable = new FinalSEDataSetImport.ImportDataTable();
+            FinalSEDataSetImport.ImportDetailDataTable dataTable = new FinalSEDataSetImport.ImportDetailDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FinalSEDataSetImport.ImportDetailDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FinalSEDataSetImport dataSet) {
+            return this.Adapter.Update(dataSet, "ImportDetail");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_ImportID, string Original_GID, global::System.Nullable<int> Original_Quantity, global::System.Nullable<int> Original_price) {
+            if ((Original_ImportID == null)) {
+                throw new global::System.ArgumentNullException("Original_ImportID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_ImportID));
+            }
+            if ((Original_GID == null)) {
+                throw new global::System.ArgumentNullException("Original_GID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_GID));
+            }
+            if ((Original_Quantity.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Quantity.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_price.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_price.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string ImportID, string GID, global::System.Nullable<int> Quantity, global::System.Nullable<int> price) {
+            if ((ImportID == null)) {
+                throw new global::System.ArgumentNullException("ImportID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ImportID));
+            }
+            if ((GID == null)) {
+                throw new global::System.ArgumentNullException("GID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(GID));
+            }
+            if ((Quantity.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Quantity.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((price.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(price.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string ImportID, string GID, global::System.Nullable<int> Quantity, global::System.Nullable<int> price, string Original_ImportID, string Original_GID, global::System.Nullable<int> Original_Quantity, global::System.Nullable<int> Original_price) {
+            if ((ImportID == null)) {
+                throw new global::System.ArgumentNullException("ImportID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ImportID));
+            }
+            if ((GID == null)) {
+                throw new global::System.ArgumentNullException("GID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(GID));
+            }
+            if ((Quantity.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Quantity.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((price.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(price.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ImportID == null)) {
+                throw new global::System.ArgumentNullException("Original_ImportID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_ImportID));
+            }
+            if ((Original_GID == null)) {
+                throw new global::System.ArgumentNullException("Original_GID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_GID));
+            }
+            if ((Original_Quantity.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Quantity.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_price.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_price.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> Quantity, global::System.Nullable<int> price, string Original_ImportID, string Original_GID, global::System.Nullable<int> Original_Quantity, global::System.Nullable<int> Original_price) {
+            return this.Update(Original_ImportID, Original_GID, Quantity, price, Original_ImportID, Original_GID, Original_Quantity, Original_price);
         }
     }
     
@@ -910,6 +1128,8 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private ImportDetailTableAdapter _importDetailTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -922,6 +1142,20 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ImportDetailTableAdapter ImportDetailTableAdapter {
+            get {
+                return this._importDetailTableAdapter;
+            }
+            set {
+                this._importDetailTableAdapter = value;
             }
         }
         
@@ -944,6 +1178,10 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._importDetailTableAdapter != null) 
+                            && (this._importDetailTableAdapter.Connection != null))) {
+                    return this._importDetailTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -957,6 +1195,9 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._importDetailTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -968,6 +1209,15 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(FinalSEDataSetImport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._importDetailTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ImportDetail.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._importDetailTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -978,6 +1228,14 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(FinalSEDataSetImport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._importDetailTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ImportDetail.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._importDetailTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -988,6 +1246,14 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(FinalSEDataSetImport dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._importDetailTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ImportDetail.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._importDetailTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -1027,6 +1293,11 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
+            if (((this._importDetailTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._importDetailTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -1059,6 +1330,15 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._importDetailTableAdapter != null)) {
+                    revertConnections.Add(this._importDetailTableAdapter, this._importDetailTableAdapter.Connection);
+                    this._importDetailTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._importDetailTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._importDetailTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._importDetailTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._importDetailTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1116,6 +1396,10 @@ namespace WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._importDetailTableAdapter != null)) {
+                    this._importDetailTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._importDetailTableAdapter]));
+                    this._importDetailTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

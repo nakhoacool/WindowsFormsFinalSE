@@ -17,11 +17,21 @@ namespace WindowsFormsFinalSE
         {
             InitializeComponent();
 
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnClear.Enabled = false;
+            btnSave.Enabled = false;
+
+            comboBoxGID.Enabled = false;
+
+            txtQuantity.Enabled = false;
 
         }
 
         private void FormGoods_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'finalSEDataSetImport.ImportDetail' table. You can move, or remove it, as needed.
+            this.importDetailTableAdapter.Fill(this.finalSEDataSetImport.ImportDetail);
 
             // TODO: This line of code loads data into the 'goodimportDataSet.Good' table. You can move, or remove it, as needed.
             this.goodTableAdapter.Fill(this.goodimportDataSet.Good);
@@ -78,7 +88,7 @@ namespace WindowsFormsFinalSE
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (comboBoxID.Text == "" || comboBoxGID.Text == "" || txtQuantity.Text == "" || txtImportID.Text == "")
+            if (comboBoxID.Text == "" || comboBoxGID.Text == "" || txtQuantity.Text == "")
             {
                 MessageBox.Show("Please fill all the fields");
             }
@@ -88,19 +98,38 @@ namespace WindowsFormsFinalSE
                 int importprice = (int)((int)good.SellingPrice * 0.75);
                 int totalprice = importprice * int.Parse(txtQuantity.Text.ToString());
 
-                Import import = new Import();
-                import.ImportID = txtImportID.Text.ToString();
-                import.ID = comboBoxID.Text.ToString();
-                import.ImportDate = dateTimePickerImport.Value;
-                import.totalPrice = totalprice;
-                db.Imports.Add(import);
-                db.SaveChanges();
-                MessageBox.Show("Adding successfully");
-                Reload();
-                Class.Clear.ResetAllControls(this);
-            }
+                ImportDetail importDetail = new ImportDetail();
+                importDetail.ImportID = txtImportID.Text;
+                importDetail.GID = comboBoxGID.Text;
+                importDetail.Quantity = Convert.ToInt32(txtQuantity.Text);
+                importDetail.price = totalprice;
 
+                
+
+
+                txtTotalPrice.Text = (int.Parse(txtTotalPrice.Text.ToString()) + totalprice).ToString();
+
+
+                db.ImportDetails.Add(importDetail);
+                
+                db.SaveChanges();
+
+                MessageBox.Show("Import Detail Added Successfully");
+
+                
+                comboBoxGID.SelectedIndex = -1;
+                txtQuantity.Text = "";
+
+                
+
+                ImportGridView.DataSource = null;
+                ImportGridView.DataSource = db.ImportDetails.ToList();
+            }
         }
+
+            
+
+        
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -115,15 +144,85 @@ namespace WindowsFormsFinalSE
         private void btnImport_Click(object sender, EventArgs e)
         {
 
-            if (ImportGridView.DataBindings.Count == 0)
-            {
-                MessageBox.Show("Add goods before import");
-            }
-
-            else
-            {
-
-            }
         }
+
+        private void btnNew_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btnNew, "Please choose Accountant ID, fill ImportID field and Date to create new import note.");
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBoxID.Text == "" || dateTimePickerImport.Text == "" || txtImportID.Text == "")
+                {
+                    MessageBox.Show("Please fill all the fields");
+                }
+
+                else
+                {
+                    Import import = new Import();
+                    import.ImportID = txtImportID.Text.ToString();
+                    import.ID = comboBoxID.Text.ToString();
+                    import.ImportDate = dateTimePickerImport.Value;
+                    import.totalPrice = 0;
+                    txtTotalPrice.Text = import.totalPrice.ToString();
+                    db.Imports.Add(import);
+                    db.SaveChanges();
+                    MessageBox.Show("Adding successfully");
+                    Reload();
+                    /*Class.Clear.ResetAllControls(this);*/
+
+                    btnAdd.Enabled = true;
+                    btnEdit.Enabled = true;
+                    btnClear.Enabled = true;
+                    btnSave.Enabled = true;
+                    btnNew.Enabled = false;
+
+                    txtQuantity.Enabled = true;
+                    txtImportID.Enabled = false;
+
+                    comboBoxID.Enabled = false;
+                    comboBoxGID.Enabled = true;
+
+                    dateTimePickerImport.Enabled = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Import import = db.Imports.Find(txtImportID.Text);
+            import.totalPrice = int.Parse(txtTotalPrice.Text.ToString());
+
+            db.SaveChanges();
+            Reload();
+            MessageBox.Show("Import note saved successfully");
+            Class.Clear.ResetAllControls(this);
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnClear.Enabled = false;
+            btnSave.Enabled = false;
+
+            comboBoxGID.Enabled = false;
+
+            txtQuantity.Enabled = false;
+
+            btnNew.Enabled = true;
+            comboBoxID.Enabled = true;
+            dateTimePickerImport.Enabled = true;
+
+            txtImportID.Enabled = true;
+        }
+
+       
     }
 }

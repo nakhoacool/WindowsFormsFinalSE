@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnImport = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -63,6 +63,14 @@
             this.ImportGridView = new System.Windows.Forms.DataGridView();
             this.accountantTableAdapter = new WindowsFormsFinalSE.accoutantimportDatasetTableAdapters.AccountantTableAdapter();
             this.goodTableAdapter = new WindowsFormsFinalSE.goodimportDataSetTableAdapters.GoodTableAdapter();
+            this.finalSEDataSetImport = new WindowsFormsFinalSE.FinalSEDataSetImport();
+            this.importDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.importDetailTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetImportTableAdapters.ImportDetailTableAdapter();
+            this.importIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNew = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -74,11 +82,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.accoutantimportDataset)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetImport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnImport);
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnAdd);
@@ -90,16 +100,16 @@
             this.panel1.Size = new System.Drawing.Size(1202, 55);
             this.panel1.TabIndex = 0;
             // 
-            // btnImport
+            // btnSave
             // 
-            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.Location = new System.Drawing.Point(366, 8);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(172, 38);
-            this.btnImport.TabIndex = 5;
-            this.btnImport.Text = "Import";
-            this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(366, 8);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(172, 38);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
@@ -351,6 +361,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnNew);
             this.panel3.Controls.Add(this.txtImportID);
             this.panel3.Controls.Add(this.lbImportID);
             this.panel3.Controls.Add(this.ImportGridView);
@@ -379,8 +390,15 @@
             // 
             // ImportGridView
             // 
+            this.ImportGridView.AutoGenerateColumns = false;
             this.ImportGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ImportGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ImportGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.importIDDataGridViewTextBoxColumn,
+            this.gIDDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.ImportGridView.DataSource = this.importDetailBindingSource;
             this.ImportGridView.Location = new System.Drawing.Point(3, 50);
             this.ImportGridView.Name = "ImportGridView";
             this.ImportGridView.RowHeadersWidth = 51;
@@ -396,6 +414,60 @@
             // goodTableAdapter
             // 
             this.goodTableAdapter.ClearBeforeFill = true;
+            // 
+            // finalSEDataSetImport
+            // 
+            this.finalSEDataSetImport.DataSetName = "FinalSEDataSetImport";
+            this.finalSEDataSetImport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // importDetailBindingSource
+            // 
+            this.importDetailBindingSource.DataMember = "ImportDetail";
+            this.importDetailBindingSource.DataSource = this.finalSEDataSetImport;
+            // 
+            // importDetailTableAdapter
+            // 
+            this.importDetailTableAdapter.ClearBeforeFill = true;
+            // 
+            // importIDDataGridViewTextBoxColumn
+            // 
+            this.importIDDataGridViewTextBoxColumn.DataPropertyName = "ImportID";
+            this.importIDDataGridViewTextBoxColumn.HeaderText = "ImportID";
+            this.importIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.importIDDataGridViewTextBoxColumn.Name = "importIDDataGridViewTextBoxColumn";
+            // 
+            // gIDDataGridViewTextBoxColumn
+            // 
+            this.gIDDataGridViewTextBoxColumn.DataPropertyName = "GID";
+            this.gIDDataGridViewTextBoxColumn.HeaderText = "GID";
+            this.gIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gIDDataGridViewTextBoxColumn.Name = "gIDDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // btnNew
+            // 
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(514, 12);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(114, 29);
+            this.btnNew.TabIndex = 4;
+            this.btnNew.Text = "New Note";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.btnNew.MouseHover += new System.EventHandler(this.btnNew_MouseHover);
             // 
             // FormImport
             // 
@@ -423,6 +495,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetImport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,7 +506,7 @@
         private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Label lbTotalPrice;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
@@ -462,5 +536,13 @@
         private System.Windows.Forms.Label lbQuantity;
         private System.Windows.Forms.TextBox txtImportID;
         private System.Windows.Forms.Label lbImportID;
+        private FinalSEDataSetImport finalSEDataSetImport;
+        private System.Windows.Forms.BindingSource importDetailBindingSource;
+        private FinalSEDataSetImportTableAdapters.ImportDetailTableAdapter importDetailTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnNew;
     }
 }
