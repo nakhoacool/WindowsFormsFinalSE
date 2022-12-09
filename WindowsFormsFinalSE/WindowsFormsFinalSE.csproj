@@ -93,10 +93,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FinalSEDataSetGoods.Designer.cs">
+    <Compile Include="FinalSEDataSetGood.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FinalSEDataSetGoods.xsd</DependentUpon>
+      <DependentUpon>FinalSEDataSetGood.xsd</DependentUpon>
     </Compile>
     <Compile Include="FinalSEDataSetImport.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -237,16 +237,16 @@
     <None Include="FinalSEDataSetAgent.xss">
       <DependentUpon>FinalSEDataSetAgent.xsd</DependentUpon>
     </None>
-    <None Include="FinalSEDataSetGoods.xsc">
-      <DependentUpon>FinalSEDataSetGoods.xsd</DependentUpon>
+    <None Include="FinalSEDataSetGood.xsc">
+      <DependentUpon>FinalSEDataSetGood.xsd</DependentUpon>
     </None>
-    <None Include="FinalSEDataSetGoods.xsd">
+    <None Include="FinalSEDataSetGood.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinalSEDataSetGoods.Designer.cs</LastGenOutput>
+      <LastGenOutput>FinalSEDataSetGood.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FinalSEDataSetGoods.xss">
-      <DependentUpon>FinalSEDataSetGoods.xsd</DependentUpon>
+    <None Include="FinalSEDataSetGood.xss">
+      <DependentUpon>FinalSEDataSetGood.xsd</DependentUpon>
     </None>
     <None Include="FinalSEDataSetImport.xsc">
       <DependentUpon>FinalSEDataSetImport.xsd</DependentUpon>

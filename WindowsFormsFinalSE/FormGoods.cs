@@ -56,8 +56,8 @@ namespace WindowsFormsFinalSE
 
         private void FormGoods_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'finalSEDataSetGoods.Good' table. You can move, or remove it, as needed.
-            this.goodTableAdapter.Fill(this.finalSEDataSetGoods.Good);
+            // TODO: This line of code loads data into the 'finalSEDataSetGood.Good' table. You can move, or remove it, as needed.
+            this.goodTableAdapter.Fill(this.finalSEDataSetGood.Good);
         }
 
         private void buttonGoodBrowse_Click(object sender, EventArgs e)
@@ -79,6 +79,7 @@ namespace WindowsFormsFinalSE
             good.GName = textBoxGoodName.Text.ToString();
             good.Quantity = int.Parse(textBoxGoodQuantity.Text.ToString());
             good.Manufacture = textBoxGoodManu.Text.ToString();
+            good.ImportPrice = int.Parse(textBoxGoodImpPrice.Text.ToString());
             good.SellingPrice = int.Parse(textBoxGoodSell.Text.ToString());
             good.GPhoto = ConvertImagetoByte(pictureBoxGoodPhoto.ImageLocation);
             db.Goods.Add(good);
@@ -96,8 +97,9 @@ namespace WindowsFormsFinalSE
                 textBoxGoodName.Text = goodGridView.SelectedRows[0].Cells[1].Value.ToString();
                 textBoxGoodQuantity.Text = goodGridView.SelectedRows[0].Cells[2].Value.ToString();
                 textBoxGoodManu.Text = goodGridView.SelectedRows[0].Cells[3].Value.ToString();
-                textBoxGoodSell.Text = goodGridView.SelectedRows[0].Cells[4].Value.ToString();
-                pictureBoxGoodPhoto.Image = ConvertBytetoImage((byte[])goodGridView.SelectedRows[0].Cells[5].Value);
+                textBoxGoodImpPrice.Text = goodGridView.SelectedRows[0].Cells[4].Value.ToString();
+                textBoxGoodSell.Text = goodGridView.SelectedRows[0].Cells[5].Value.ToString();
+                pictureBoxGoodPhoto.Image = ConvertBytetoImage((byte[])goodGridView.SelectedRows[0].Cells[6].Value);
 
                 buttonGoodSave.Enabled = false;
                 buttonGoodDelete.Enabled = true;
@@ -133,6 +135,7 @@ namespace WindowsFormsFinalSE
             good.GName = textBoxGoodName.Text.ToString();
             good.Quantity = int.Parse(textBoxGoodQuantity.Text.ToString());
             good.Manufacture = textBoxGoodManu.Text.ToString();
+            good.ImportPrice = int.Parse(textBoxGoodImpPrice.Text.ToString());
             good.SellingPrice = int.Parse(textBoxGoodSell.Text.ToString());
             if (pictureBoxGoodPhoto.ImageLocation != null)
             {
@@ -165,6 +168,11 @@ namespace WindowsFormsFinalSE
             {
                 goodGridView.DataSource = null;
                 goodGridView.DataSource = db.Goods.Where(x => x.Manufacture == textBoxGoodManu.Text || x.Manufacture.Contains(textBoxGoodManu.Text)).ToList();
+            }
+            else if (textBoxGoodImpPrice.Text != "")
+            {
+                goodGridView.DataSource = null;
+                goodGridView.DataSource = db.Goods.Where(x => x.ImportPrice == int.Parse(textBoxGoodImpPrice.Text)).ToList();
             }
             else if (textBoxGoodSell.Text != "")
             {

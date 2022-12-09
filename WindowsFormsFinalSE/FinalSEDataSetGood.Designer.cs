@@ -20,9 +20,9 @@ namespace WindowsFormsFinalSE {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FinalSEDataSetGoods")]
+    [global::System.Xml.Serialization.XmlRootAttribute("FinalSEDataSetGood")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FinalSEDataSetGoods : global::System.Data.DataSet {
+    public partial class FinalSEDataSetGood : global::System.Data.DataSet {
         
         private GoodDataTable tableGood;
         
@@ -30,7 +30,7 @@ namespace WindowsFormsFinalSE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public FinalSEDataSetGoods() {
+        public FinalSEDataSetGood() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace WindowsFormsFinalSE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected FinalSEDataSetGoods(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected FinalSEDataSetGood(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FinalSEDataSetGoods cln = ((FinalSEDataSetGoods)(base.Clone()));
+            FinalSEDataSetGood cln = ((FinalSEDataSetGood)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FinalSEDataSetGoods";
+            this.DataSetName = "FinalSEDataSetGood";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FinalSEDataSetGoods.xsd";
+            this.Namespace = "http://tempuri.org/FinalSEDataSetGood.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableGood = new GoodDataTable();
@@ -225,7 +225,7 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FinalSEDataSetGoods ds = new FinalSEDataSetGoods();
+            FinalSEDataSetGood ds = new FinalSEDataSetGood();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -286,6 +286,8 @@ namespace WindowsFormsFinalSE {
             private global::System.Data.DataColumn columnQuantity;
             
             private global::System.Data.DataColumn columnManufacture;
+            
+            private global::System.Data.DataColumn columnImportPrice;
             
             private global::System.Data.DataColumn columnSellingPrice;
             
@@ -358,6 +360,14 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ImportPriceColumn {
+                get {
+                    return this.columnImportPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn SellingPriceColumn {
                 get {
                     return this.columnSellingPrice;
@@ -409,13 +419,14 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GoodRow AddGoodRow(string GID, string GName, int Quantity, string Manufacture, int SellingPrice, byte[] GPhoto) {
+            public GoodRow AddGoodRow(string GID, string GName, int Quantity, string Manufacture, int ImportPrice, int SellingPrice, byte[] GPhoto) {
                 GoodRow rowGoodRow = ((GoodRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GID,
                         GName,
                         Quantity,
                         Manufacture,
+                        ImportPrice,
                         SellingPrice,
                         GPhoto};
                 rowGoodRow.ItemArray = columnValuesArray;
@@ -451,6 +462,7 @@ namespace WindowsFormsFinalSE {
                 this.columnGName = base.Columns["GName"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnManufacture = base.Columns["Manufacture"];
+                this.columnImportPrice = base.Columns["ImportPrice"];
                 this.columnSellingPrice = base.Columns["SellingPrice"];
                 this.columnGPhoto = base.Columns["GPhoto"];
             }
@@ -466,6 +478,8 @@ namespace WindowsFormsFinalSE {
                 base.Columns.Add(this.columnQuantity);
                 this.columnManufacture = new global::System.Data.DataColumn("Manufacture", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnManufacture);
+                this.columnImportPrice = new global::System.Data.DataColumn("ImportPrice", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImportPrice);
                 this.columnSellingPrice = new global::System.Data.DataColumn("SellingPrice", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSellingPrice);
                 this.columnGPhoto = new global::System.Data.DataColumn("GPhoto", typeof(byte[]), null, global::System.Data.MappingType.Element);
@@ -544,7 +558,7 @@ namespace WindowsFormsFinalSE {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FinalSEDataSetGoods ds = new FinalSEDataSetGoods();
+                FinalSEDataSetGood ds = new FinalSEDataSetGood();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -678,6 +692,22 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ImportPrice {
+                get {
+                    try {
+                        return ((int)(this[this.tableGood.ImportPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ImportPrice\' in table \'Good\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGood.ImportPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int SellingPrice {
                 get {
                     try {
@@ -746,6 +776,18 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsImportPriceNull() {
+                return this.IsNull(this.tableGood.ImportPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetImportPriceNull() {
+                this[this.tableGood.ImportPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsSellingPriceNull() {
                 return this.IsNull(this.tableGood.SellingPriceColumn);
             }
@@ -804,7 +846,7 @@ namespace WindowsFormsFinalSE {
         }
     }
 }
-namespace WindowsFormsFinalSE.FinalSEDataSetGoodsTableAdapters {
+namespace WindowsFormsFinalSE.FinalSEDataSetGoodTableAdapters {
     
     
     /// <summary>
@@ -932,12 +974,13 @@ namespace WindowsFormsFinalSE.FinalSEDataSetGoodsTableAdapters {
             tableMapping.ColumnMappings.Add("GName", "GName");
             tableMapping.ColumnMappings.Add("Quantity", "Quantity");
             tableMapping.ColumnMappings.Add("Manufacture", "Manufacture");
+            tableMapping.ColumnMappings.Add("ImportPrice", "ImportPrice");
             tableMapping.ColumnMappings.Add("SellingPrice", "SellingPrice");
             tableMapping.ColumnMappings.Add("GPhoto", "GPhoto");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Good] WHERE (([GID] = @Original_GID) AND ((@IsNull_GName = 1 AND [GName] IS NULL) OR ([GName] = @Original_GName)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Manufacture = 1 AND [Manufacture] IS NULL) OR ([Manufacture] = @Original_Manufacture)) AND ((@IsNull_SellingPrice = 1 AND [SellingPrice] IS NULL) OR ([SellingPrice] = @Original_SellingPrice)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Good] WHERE (([GID] = @Original_GID) AND ((@IsNull_GName = 1 AND [GName] IS NULL) OR ([GName] = @Original_GName)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Manufacture = 1 AND [Manufacture] IS NULL) OR ([Manufacture] = @Original_Manufacture)) AND ((@IsNull_ImportPrice = 1 AND [ImportPrice] IS NULL) OR ([ImportPrice] = @Original_ImportPrice)) AND ((@IsNull_SellingPrice = 1 AND [SellingPrice] IS NULL) OR ([SellingPrice] = @Original_SellingPrice)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_GName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -946,28 +989,32 @@ namespace WindowsFormsFinalSE.FinalSEDataSetGoodsTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Manufacture", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacture", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Manufacture", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacture", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ImportPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ImportPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SellingPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SellingPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SellingPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SellingPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Good] ([GID], [GName], [Quantity], [Manufacture], [SellingPrice], [GPhoto]) VALUES (@GID, @GName, @Quantity, @Manufacture, @SellingPrice, @GPhoto);
-SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (GID = @GID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Good] ([GID], [GName], [Quantity], [Manufacture], [ImportPrice], [SellingPrice], [GPhoto]) VALUES (@GID, @GName, @Quantity, @Manufacture, @ImportPrice, @SellingPrice, @GPhoto);
+SELECT GID, GName, Quantity, Manufacture, ImportPrice, SellingPrice, GPhoto FROM Good WHERE (GID = @GID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manufacture", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacture", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImportPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SellingPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SellingPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPhoto", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPhoto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Good] SET [GID] = @GID, [GName] = @GName, [Quantity] = @Quantity, [Manufacture] = @Manufacture, [SellingPrice] = @SellingPrice, [GPhoto] = @GPhoto WHERE (([GID] = @Original_GID) AND ((@IsNull_GName = 1 AND [GName] IS NULL) OR ([GName] = @Original_GName)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Manufacture = 1 AND [Manufacture] IS NULL) OR ([Manufacture] = @Original_Manufacture)) AND ((@IsNull_SellingPrice = 1 AND [SellingPrice] IS NULL) OR ([SellingPrice] = @Original_SellingPrice)));
-SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (GID = @GID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Good] SET [GID] = @GID, [GName] = @GName, [Quantity] = @Quantity, [Manufacture] = @Manufacture, [ImportPrice] = @ImportPrice, [SellingPrice] = @SellingPrice, [GPhoto] = @GPhoto WHERE (([GID] = @Original_GID) AND ((@IsNull_GName = 1 AND [GName] IS NULL) OR ([GName] = @Original_GName)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Manufacture = 1 AND [Manufacture] IS NULL) OR ([Manufacture] = @Original_Manufacture)) AND ((@IsNull_ImportPrice = 1 AND [ImportPrice] IS NULL) OR ([ImportPrice] = @Original_ImportPrice)) AND ((@IsNull_SellingPrice = 1 AND [SellingPrice] IS NULL) OR ([SellingPrice] = @Original_SellingPrice)));
+SELECT GID, GName, Quantity, Manufacture, ImportPrice, SellingPrice, GPhoto FROM Good WHERE (GID = @GID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manufacture", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacture", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImportPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SellingPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SellingPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GPhoto", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GPhoto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -977,6 +1024,8 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Manufacture", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacture", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Manufacture", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacture", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ImportPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ImportPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImportPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SellingPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SellingPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SellingPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SellingPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -994,7 +1043,8 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM dbo.Good";
+            this._commandCollection[0].CommandText = "SELECT GID, GName, Quantity, Manufacture, ImportPrice, SellingPrice, GPhoto FROM " +
+                "dbo.Good";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1002,7 +1052,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FinalSEDataSetGoods.GoodDataTable dataTable) {
+        public virtual int Fill(FinalSEDataSetGood.GoodDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1015,9 +1065,9 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FinalSEDataSetGoods.GoodDataTable GetData() {
+        public virtual FinalSEDataSetGood.GoodDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FinalSEDataSetGoods.GoodDataTable dataTable = new FinalSEDataSetGoods.GoodDataTable();
+            FinalSEDataSetGood.GoodDataTable dataTable = new FinalSEDataSetGood.GoodDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1025,14 +1075,14 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FinalSEDataSetGoods.GoodDataTable dataTable) {
+        public virtual int Update(FinalSEDataSetGood.GoodDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FinalSEDataSetGoods dataSet) {
+        public virtual int Update(FinalSEDataSetGood dataSet) {
             return this.Adapter.Update(dataSet, "Good");
         }
         
@@ -1055,7 +1105,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_GID, string Original_GName, global::System.Nullable<int> Original_Quantity, string Original_Manufacture, global::System.Nullable<int> Original_SellingPrice) {
+        public virtual int Delete(string Original_GID, string Original_GName, global::System.Nullable<int> Original_Quantity, string Original_Manufacture, global::System.Nullable<int> Original_ImportPrice, global::System.Nullable<int> Original_SellingPrice) {
             if ((Original_GID == null)) {
                 throw new global::System.ArgumentNullException("Original_GID");
             }
@@ -1086,13 +1136,21 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Manufacture));
             }
-            if ((Original_SellingPrice.HasValue == true)) {
+            if ((Original_ImportPrice.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_SellingPrice.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_ImportPrice.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SellingPrice.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_SellingPrice.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1114,7 +1172,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string GID, string GName, global::System.Nullable<int> Quantity, string Manufacture, global::System.Nullable<int> SellingPrice, byte[] GPhoto) {
+        public virtual int Insert(string GID, string GName, global::System.Nullable<int> Quantity, string Manufacture, global::System.Nullable<int> ImportPrice, global::System.Nullable<int> SellingPrice, byte[] GPhoto) {
             if ((GID == null)) {
                 throw new global::System.ArgumentNullException("GID");
             }
@@ -1139,17 +1197,23 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Manufacture));
             }
-            if ((SellingPrice.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(SellingPrice.Value));
+            if ((ImportPrice.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ImportPrice.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((GPhoto == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((SellingPrice.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(SellingPrice.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((byte[])(GPhoto));
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((GPhoto == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((byte[])(GPhoto));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1171,7 +1235,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string GID, string GName, global::System.Nullable<int> Quantity, string Manufacture, global::System.Nullable<int> SellingPrice, byte[] GPhoto, string Original_GID, string Original_GName, global::System.Nullable<int> Original_Quantity, string Original_Manufacture, global::System.Nullable<int> Original_SellingPrice) {
+        public virtual int Update(string GID, string GName, global::System.Nullable<int> Quantity, string Manufacture, global::System.Nullable<int> ImportPrice, global::System.Nullable<int> SellingPrice, byte[] GPhoto, string Original_GID, string Original_GName, global::System.Nullable<int> Original_Quantity, string Original_Manufacture, global::System.Nullable<int> Original_ImportPrice, global::System.Nullable<int> Original_SellingPrice) {
             if ((GID == null)) {
                 throw new global::System.ArgumentNullException("GID");
             }
@@ -1196,55 +1260,69 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Manufacture));
             }
-            if ((SellingPrice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(SellingPrice.Value));
+            if ((ImportPrice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ImportPrice.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((GPhoto == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((SellingPrice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(SellingPrice.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte[])(GPhoto));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((GPhoto == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((byte[])(GPhoto));
             }
             if ((Original_GID == null)) {
                 throw new global::System.ArgumentNullException("Original_GID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_GID));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_GID));
             }
             if ((Original_GName == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_GName));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_GName));
             }
             if ((Original_Quantity.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Quantity.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Quantity.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_Manufacture == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Manufacture));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Manufacture));
+            }
+            if ((Original_ImportPrice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_ImportPrice.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_SellingPrice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_SellingPrice.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_SellingPrice.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1266,8 +1344,8 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string GName, global::System.Nullable<int> Quantity, string Manufacture, global::System.Nullable<int> SellingPrice, byte[] GPhoto, string Original_GID, string Original_GName, global::System.Nullable<int> Original_Quantity, string Original_Manufacture, global::System.Nullable<int> Original_SellingPrice) {
-            return this.Update(Original_GID, GName, Quantity, Manufacture, SellingPrice, GPhoto, Original_GID, Original_GName, Original_Quantity, Original_Manufacture, Original_SellingPrice);
+        public virtual int Update(string GName, global::System.Nullable<int> Quantity, string Manufacture, global::System.Nullable<int> ImportPrice, global::System.Nullable<int> SellingPrice, byte[] GPhoto, string Original_GID, string Original_GName, global::System.Nullable<int> Original_Quantity, string Original_Manufacture, global::System.Nullable<int> Original_ImportPrice, global::System.Nullable<int> Original_SellingPrice) {
+            return this.Update(Original_GID, GName, Quantity, Manufacture, ImportPrice, SellingPrice, GPhoto, Original_GID, Original_GName, Original_Quantity, Original_Manufacture, Original_ImportPrice, Original_SellingPrice);
         }
     }
     
@@ -1362,7 +1440,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(FinalSEDataSetGoods dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(FinalSEDataSetGood dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._goodTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Good.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1381,7 +1459,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(FinalSEDataSetGoods dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(FinalSEDataSetGood dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._goodTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Good.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1399,7 +1477,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(FinalSEDataSetGoods dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(FinalSEDataSetGood dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._goodTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Good.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1441,7 +1519,7 @@ SELECT GID, GName, Quantity, Manufacture, SellingPrice, GPhoto FROM Good WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(FinalSEDataSetGoods dataSet) {
+        public virtual int UpdateAll(FinalSEDataSetGood dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

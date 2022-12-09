@@ -44,23 +44,26 @@
             this.textBoxGoodQuantity = new System.Windows.Forms.TextBox();
             this.textBoxGoodSell = new System.Windows.Forms.TextBox();
             this.goodGridView = new System.Windows.Forms.DataGridView();
-            this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manufactureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gPhotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.finalSEDataSetGoods = new WindowsFormsFinalSE.FinalSEDataSetGoods();
-            this.goodTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetGoodsTableAdapters.GoodTableAdapter();
             this.buttonGoodDelete = new System.Windows.Forms.Button();
             this.buttonGoodClear = new System.Windows.Forms.Button();
             this.buttonGoodEdit = new System.Windows.Forms.Button();
             this.buttonGoodSearch = new System.Windows.Forms.Button();
+            this.finalSEDataSetGood = new WindowsFormsFinalSE.FinalSEDataSetGood();
+            this.goodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.goodTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetGoodTableAdapters.GoodTableAdapter();
+            this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manufactureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sellingPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gPhotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxGoodImpPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGoodPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetGoods)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,7 +105,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 223);
+            this.label5.Location = new System.Drawing.Point(15, 267);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 16);
             this.label5.TabIndex = 4;
@@ -132,7 +135,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 299);
+            this.label6.Location = new System.Drawing.Point(15, 326);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 16);
             this.label6.TabIndex = 10;
@@ -140,7 +143,7 @@
             // 
             // buttonGoodBrowse
             // 
-            this.buttonGoodBrowse.Location = new System.Drawing.Point(123, 440);
+            this.buttonGoodBrowse.Location = new System.Drawing.Point(123, 485);
             this.buttonGoodBrowse.Name = "buttonGoodBrowse";
             this.buttonGoodBrowse.Size = new System.Drawing.Size(137, 44);
             this.buttonGoodBrowse.TabIndex = 11;
@@ -150,7 +153,7 @@
             // 
             // pictureBoxGoodPhoto
             // 
-            this.pictureBoxGoodPhoto.Location = new System.Drawing.Point(85, 279);
+            this.pictureBoxGoodPhoto.Location = new System.Drawing.Point(84, 326);
             this.pictureBoxGoodPhoto.Name = "pictureBoxGoodPhoto";
             this.pictureBoxGoodPhoto.Size = new System.Drawing.Size(211, 127);
             this.pictureBoxGoodPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -176,7 +179,7 @@
             // 
             // textBoxGoodSell
             // 
-            this.textBoxGoodSell.Location = new System.Drawing.Point(123, 223);
+            this.textBoxGoodSell.Location = new System.Drawing.Point(123, 267);
             this.textBoxGoodSell.Name = "textBoxGoodSell";
             this.textBoxGoodSell.Size = new System.Drawing.Size(137, 22);
             this.textBoxGoodSell.TabIndex = 16;
@@ -192,6 +195,7 @@
             this.gNameDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
             this.manufactureDataGridViewTextBoxColumn,
+            this.importPriceDataGridViewTextBoxColumn,
             this.sellingPriceDataGridViewTextBoxColumn,
             this.gPhotoDataGridViewImageColumn});
             this.goodGridView.DataSource = this.goodBindingSource;
@@ -203,74 +207,6 @@
             this.goodGridView.Size = new System.Drawing.Size(811, 375);
             this.goodGridView.TabIndex = 17;
             this.goodGridView.SelectionChanged += new System.EventHandler(this.goodGridView_SelectionChanged);
-            // 
-            // gIDDataGridViewTextBoxColumn
-            // 
-            this.gIDDataGridViewTextBoxColumn.DataPropertyName = "GID";
-            this.gIDDataGridViewTextBoxColumn.HeaderText = "GID";
-            this.gIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gIDDataGridViewTextBoxColumn.Name = "gIDDataGridViewTextBoxColumn";
-            this.gIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // gNameDataGridViewTextBoxColumn
-            // 
-            this.gNameDataGridViewTextBoxColumn.DataPropertyName = "GName";
-            this.gNameDataGridViewTextBoxColumn.HeaderText = "GName";
-            this.gNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gNameDataGridViewTextBoxColumn.Name = "gNameDataGridViewTextBoxColumn";
-            this.gNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // manufactureDataGridViewTextBoxColumn
-            // 
-            this.manufactureDataGridViewTextBoxColumn.DataPropertyName = "Manufacture";
-            this.manufactureDataGridViewTextBoxColumn.HeaderText = "Manufacture";
-            this.manufactureDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.manufactureDataGridViewTextBoxColumn.Name = "manufactureDataGridViewTextBoxColumn";
-            this.manufactureDataGridViewTextBoxColumn.ReadOnly = true;
-            this.manufactureDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sellingPriceDataGridViewTextBoxColumn
-            // 
-            this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
-            this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "SellingPrice";
-            this.sellingPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
-            this.sellingPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sellingPriceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // gPhotoDataGridViewImageColumn
-            // 
-            this.gPhotoDataGridViewImageColumn.DataPropertyName = "GPhoto";
-            this.gPhotoDataGridViewImageColumn.HeaderText = "GPhoto";
-            this.gPhotoDataGridViewImageColumn.MinimumWidth = 6;
-            this.gPhotoDataGridViewImageColumn.Name = "gPhotoDataGridViewImageColumn";
-            this.gPhotoDataGridViewImageColumn.ReadOnly = true;
-            this.gPhotoDataGridViewImageColumn.Width = 125;
-            // 
-            // goodBindingSource
-            // 
-            this.goodBindingSource.DataMember = "Good";
-            this.goodBindingSource.DataSource = this.finalSEDataSetGoods;
-            // 
-            // finalSEDataSetGoods
-            // 
-            this.finalSEDataSetGoods.DataSetName = "FinalSEDataSetGoods";
-            this.finalSEDataSetGoods.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // goodTableAdapter
-            // 
-            this.goodTableAdapter.ClearBeforeFill = true;
             // 
             // buttonGoodDelete
             // 
@@ -312,11 +248,106 @@
             this.buttonGoodSearch.UseVisualStyleBackColor = true;
             this.buttonGoodSearch.Click += new System.EventHandler(this.buttonGoodSearch_Click);
             // 
+            // finalSEDataSetGood
+            // 
+            this.finalSEDataSetGood.DataSetName = "FinalSEDataSetGood";
+            this.finalSEDataSetGood.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // goodBindingSource
+            // 
+            this.goodBindingSource.DataMember = "Good";
+            this.goodBindingSource.DataSource = this.finalSEDataSetGood;
+            // 
+            // goodTableAdapter
+            // 
+            this.goodTableAdapter.ClearBeforeFill = true;
+            // 
+            // gIDDataGridViewTextBoxColumn
+            // 
+            this.gIDDataGridViewTextBoxColumn.DataPropertyName = "GID";
+            this.gIDDataGridViewTextBoxColumn.HeaderText = "GID";
+            this.gIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gIDDataGridViewTextBoxColumn.Name = "gIDDataGridViewTextBoxColumn";
+            this.gIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gNameDataGridViewTextBoxColumn
+            // 
+            this.gNameDataGridViewTextBoxColumn.DataPropertyName = "GName";
+            this.gNameDataGridViewTextBoxColumn.HeaderText = "GName";
+            this.gNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gNameDataGridViewTextBoxColumn.Name = "gNameDataGridViewTextBoxColumn";
+            this.gNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // manufactureDataGridViewTextBoxColumn
+            // 
+            this.manufactureDataGridViewTextBoxColumn.DataPropertyName = "Manufacture";
+            this.manufactureDataGridViewTextBoxColumn.HeaderText = "Manufacture";
+            this.manufactureDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.manufactureDataGridViewTextBoxColumn.Name = "manufactureDataGridViewTextBoxColumn";
+            this.manufactureDataGridViewTextBoxColumn.ReadOnly = true;
+            this.manufactureDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // importPriceDataGridViewTextBoxColumn
+            // 
+            this.importPriceDataGridViewTextBoxColumn.DataPropertyName = "ImportPrice";
+            this.importPriceDataGridViewTextBoxColumn.HeaderText = "ImportPrice";
+            this.importPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.importPriceDataGridViewTextBoxColumn.Name = "importPriceDataGridViewTextBoxColumn";
+            this.importPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importPriceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sellingPriceDataGridViewTextBoxColumn
+            // 
+            this.sellingPriceDataGridViewTextBoxColumn.DataPropertyName = "SellingPrice";
+            this.sellingPriceDataGridViewTextBoxColumn.HeaderText = "SellingPrice";
+            this.sellingPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sellingPriceDataGridViewTextBoxColumn.Name = "sellingPriceDataGridViewTextBoxColumn";
+            this.sellingPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sellingPriceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gPhotoDataGridViewImageColumn
+            // 
+            this.gPhotoDataGridViewImageColumn.DataPropertyName = "GPhoto";
+            this.gPhotoDataGridViewImageColumn.HeaderText = "GPhoto";
+            this.gPhotoDataGridViewImageColumn.MinimumWidth = 6;
+            this.gPhotoDataGridViewImageColumn.Name = "gPhotoDataGridViewImageColumn";
+            this.gPhotoDataGridViewImageColumn.ReadOnly = true;
+            this.gPhotoDataGridViewImageColumn.Width = 125;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 219);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 16);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Import price";
+            // 
+            // textBoxGoodImpPrice
+            // 
+            this.textBoxGoodImpPrice.Location = new System.Drawing.Point(123, 219);
+            this.textBoxGoodImpPrice.Name = "textBoxGoodImpPrice";
+            this.textBoxGoodImpPrice.Size = new System.Drawing.Size(137, 22);
+            this.textBoxGoodImpPrice.TabIndex = 23;
+            // 
             // FormGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 541);
+            this.Controls.Add(this.textBoxGoodImpPrice);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonGoodSearch);
             this.Controls.Add(this.buttonGoodEdit);
             this.Controls.Add(this.buttonGoodClear);
@@ -341,8 +372,8 @@
             this.Load += new System.EventHandler(this.FormGoods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGoodPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetGood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetGoods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,18 +396,21 @@
         private System.Windows.Forms.TextBox textBoxGoodQuantity;
         private System.Windows.Forms.TextBox textBoxGoodSell;
         private System.Windows.Forms.DataGridView goodGridView;
-        private FinalSEDataSetGoods finalSEDataSetGoods;
-        private System.Windows.Forms.BindingSource goodBindingSource;
-        private FinalSEDataSetGoodsTableAdapters.GoodTableAdapter goodTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn manufactureDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn gPhotoDataGridViewImageColumn;
         private System.Windows.Forms.Button buttonGoodDelete;
         private System.Windows.Forms.Button buttonGoodClear;
         private System.Windows.Forms.Button buttonGoodEdit;
         private System.Windows.Forms.Button buttonGoodSearch;
+        private FinalSEDataSetGood finalSEDataSetGood;
+        private System.Windows.Forms.BindingSource goodBindingSource;
+        private FinalSEDataSetGoodTableAdapters.GoodTableAdapter goodTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manufactureDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sellingPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn gPhotoDataGridViewImageColumn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxGoodImpPrice;
     }
 }
