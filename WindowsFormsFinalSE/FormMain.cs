@@ -92,6 +92,7 @@ namespace WindowsFormsFinalSE
         private void iconReport_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new FormReport());
         }
 
         private void iconAgent_Click(object sender, EventArgs e)
