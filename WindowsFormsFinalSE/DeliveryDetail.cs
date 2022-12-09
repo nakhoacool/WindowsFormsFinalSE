@@ -12,19 +12,14 @@ namespace WindowsFormsFinalSE
     using System;
     using System.Collections.Generic;
     
-    public partial class Delivery
+    public partial class DeliveryDetail
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Delivery()
-        {
-            this.DeliveryDetails = new HashSet<DeliveryDetail>();
-        }
-    
         public string DeliveryID { get; set; }
-        public string AID { get; set; }
+        public string OID { get; set; }
+        public string GoodsStatus { get; set; }
+        public string PaymentStatus { get; set; }
     
-        public virtual Agent Agent { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DeliveryDetail> DeliveryDetails { get; set; }
+        public virtual Delivery Delivery { get; set; }
+        public virtual GoodOrder GoodOrder { get; set; }
     }
 }

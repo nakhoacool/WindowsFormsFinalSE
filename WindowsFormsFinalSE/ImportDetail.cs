@@ -12,17 +12,14 @@ namespace WindowsFormsFinalSE
     using System;
     using System.Collections.Generic;
     
-    public partial class GOrder
+    public partial class ImportDetail
     {
-        public string OID { get; set; }
+        public string ImportID { get; set; }
         public string GID { get; set; }
-        public string AID { get; set; }
         public Nullable<int> Quantity { get; set; }
-        public Nullable<int> TotalPrice { get; set; }
-        public Nullable<System.DateTime> OrderDate { get; set; }
-        public string PaymentMethod { get; set; }
+        public Nullable<int> price { get; set; }
     
-        public virtual Agent Agent { get; set; }
         public virtual Good Good { get; set; }
+        public virtual Import Import { get; set; }
     }
 }

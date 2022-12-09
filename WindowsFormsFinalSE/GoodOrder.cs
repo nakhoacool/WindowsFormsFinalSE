@@ -12,21 +12,24 @@ namespace WindowsFormsFinalSE
     using System;
     using System.Collections.Generic;
     
-    public partial class Accountant
+    public partial class GoodOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Accountant()
+        public GoodOrder()
         {
-            this.Imports = new HashSet<Import>();
+            this.DeliveryDetails = new HashSet<DeliveryDetail>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
-        public string ID { get; set; }
-        public string AName { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public Nullable<System.DateTime> BirthDay { get; set; }
+        public string OID { get; set; }
+        public string AID { get; set; }
+        public Nullable<int> TotalPrice { get; set; }
+        public Nullable<System.DateTime> OrderDate { get; set; }
     
+        public virtual Agent Agent { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Import> Imports { get; set; }
+        public virtual ICollection<DeliveryDetail> DeliveryDetails { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

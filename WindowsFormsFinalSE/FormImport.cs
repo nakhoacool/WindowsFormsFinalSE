@@ -16,13 +16,13 @@ namespace WindowsFormsFinalSE
         public FormImport()
         {
             InitializeComponent();
-            
-           
+
+
         }
 
         private void FormGoods_Load(object sender, EventArgs e)
         {
-           
+
             // TODO: This line of code loads data into the 'goodimportDataSet.Good' table. You can move, or remove it, as needed.
             this.goodTableAdapter.Fill(this.goodimportDataSet.Good);
             // TODO: This line of code loads data into the 'accoutantimportDataset.Accountant' table. You can move, or remove it, as needed.
@@ -31,21 +31,21 @@ namespace WindowsFormsFinalSE
             this.accountantTableAdapter.Fill(this.accoutantimportDataset.Accountant);
             // TODO: This line of code loads data into the 'goodimportDataSet.Good' table. You can move, or remove it, as needed.
             this.goodTableAdapter.Fill(this.goodimportDataSet.Good);
-      
-            
+
+
             comboBoxID.SelectedIndex = -1;
             comboBoxGID.SelectedIndex = -1;
 
         }
 
-       
+
         private void Reload()
         {
             ImportGridView.DataSource = null;
             ImportGridView.DataSource = db.Imports.ToList();
         }
-       
-     
+
+
 
         private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,11 +54,12 @@ namespace WindowsFormsFinalSE
 
             if (comboBoxID.Text == "") { txtName.Text = ""; }
 
-            else {
-                accountant = (Accountant) db.Accountants.Find(str);
+            else
+            {
+                accountant = (Accountant)db.Accountants.Find(str);
                 txtName.Text = accountant.AName;
             }
-                
+
         }
 
         private void comboBoxGID_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,8 +91,6 @@ namespace WindowsFormsFinalSE
                 Import import = new Import();
                 import.ImportID = txtImportID.Text.ToString();
                 import.ID = comboBoxID.Text.ToString();
-                import.GID = comboBoxGID.Text.ToString();
-                import.Quantity = int.Parse(txtQuantity.Text.ToString());
                 import.ImportDate = dateTimePickerImport.Value;
                 import.totalPrice = totalprice;
                 db.Imports.Add(import);
@@ -115,7 +114,7 @@ namespace WindowsFormsFinalSE
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            
+
             if (ImportGridView.DataBindings.Count == 0)
             {
                 MessageBox.Show("Add goods before import");
@@ -123,7 +122,7 @@ namespace WindowsFormsFinalSE
 
             else
             {
-                
+
             }
         }
     }

@@ -18,7 +18,7 @@ namespace WindowsFormsFinalSE
         public Agent()
         {
             this.Deliveries = new HashSet<Delivery>();
-            this.GOrders = new HashSet<GOrder>();
+            this.GoodOrders = new HashSet<GoodOrder>();
         }
     
         public string AID { get; set; }
@@ -29,6 +29,6 @@ namespace WindowsFormsFinalSE
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Delivery> Deliveries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GOrder> GOrders { get; set; }
+        public virtual ICollection<GoodOrder> GoodOrders { get; set; }
     }
 }
