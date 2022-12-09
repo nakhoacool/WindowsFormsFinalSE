@@ -401,6 +401,7 @@
             this.ImportGridView.DataSource = this.importDetailBindingSource;
             this.ImportGridView.Location = new System.Drawing.Point(3, 50);
             this.ImportGridView.Name = "ImportGridView";
+            this.ImportGridView.ReadOnly = true;
             this.ImportGridView.RowHeadersWidth = 51;
             this.ImportGridView.RowTemplate.Height = 24;
             this.ImportGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

@@ -203,6 +203,15 @@ namespace WindowsFormsFinalSE
             Import import = db.Imports.Find(txtImportID.Text);
             import.totalPrice = int.Parse(txtTotalPrice.Text.ToString());
 
+            foreach (ImportDetail importDetail in db.ImportDetails)
+            {
+                if (importDetail.ImportID == txtImportID.Text)
+                {
+                    Good good = db.Goods.Find(importDetail.GID);
+                    good.Quantity += importDetail.Quantity;
+                }
+            }
+
             db.SaveChanges();
             Reload();
             MessageBox.Show("Import note saved successfully");
