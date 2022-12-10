@@ -95,7 +95,7 @@ namespace WindowsFormsFinalSE
             else
             {
                 Good good = db.Goods.Find(comboBoxGID.Text);
-                int importprice = (int)((int)good.SellingPrice * 0.75);
+                int importprice = (int)((int)good.ImportPrice * 0.75);
                 int totalprice = importprice * int.Parse(txtQuantity.Text.ToString());
 
                 ImportDetail importDetail = new ImportDetail();
@@ -104,32 +104,32 @@ namespace WindowsFormsFinalSE
                 importDetail.Quantity = Convert.ToInt32(txtQuantity.Text);
                 importDetail.price = totalprice;
 
-                
+
 
 
                 txtTotalPrice.Text = (int.Parse(txtTotalPrice.Text.ToString()) + totalprice).ToString();
 
 
                 db.ImportDetails.Add(importDetail);
-                
+
                 db.SaveChanges();
 
                 MessageBox.Show("Import Detail Added Successfully");
 
-                
+
                 comboBoxGID.SelectedIndex = -1;
                 txtQuantity.Text = "";
 
-                
+
 
                 ImportGridView.DataSource = null;
                 ImportGridView.DataSource = db.ImportDetails.ToList();
             }
         }
 
-            
 
-        
+
+
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -232,6 +232,6 @@ namespace WindowsFormsFinalSE
             txtImportID.Enabled = true;
         }
 
-       
+
     }
 }
