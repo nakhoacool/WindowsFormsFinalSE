@@ -95,7 +95,7 @@ namespace WindowsFormsFinalSE
             else
             {
                 Good good = db.Goods.Find(comboBoxGID.Text);
-                int importprice = (int)((int)good.ImportPrice * 0.75);
+                int importprice = (int)good.ImportPrice;
                 int totalprice = importprice * int.Parse(txtQuantity.Text.ToString());
 
                 ImportDetail importDetail = new ImportDetail();

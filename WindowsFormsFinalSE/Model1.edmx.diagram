@@ -23,6 +23,7 @@
         <AssociationConnector Association="FinalSEModel.FK__OrderDetail__GID__4D94879B" ManuallyRouted="false" />
         <AssociationConnector Association="FinalSEModel.FK__OrderDetail__OID__4CA06362" ManuallyRouted="false" />
         <AssociationConnector Association="FinalSEModel.FK__ImportDet__Impor__44FF419A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FinalSEModel.Income" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

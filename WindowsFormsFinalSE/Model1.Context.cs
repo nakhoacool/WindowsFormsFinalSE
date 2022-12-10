@@ -34,5 +34,6 @@ namespace WindowsFormsFinalSE
         public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<ImportDetail> ImportDetails { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+        public virtual DbSet<Income> Incomes { get; set; }
     }
 }
