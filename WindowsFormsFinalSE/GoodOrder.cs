@@ -17,19 +17,20 @@ namespace WindowsFormsFinalSE
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GoodOrder()
         {
-            this.DeliveryDetails = new HashSet<DeliveryDetail>();
-            this.OrderDetails = new HashSet<OrderDetail>();
+            this.Deliveries = new HashSet<Delivery>();
         }
     
         public string OID { get; set; }
         public string AID { get; set; }
-        public Nullable<int> TotalPrice { get; set; }
+        public string GID { get; set; }
+        public Nullable<int> Quantity { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
+        public Nullable<int> TotalPrice { get; set; }
+        public string PaymentMethod { get; set; }
     
         public virtual Agent Agent { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DeliveryDetail> DeliveryDetails { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<Delivery> Deliveries { get; set; }
+        public virtual Good Good { get; set; }
     }
 }

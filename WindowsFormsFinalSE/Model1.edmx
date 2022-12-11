@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="FinalSEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="FinalSEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accountant">
           <Key>
             <PropertyRef Name="ID" />
@@ -30,14 +30,7 @@
           </Key>
           <Property Name="DeliveryID" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="AID" Type="varchar" MaxLength="5" />
-        </EntityType>
-        <EntityType Name="DeliveryDetail">
-          <Key>
-            <PropertyRef Name="DeliveryID" />
-            <PropertyRef Name="OID" />
-          </Key>
-          <Property Name="DeliveryID" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="OID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="OID" Type="varchar" MaxLength="6" />
           <Property Name="GoodsStatus" Type="varchar" MaxLength="50" />
           <Property Name="PaymentStatus" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -59,8 +52,11 @@
           </Key>
           <Property Name="OID" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="AID" Type="varchar" MaxLength="5" />
-          <Property Name="TotalPrice" Type="int" />
+          <Property Name="GID" Type="varchar" MaxLength="6" />
+          <Property Name="Quantity" Type="int" />
           <Property Name="OrderDate" Type="date" />
+          <Property Name="TotalPrice" Type="int" />
+          <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -81,30 +77,7 @@
           <Property Name="Quantity" Type="int" />
           <Property Name="price" Type="int" />
         </EntityType>
-        <EntityType Name="OrderDetail">
-          <Key>
-            <PropertyRef Name="OID" />
-            <PropertyRef Name="GID" />
-          </Key>
-          <Property Name="OID" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="GID" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="Quantity" Type="int" />
-          <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="Income">
-          <Key>
-            <PropertyRef Name="Expr1" />
-          </Key>
-          <Property Name="Expr1" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="TotalPrice" Type="int" />
-          <Property Name="OrderDate" Type="date" />
-          <Property Name="GoodsStatus" Type="varchar" MaxLength="50" />
-          <Property Name="PaymentStatus" Type="varchar" MaxLength="50" />
-          <Property Name="Quantity" Type="int" />
-        </EntityType>
-        <Association Name="FK__Delivery__AID__3F466844">
+        <Association Name="FK__Delivery__AID__440B1D61">
           <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
@@ -116,31 +89,19 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DeliveryD__Deliv__48CFD27E">
-          <End Role="Delivery" Type="Self.Delivery" Multiplicity="1" />
-          <End Role="DeliveryDetail" Type="Self.DeliveryDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Delivery">
-              <PropertyRef Name="DeliveryID" />
-            </Principal>
-            <Dependent Role="DeliveryDetail">
-              <PropertyRef Name="DeliveryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__DeliveryDet__OID__49C3F6B7">
-          <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="1" />
-          <End Role="DeliveryDetail" Type="Self.DeliveryDetail" Multiplicity="*" />
+        <Association Name="FK__Delivery__OID__4316F928">
+          <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="0..1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GoodOrder">
               <PropertyRef Name="OID" />
             </Principal>
-            <Dependent Role="DeliveryDetail">
+            <Dependent Role="Delivery">
               <PropertyRef Name="OID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__GoodOrder__AID__4222D4EF">
+        <Association Name="FK__GoodOrder__AID__403A8C7D">
           <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
           <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -149,6 +110,18 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Principal>
             <Dependent Role="GoodOrder">
               <PropertyRef Name="AID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GoodOrder__GID__3F466844">
+          <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+          <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Good">
+              <PropertyRef Name="GID" />
+            </Principal>
+            <Dependent Role="GoodOrder">
+              <PropertyRef Name="GID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -164,7 +137,7 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ImportDet__Impor__44FF419A">
+        <Association Name="FK__ImportDet__Impor__46E78A0C">
           <End Role="Import" Type="Self.Import" Multiplicity="1" />
           <End Role="ImportDetail" Type="Self.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -176,7 +149,7 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ImportDetai__GID__45F365D3">
+        <Association Name="FK__ImportDetai__GID__47DBAE45">
           <End Role="Good" Type="Self.Good" Multiplicity="1" />
           <End Role="ImportDetail" Type="Self.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -188,88 +161,45 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDetail__GID__4D94879B">
-          <End Role="Good" Type="Self.Good" Multiplicity="1" />
-          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Good">
-              <PropertyRef Name="GID" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="GID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__OrderDetail__OID__4CA06362">
-          <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="1" />
-          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GoodOrder">
-              <PropertyRef Name="OID" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="OID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="FinalSEModelStoreContainer">
           <EntitySet Name="Accountant" EntityType="Self.Accountant" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DeliveryDetail" EntityType="Self.DeliveryDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Good" EntityType="Self.Good" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GoodOrder" EntityType="Self.GoodOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Import" EntityType="Self.Import" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ImportDetail" EntityType="Self.ImportDetail" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OrderDetail" EntityType="Self.OrderDetail" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Income" EntityType="Self.Income" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Income].[Expr1] AS [Expr1], 
-    [Income].[TotalPrice] AS [TotalPrice], 
-    [Income].[OrderDate] AS [OrderDate], 
-    [Income].[GoodsStatus] AS [GoodsStatus], 
-    [Income].[PaymentStatus] AS [PaymentStatus], 
-    [Income].[Quantity] AS [Quantity]
-    FROM [dbo].[Income] AS [Income]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK__Delivery__AID__3F466844" Association="Self.FK__Delivery__AID__3F466844">
+          <AssociationSet Name="FK__Delivery__AID__440B1D61" Association="Self.FK__Delivery__AID__440B1D61">
             <End Role="Agent" EntitySet="Agent" />
             <End Role="Delivery" EntitySet="Delivery" />
           </AssociationSet>
-          <AssociationSet Name="FK__DeliveryD__Deliv__48CFD27E" Association="Self.FK__DeliveryD__Deliv__48CFD27E">
-            <End Role="Delivery" EntitySet="Delivery" />
-            <End Role="DeliveryDetail" EntitySet="DeliveryDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DeliveryDet__OID__49C3F6B7" Association="Self.FK__DeliveryDet__OID__49C3F6B7">
+          <AssociationSet Name="FK__Delivery__OID__4316F928" Association="Self.FK__Delivery__OID__4316F928">
             <End Role="GoodOrder" EntitySet="GoodOrder" />
-            <End Role="DeliveryDetail" EntitySet="DeliveryDetail" />
+            <End Role="Delivery" EntitySet="Delivery" />
           </AssociationSet>
-          <AssociationSet Name="FK__GoodOrder__AID__4222D4EF" Association="Self.FK__GoodOrder__AID__4222D4EF">
+          <AssociationSet Name="FK__GoodOrder__AID__403A8C7D" Association="Self.FK__GoodOrder__AID__403A8C7D">
             <End Role="Agent" EntitySet="Agent" />
+            <End Role="GoodOrder" EntitySet="GoodOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GoodOrder__GID__3F466844" Association="Self.FK__GoodOrder__GID__3F466844">
+            <End Role="Good" EntitySet="Good" />
             <End Role="GoodOrder" EntitySet="GoodOrder" />
           </AssociationSet>
           <AssociationSet Name="FK__Import__ID__3C69FB99" Association="Self.FK__Import__ID__3C69FB99">
             <End Role="Accountant" EntitySet="Accountant" />
             <End Role="Import" EntitySet="Import" />
           </AssociationSet>
-          <AssociationSet Name="FK__ImportDet__Impor__44FF419A" Association="Self.FK__ImportDet__Impor__44FF419A">
+          <AssociationSet Name="FK__ImportDet__Impor__46E78A0C" Association="Self.FK__ImportDet__Impor__46E78A0C">
             <End Role="Import" EntitySet="Import" />
             <End Role="ImportDetail" EntitySet="ImportDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__ImportDetai__GID__45F365D3" Association="Self.FK__ImportDetai__GID__45F365D3">
+          <AssociationSet Name="FK__ImportDetai__GID__47DBAE45" Association="Self.FK__ImportDetai__GID__47DBAE45">
             <End Role="Good" EntitySet="Good" />
             <End Role="ImportDetail" EntitySet="ImportDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDetail__GID__4D94879B" Association="Self.FK__OrderDetail__GID__4D94879B">
-            <End Role="Good" EntitySet="Good" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK__OrderDetail__OID__4CA06362" Association="Self.FK__OrderDetail__OID__4CA06362">
-            <End Role="GoodOrder" EntitySet="GoodOrder" />
-            <End Role="OrderDetail" EntitySet="OrderDetail" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FinalSEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -292,8 +222,8 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
           <Property Name="AName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNum" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="A_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Deliveries" Relationship="Self.FK__Delivery__AID__3F466844" FromRole="Agent" ToRole="Delivery" />
-          <NavigationProperty Name="GoodOrders" Relationship="Self.FK__GoodOrder__AID__4222D4EF" FromRole="Agent" ToRole="GoodOrder" />
+          <NavigationProperty Name="Deliveries" Relationship="Self.FK__Delivery__AID__440B1D61" FromRole="Agent" ToRole="Delivery" />
+          <NavigationProperty Name="GoodOrders" Relationship="Self.FK__GoodOrder__AID__403A8C7D" FromRole="Agent" ToRole="GoodOrder" />
         </EntityType>
         <EntityType Name="Delivery">
           <Key>
@@ -301,20 +231,11 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
           </Key>
           <Property Name="DeliveryID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Agent" Relationship="Self.FK__Delivery__AID__3F466844" FromRole="Delivery" ToRole="Agent" />
-          <NavigationProperty Name="DeliveryDetails" Relationship="Self.FK__DeliveryD__Deliv__48CFD27E" FromRole="Delivery" ToRole="DeliveryDetail" />
-        </EntityType>
-        <EntityType Name="DeliveryDetail">
-          <Key>
-            <PropertyRef Name="DeliveryID" />
-            <PropertyRef Name="OID" />
-          </Key>
-          <Property Name="DeliveryID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="OID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="GoodsStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Delivery" Relationship="Self.FK__DeliveryD__Deliv__48CFD27E" FromRole="DeliveryDetail" ToRole="Delivery" />
-          <NavigationProperty Name="GoodOrder" Relationship="Self.FK__DeliveryDet__OID__49C3F6B7" FromRole="DeliveryDetail" ToRole="GoodOrder" />
+          <NavigationProperty Name="Agent" Relationship="Self.FK__Delivery__AID__440B1D61" FromRole="Delivery" ToRole="Agent" />
+          <NavigationProperty Name="GoodOrder" Relationship="Self.FK__Delivery__OID__4316F928" FromRole="Delivery" ToRole="GoodOrder" />
         </EntityType>
         <EntityType Name="Good">
           <Key>
@@ -327,8 +248,8 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
           <Property Name="ImportPrice" Type="Int32" />
           <Property Name="SellingPrice" Type="Int32" />
           <Property Name="GPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="ImportDetails" Relationship="Self.FK__ImportDetai__GID__45F365D3" FromRole="Good" ToRole="ImportDetail" />
-          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDetail__GID__4D94879B" FromRole="Good" ToRole="OrderDetail" />
+          <NavigationProperty Name="GoodOrders" Relationship="Self.FK__GoodOrder__GID__3F466844" FromRole="Good" ToRole="GoodOrder" />
+          <NavigationProperty Name="ImportDetails" Relationship="Self.FK__ImportDetai__GID__47DBAE45" FromRole="Good" ToRole="ImportDetail" />
         </EntityType>
         <EntityType Name="GoodOrder">
           <Key>
@@ -336,11 +257,14 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
           </Key>
           <Property Name="OID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="TotalPrice" Type="Int32" />
+          <Property Name="GID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" />
           <Property Name="OrderDate" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Agent" Relationship="Self.FK__GoodOrder__AID__4222D4EF" FromRole="GoodOrder" ToRole="Agent" />
-          <NavigationProperty Name="DeliveryDetails" Relationship="Self.FK__DeliveryDet__OID__49C3F6B7" FromRole="GoodOrder" ToRole="DeliveryDetail" />
-          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDetail__OID__4CA06362" FromRole="GoodOrder" ToRole="OrderDetail" />
+          <Property Name="TotalPrice" Type="Int32" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Agent" Relationship="Self.FK__GoodOrder__AID__403A8C7D" FromRole="GoodOrder" ToRole="Agent" />
+          <NavigationProperty Name="Deliveries" Relationship="Self.FK__Delivery__OID__4316F928" FromRole="GoodOrder" ToRole="Delivery" />
+          <NavigationProperty Name="Good" Relationship="Self.FK__GoodOrder__GID__3F466844" FromRole="GoodOrder" ToRole="Good" />
         </EntityType>
         <EntityType Name="Import">
           <Key>
@@ -351,7 +275,7 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
           <Property Name="ImportDate" Type="DateTime" Precision="0" />
           <Property Name="totalPrice" Type="Int32" />
           <NavigationProperty Name="Accountant" Relationship="Self.FK__Import__ID__3C69FB99" FromRole="Import" ToRole="Accountant" />
-          <NavigationProperty Name="ImportDetails" Relationship="Self.FK__ImportDet__Impor__44FF419A" FromRole="Import" ToRole="ImportDetail" />
+          <NavigationProperty Name="ImportDetails" Relationship="Self.FK__ImportDet__Impor__46E78A0C" FromRole="Import" ToRole="ImportDetail" />
         </EntityType>
         <EntityType Name="ImportDetail">
           <Key>
@@ -362,20 +286,8 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
           <Property Name="GID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Quantity" Type="Int32" />
           <Property Name="price" Type="Int32" />
-          <NavigationProperty Name="Good" Relationship="Self.FK__ImportDetai__GID__45F365D3" FromRole="ImportDetail" ToRole="Good" />
-          <NavigationProperty Name="Import" Relationship="Self.FK__ImportDet__Impor__44FF419A" FromRole="ImportDetail" ToRole="Import" />
-        </EntityType>
-        <EntityType Name="OrderDetail">
-          <Key>
-            <PropertyRef Name="OID" />
-            <PropertyRef Name="GID" />
-          </Key>
-          <Property Name="OID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="GID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" />
-          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Good" Relationship="Self.FK__OrderDetail__GID__4D94879B" FromRole="OrderDetail" ToRole="Good" />
-          <NavigationProperty Name="GoodOrder" Relationship="Self.FK__OrderDetail__OID__4CA06362" FromRole="OrderDetail" ToRole="GoodOrder" />
+          <NavigationProperty Name="Good" Relationship="Self.FK__ImportDetai__GID__47DBAE45" FromRole="ImportDetail" ToRole="Good" />
+          <NavigationProperty Name="Import" Relationship="Self.FK__ImportDet__Impor__46E78A0C" FromRole="ImportDetail" ToRole="Import" />
         </EntityType>
         <Association Name="FK__Import__ID__3C69FB99">
           <End Role="Accountant" Type="Self.Accountant" Multiplicity="0..1" />
@@ -389,7 +301,7 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Delivery__AID__3F466844">
+        <Association Name="FK__Delivery__AID__440B1D61">
           <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
           <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
@@ -401,7 +313,7 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__GoodOrder__AID__4222D4EF">
+        <Association Name="FK__GoodOrder__AID__403A8C7D">
           <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
           <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="*" />
           <ReferentialConstraint>
@@ -413,31 +325,31 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DeliveryD__Deliv__48CFD27E">
-          <End Role="Delivery" Type="Self.Delivery" Multiplicity="1" />
-          <End Role="DeliveryDetail" Type="Self.DeliveryDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Delivery">
-              <PropertyRef Name="DeliveryID" />
-            </Principal>
-            <Dependent Role="DeliveryDetail">
-              <PropertyRef Name="DeliveryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__DeliveryDet__OID__49C3F6B7">
-          <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="1" />
-          <End Role="DeliveryDetail" Type="Self.DeliveryDetail" Multiplicity="*" />
+        <Association Name="FK__Delivery__OID__4316F928">
+          <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="0..1" />
+          <End Role="Delivery" Type="Self.Delivery" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GoodOrder">
               <PropertyRef Name="OID" />
             </Principal>
-            <Dependent Role="DeliveryDetail">
+            <Dependent Role="Delivery">
               <PropertyRef Name="OID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ImportDetai__GID__45F365D3">
+        <Association Name="FK__GoodOrder__GID__3F466844">
+          <End Role="Good" Type="Self.Good" Multiplicity="0..1" />
+          <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Good">
+              <PropertyRef Name="GID" />
+            </Principal>
+            <Dependent Role="GoodOrder">
+              <PropertyRef Name="GID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ImportDetai__GID__47DBAE45">
           <End Role="Good" Type="Self.Good" Multiplicity="1" />
           <End Role="ImportDetail" Type="Self.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -449,31 +361,7 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderDetail__GID__4D94879B">
-          <End Role="Good" Type="Self.Good" Multiplicity="1" />
-          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Good">
-              <PropertyRef Name="GID" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="GID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__OrderDetail__OID__4CA06362">
-          <End Role="GoodOrder" Type="Self.GoodOrder" Multiplicity="1" />
-          <End Role="OrderDetail" Type="Self.OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GoodOrder">
-              <PropertyRef Name="OID" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="OID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ImportDet__Impor__44FF419A">
+        <Association Name="FK__ImportDet__Impor__46E78A0C">
           <End Role="Import" Type="Self.Import" Multiplicity="1" />
           <End Role="ImportDetail" Type="Self.ImportDetail" Multiplicity="*" />
           <ReferentialConstraint>
@@ -489,61 +377,39 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
           <EntitySet Name="Accountants" EntityType="Self.Accountant" />
           <EntitySet Name="Agents" EntityType="Self.Agent" />
           <EntitySet Name="Deliveries" EntityType="Self.Delivery" />
-          <EntitySet Name="DeliveryDetails" EntityType="Self.DeliveryDetail" />
           <EntitySet Name="Goods" EntityType="Self.Good" />
           <EntitySet Name="GoodOrders" EntityType="Self.GoodOrder" />
           <EntitySet Name="Imports" EntityType="Self.Import" />
           <EntitySet Name="ImportDetails" EntityType="Self.ImportDetail" />
-          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
           <AssociationSet Name="FK__Import__ID__3C69FB99" Association="Self.FK__Import__ID__3C69FB99">
             <End Role="Accountant" EntitySet="Accountants" />
             <End Role="Import" EntitySet="Imports" />
           </AssociationSet>
-          <AssociationSet Name="FK__Delivery__AID__3F466844" Association="Self.FK__Delivery__AID__3F466844">
+          <AssociationSet Name="FK__Delivery__AID__440B1D61" Association="Self.FK__Delivery__AID__440B1D61">
             <End Role="Agent" EntitySet="Agents" />
             <End Role="Delivery" EntitySet="Deliveries" />
           </AssociationSet>
-          <AssociationSet Name="FK__GoodOrder__AID__4222D4EF" Association="Self.FK__GoodOrder__AID__4222D4EF">
+          <AssociationSet Name="FK__GoodOrder__AID__403A8C7D" Association="Self.FK__GoodOrder__AID__403A8C7D">
             <End Role="Agent" EntitySet="Agents" />
             <End Role="GoodOrder" EntitySet="GoodOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK__DeliveryD__Deliv__48CFD27E" Association="Self.FK__DeliveryD__Deliv__48CFD27E">
-            <End Role="Delivery" EntitySet="Deliveries" />
-            <End Role="DeliveryDetail" EntitySet="DeliveryDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DeliveryDet__OID__49C3F6B7" Association="Self.FK__DeliveryDet__OID__49C3F6B7">
+          <AssociationSet Name="FK__Delivery__OID__4316F928" Association="Self.FK__Delivery__OID__4316F928">
             <End Role="GoodOrder" EntitySet="GoodOrders" />
-            <End Role="DeliveryDetail" EntitySet="DeliveryDetails" />
+            <End Role="Delivery" EntitySet="Deliveries" />
           </AssociationSet>
-          <AssociationSet Name="FK__ImportDetai__GID__45F365D3" Association="Self.FK__ImportDetai__GID__45F365D3">
+          <AssociationSet Name="FK__GoodOrder__GID__3F466844" Association="Self.FK__GoodOrder__GID__3F466844">
+            <End Role="Good" EntitySet="Goods" />
+            <End Role="GoodOrder" EntitySet="GoodOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ImportDetai__GID__47DBAE45" Association="Self.FK__ImportDetai__GID__47DBAE45">
             <End Role="Good" EntitySet="Goods" />
             <End Role="ImportDetail" EntitySet="ImportDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderDetail__GID__4D94879B" Association="Self.FK__OrderDetail__GID__4D94879B">
-            <End Role="Good" EntitySet="Goods" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK__OrderDetail__OID__4CA06362" Association="Self.FK__OrderDetail__OID__4CA06362">
-            <End Role="GoodOrder" EntitySet="GoodOrders" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ImportDet__Impor__44FF419A" Association="Self.FK__ImportDet__Impor__44FF419A">
+          <AssociationSet Name="FK__ImportDet__Impor__46E78A0C" Association="Self.FK__ImportDet__Impor__46E78A0C">
             <End Role="Import" EntitySet="Imports" />
             <End Role="ImportDetail" EntitySet="ImportDetails" />
           </AssociationSet>
-          <EntitySet Name="Incomes" EntityType="FinalSEModel.Income" />
         </EntityContainer>
-        <EntityType Name="Income">
-          <Key>
-            <PropertyRef Name="Expr1" />
-          </Key>
-          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
-          <Property Name="TotalPrice" Type="Int32" />
-          <Property Name="OrderDate" Type="DateTime" Precision="0" />
-          <Property Name="GoodsStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Quantity" Type="Int32" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -576,13 +442,6 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
               <MappingFragment StoreEntitySet="Delivery">
                 <ScalarProperty Name="DeliveryID" ColumnName="DeliveryID" />
                 <ScalarProperty Name="AID" ColumnName="AID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DeliveryDetails">
-            <EntityTypeMapping TypeName="FinalSEModel.DeliveryDetail">
-              <MappingFragment StoreEntitySet="DeliveryDetail">
-                <ScalarProperty Name="DeliveryID" ColumnName="DeliveryID" />
                 <ScalarProperty Name="OID" ColumnName="OID" />
                 <ScalarProperty Name="GoodsStatus" ColumnName="GoodsStatus" />
                 <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
@@ -607,8 +466,11 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
               <MappingFragment StoreEntitySet="GoodOrder">
                 <ScalarProperty Name="OID" ColumnName="OID" />
                 <ScalarProperty Name="AID" ColumnName="AID" />
-                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -629,28 +491,6 @@ warning 6002: The table/view 'FinalSE.dbo.Income' does not have a primary key de
                 <ScalarProperty Name="GID" ColumnName="GID" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="price" ColumnName="price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="FinalSEModel.OrderDetail">
-              <MappingFragment StoreEntitySet="OrderDetail">
-                <ScalarProperty Name="OID" ColumnName="OID" />
-                <ScalarProperty Name="GID" ColumnName="GID" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Incomes">
-            <EntityTypeMapping TypeName="FinalSEModel.Income">
-              <MappingFragment StoreEntitySet="Income">
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
-                <ScalarProperty Name="GoodsStatus" ColumnName="GoodsStatus" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

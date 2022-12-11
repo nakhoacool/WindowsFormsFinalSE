@@ -28,12 +28,9 @@ namespace WindowsFormsFinalSE
         public virtual DbSet<Accountant> Accountants { get; set; }
         public virtual DbSet<Agent> Agents { get; set; }
         public virtual DbSet<Delivery> Deliveries { get; set; }
-        public virtual DbSet<DeliveryDetail> DeliveryDetails { get; set; }
         public virtual DbSet<Good> Goods { get; set; }
         public virtual DbSet<GoodOrder> GoodOrders { get; set; }
         public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<ImportDetail> ImportDetails { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<Income> Incomes { get; set; }
     }
 }
