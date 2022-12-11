@@ -32,5 +32,6 @@ namespace WindowsFormsFinalSE
         public virtual DbSet<GoodOrder> GoodOrders { get; set; }
         public virtual DbSet<Import> Imports { get; set; }
         public virtual DbSet<ImportDetail> ImportDetails { get; set; }
+        public virtual DbSet<Vw_ItemOrdered> Vw_ItemOrdered { get; set; }
     }
 }

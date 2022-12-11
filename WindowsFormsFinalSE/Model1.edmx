@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FinalSEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FinalSEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accountant">
           <Key>
             <PropertyRef Name="ID" />
@@ -76,6 +76,18 @@
           <Property Name="GID" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="Quantity" Type="int" />
           <Property Name="price" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FinalSE.dbo.Vw_ItemOrdered' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_ItemOrdered">
+          <Key>
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="GName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="TotalPrice" Type="int" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="Expr1" Type="varchar" MaxLength="6" Nullable="false" />
         </EntityType>
         <Association Name="FK__Delivery__AID__440B1D61">
           <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
@@ -169,6 +181,15 @@
           <EntitySet Name="GoodOrder" EntityType="Self.GoodOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Import" EntityType="Self.Import" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ImportDetail" EntityType="Self.ImportDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vw_ItemOrdered" EntityType="Self.Vw_ItemOrdered" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_ItemOrdered].[GName] AS [GName], 
+    [Vw_ItemOrdered].[Quantity] AS [Quantity], 
+    [Vw_ItemOrdered].[TotalPrice] AS [TotalPrice], 
+    [Vw_ItemOrdered].[OrderDate] AS [OrderDate], 
+    [Vw_ItemOrdered].[Expr1] AS [Expr1]
+    FROM [dbo].[Vw_ItemOrdered] AS [Vw_ItemOrdered]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__Delivery__AID__440B1D61" Association="Self.FK__Delivery__AID__440B1D61">
             <End Role="Agent" EntitySet="Agent" />
             <End Role="Delivery" EntitySet="Delivery" />
@@ -198,8 +219,7 @@
             <End Role="ImportDetail" EntitySet="ImportDetail" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FinalSEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -409,7 +429,18 @@
             <End Role="Import" EntitySet="Imports" />
             <End Role="ImportDetail" EntitySet="ImportDetails" />
           </AssociationSet>
+          <EntitySet Name="Vw_ItemOrdered" EntityType="FinalSEModel.Vw_ItemOrdered" />
         </EntityContainer>
+        <EntityType Name="Vw_ItemOrdered">
+          <Key>
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="GName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="TotalPrice" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -491,6 +522,17 @@
                 <ScalarProperty Name="GID" ColumnName="GID" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_ItemOrdered">
+            <EntityTypeMapping TypeName="FinalSEModel.Vw_ItemOrdered">
+              <MappingFragment StoreEntitySet="Vw_ItemOrdered">
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="GName" ColumnName="GName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

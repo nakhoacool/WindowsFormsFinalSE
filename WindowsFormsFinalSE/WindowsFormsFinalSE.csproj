@@ -102,11 +102,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSEDataSetImport.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FinalSEDataSetSold.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FinalSEDataSetSold.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FormAccountant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +172,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vw_ItemOrdered.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAccountant.resx">
       <DependentUpon>FormAccountant.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,17 +257,6 @@
     </None>
     <None Include="FinalSEDataSetImport.xss">
       <DependentUpon>FinalSEDataSetImport.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSetSold.xsc">
-      <DependentUpon>FinalSEDataSetSold.xsd</DependentUpon>
-    </None>
-    <None Include="FinalSEDataSetSold.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FinalSEDataSetSold.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FinalSEDataSetSold.xss">
-      <DependentUpon>FinalSEDataSetSold.xsd</DependentUpon>
     </None>
     <None Include="goodimportDataSet.xsc">
       <DependentUpon>goodimportDataSet.xsd</DependentUpon>

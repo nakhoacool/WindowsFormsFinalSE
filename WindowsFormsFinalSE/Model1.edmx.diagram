@@ -19,6 +19,7 @@
         <AssociationConnector Association="FinalSEModel.FK__GoodOrder__GID__3F466844" ManuallyRouted="false" />
         <AssociationConnector Association="FinalSEModel.FK__ImportDetai__GID__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="FinalSEModel.FK__ImportDet__Impor__46E78A0C" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FinalSEModel.Vw_ItemOrdered" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
