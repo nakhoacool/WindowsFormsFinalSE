@@ -29,43 +29,68 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.tabControlReport = new System.Windows.Forms.TabControl();
             this.tabPageTopSelling = new System.Windows.Forms.TabPage();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.labelSort = new System.Windows.Forms.Label();
+            this.comboBoxSort = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.labelTo = new System.Windows.Forms.Label();
+            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
+            this.lb_From = new System.Windows.Forms.Label();
             this.dataGridViewTopSelling = new System.Windows.Forms.DataGridView();
             this.tabPageIncome = new System.Windows.Forms.TabPage();
-            this.dataGridViewIncome = new System.Windows.Forms.DataGridView();
             this.tabPageOutcome = new System.Windows.Forms.TabPage();
-            this.dataGridViewOutcome = new System.Windows.Forms.DataGridView();
-            this.tabPageRevenue = new System.Windows.Forms.TabPage();
-            this.dataGridViewRevenue = new System.Windows.Forms.DataGridView();
-            this.finalSEDataSetSold = new WindowsFormsFinalSE.FinalSEDataSetSold();
-            this.incomeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.incomeTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetSoldTableAdapters.IncomeTableAdapter();
-            this.expr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lb_From = new System.Windows.Forms.Label();
-            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
-            this.labelTo = new System.Windows.Forms.Label();
-            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxSort = new System.Windows.Forms.ComboBox();
-            this.labelSort = new System.Windows.Forms.Label();
-            this.btnLoad = new System.Windows.Forms.Button();
+            this.dataGridViewIncome = new System.Windows.Forms.DataGridView();
+            this.btnLoadIncome = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxIncomeSort = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerIncomeTo = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePickerIncomeFrom = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtTotalIncome = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtImport = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnLoadOutcome = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxOutcomeSort = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerOutcomeTo = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePickerOutcomeFrom = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtOutcome = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.finalSEDataSetOrdered = new WindowsFormsFinalSE.FinalSEDataSetOrdered();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vwItemOrderedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vw_ItemOrderedTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters.Vw_ItemOrderedTableAdapter();
             this.tabControlReport.SuspendLayout();
             this.tabPageTopSelling.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopSelling)).BeginInit();
             this.tabPageIncome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).BeginInit();
             this.tabPageOutcome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutcome)).BeginInit();
-            this.tabPageRevenue.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRevenue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetSold)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetOrdered)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBottom
@@ -81,7 +106,6 @@
             this.tabControlReport.Controls.Add(this.tabPageTopSelling);
             this.tabControlReport.Controls.Add(this.tabPageIncome);
             this.tabControlReport.Controls.Add(this.tabPageOutcome);
-            this.tabControlReport.Controls.Add(this.tabPageRevenue);
             this.tabControlReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlReport.Location = new System.Drawing.Point(0, 0);
             this.tabControlReport.Name = "tabControlReport";
@@ -107,187 +131,26 @@
             this.tabPageTopSelling.Text = "Top Selling";
             this.tabPageTopSelling.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTopSelling
+            // btnLoad
             // 
-            this.dataGridViewTopSelling.AutoGenerateColumns = false;
-            this.dataGridViewTopSelling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTopSelling.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.expr1DataGridViewTextBoxColumn,
-            this.totalPriceDataGridViewTextBoxColumn,
-            this.orderDateDataGridViewTextBoxColumn,
-            this.goodsStatusDataGridViewTextBoxColumn,
-            this.paymentStatusDataGridViewTextBoxColumn});
-            this.dataGridViewTopSelling.DataSource = this.incomeBindingSource;
-            this.dataGridViewTopSelling.Location = new System.Drawing.Point(507, 3);
-            this.dataGridViewTopSelling.Name = "dataGridViewTopSelling";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTopSelling.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTopSelling.RowHeadersWidth = 51;
-            this.dataGridViewTopSelling.RowTemplate.Height = 24;
-            this.dataGridViewTopSelling.Size = new System.Drawing.Size(678, 389);
-            this.dataGridViewTopSelling.TabIndex = 0;
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Location = new System.Drawing.Point(154, 300);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(91, 48);
+            this.btnLoad.TabIndex = 7;
+            this.btnLoad.Text = "Load ";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // tabPageIncome
+            // labelSort
             // 
-            this.tabPageIncome.Controls.Add(this.dataGridViewIncome);
-            this.tabPageIncome.Location = new System.Drawing.Point(4, 25);
-            this.tabPageIncome.Name = "tabPageIncome";
-            this.tabPageIncome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageIncome.Size = new System.Drawing.Size(1193, 395);
-            this.tabPageIncome.TabIndex = 1;
-            this.tabPageIncome.Text = "Income";
-            this.tabPageIncome.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewIncome
-            // 
-            this.dataGridViewIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIncome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewIncome.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewIncome.Name = "dataGridViewIncome";
-            this.dataGridViewIncome.RowHeadersWidth = 51;
-            this.dataGridViewIncome.RowTemplate.Height = 24;
-            this.dataGridViewIncome.Size = new System.Drawing.Size(1187, 389);
-            this.dataGridViewIncome.TabIndex = 1;
-            // 
-            // tabPageOutcome
-            // 
-            this.tabPageOutcome.Controls.Add(this.dataGridViewOutcome);
-            this.tabPageOutcome.Location = new System.Drawing.Point(4, 25);
-            this.tabPageOutcome.Name = "tabPageOutcome";
-            this.tabPageOutcome.Size = new System.Drawing.Size(1193, 395);
-            this.tabPageOutcome.TabIndex = 2;
-            this.tabPageOutcome.Text = "Outcome";
-            this.tabPageOutcome.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewOutcome
-            // 
-            this.dataGridViewOutcome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOutcome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewOutcome.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewOutcome.Name = "dataGridViewOutcome";
-            this.dataGridViewOutcome.RowHeadersWidth = 51;
-            this.dataGridViewOutcome.RowTemplate.Height = 24;
-            this.dataGridViewOutcome.Size = new System.Drawing.Size(1193, 395);
-            this.dataGridViewOutcome.TabIndex = 1;
-            // 
-            // tabPageRevenue
-            // 
-            this.tabPageRevenue.Controls.Add(this.dataGridViewRevenue);
-            this.tabPageRevenue.Location = new System.Drawing.Point(4, 25);
-            this.tabPageRevenue.Name = "tabPageRevenue";
-            this.tabPageRevenue.Size = new System.Drawing.Size(1193, 395);
-            this.tabPageRevenue.TabIndex = 3;
-            this.tabPageRevenue.Text = "Revenue";
-            this.tabPageRevenue.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewRevenue
-            // 
-            this.dataGridViewRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewRevenue.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewRevenue.Name = "dataGridViewRevenue";
-            this.dataGridViewRevenue.RowHeadersWidth = 51;
-            this.dataGridViewRevenue.RowTemplate.Height = 24;
-            this.dataGridViewRevenue.Size = new System.Drawing.Size(1193, 395);
-            this.dataGridViewRevenue.TabIndex = 1;
-            // 
-            // finalSEDataSetSold
-            // 
-            this.finalSEDataSetSold.DataSetName = "FinalSEDataSetSold";
-            this.finalSEDataSetSold.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // incomeBindingSource
-            // 
-            this.incomeBindingSource.DataMember = "Income";
-            this.incomeBindingSource.DataSource = this.finalSEDataSetSold;
-            // 
-            // incomeTableAdapter
-            // 
-            this.incomeTableAdapter.ClearBeforeFill = true;
-            // 
-            // expr1DataGridViewTextBoxColumn
-            // 
-            this.expr1DataGridViewTextBoxColumn.DataPropertyName = "GID";
-            this.expr1DataGridViewTextBoxColumn.HeaderText = "GID";
-            this.expr1DataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
-            this.expr1DataGridViewTextBoxColumn.Width = 125;
-            // 
-            // totalPriceDataGridViewTextBoxColumn
-            // 
-            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalPrice";
-            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "Total Price";
-            this.totalPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
-            this.totalPriceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "Order Date";
-            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            this.orderDateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // goodsStatusDataGridViewTextBoxColumn
-            // 
-            this.goodsStatusDataGridViewTextBoxColumn.DataPropertyName = "GoodsStatus";
-            this.goodsStatusDataGridViewTextBoxColumn.HeaderText = "Goods Status";
-            this.goodsStatusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.goodsStatusDataGridViewTextBoxColumn.Name = "goodsStatusDataGridViewTextBoxColumn";
-            this.goodsStatusDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // paymentStatusDataGridViewTextBoxColumn
-            // 
-            this.paymentStatusDataGridViewTextBoxColumn.DataPropertyName = "PaymentStatus";
-            this.paymentStatusDataGridViewTextBoxColumn.HeaderText = "Payment Status";
-            this.paymentStatusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.paymentStatusDataGridViewTextBoxColumn.Name = "paymentStatusDataGridViewTextBoxColumn";
-            this.paymentStatusDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lb_From
-            // 
-            this.lb_From.AutoSize = true;
-            this.lb_From.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_From.Location = new System.Drawing.Point(8, 17);
-            this.lb_From.Name = "lb_From";
-            this.lb_From.Size = new System.Drawing.Size(126, 20);
-            this.lb_From.TabIndex = 1;
-            this.lb_From.Text = " Filter By: From";
-            // 
-            // dateTimePickerFrom
-            // 
-            this.dateTimePickerFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(154, 17);
-            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(97, 26);
-            this.dateTimePickerFrom.TabIndex = 2;
-            // 
-            // labelTo
-            // 
-            this.labelTo.AutoSize = true;
-            this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(69, 70);
-            this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(33, 20);
-            this.labelTo.TabIndex = 3;
-            this.labelTo.Text = "To:";
-            // 
-            // dateTimePickerTo
-            // 
-            this.dateTimePickerTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerTo.Location = new System.Drawing.Point(154, 65);
-            this.dateTimePickerTo.Name = "dateTimePickerTo";
-            this.dateTimePickerTo.Size = new System.Drawing.Size(97, 26);
-            this.dateTimePickerTo.TabIndex = 4;
+            this.labelSort.AutoSize = true;
+            this.labelSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSort.Location = new System.Drawing.Point(35, 165);
+            this.labelSort.Name = "labelSort";
+            this.labelSort.Size = new System.Drawing.Size(67, 20);
+            this.labelSort.TabIndex = 6;
+            this.labelSort.Text = "Sort by:";
             // 
             // comboBoxSort
             // 
@@ -302,26 +165,480 @@
             this.comboBoxSort.TabIndex = 5;
             this.comboBoxSort.Text = "Select sort type";
             // 
-            // labelSort
+            // dateTimePickerTo
             // 
-            this.labelSort.AutoSize = true;
-            this.labelSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSort.Location = new System.Drawing.Point(35, 165);
-            this.labelSort.Name = "labelSort";
-            this.labelSort.Size = new System.Drawing.Size(67, 20);
-            this.labelSort.TabIndex = 6;
-            this.labelSort.Text = "Sort by:";
+            this.dateTimePickerTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerTo.Location = new System.Drawing.Point(154, 65);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(107, 26);
+            this.dateTimePickerTo.TabIndex = 4;
             // 
-            // btnLoad
+            // labelTo
             // 
-            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.Location = new System.Drawing.Point(154, 300);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(91, 48);
-            this.btnLoad.TabIndex = 7;
-            this.btnLoad.Text = "Load ";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.labelTo.AutoSize = true;
+            this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTo.Location = new System.Drawing.Point(69, 70);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(33, 20);
+            this.labelTo.TabIndex = 3;
+            this.labelTo.Text = "To:";
+            // 
+            // dateTimePickerFrom
+            // 
+            this.dateTimePickerFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(154, 17);
+            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(107, 26);
+            this.dateTimePickerFrom.TabIndex = 2;
+            // 
+            // lb_From
+            // 
+            this.lb_From.AutoSize = true;
+            this.lb_From.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_From.Location = new System.Drawing.Point(8, 17);
+            this.lb_From.Name = "lb_From";
+            this.lb_From.Size = new System.Drawing.Size(126, 20);
+            this.lb_From.TabIndex = 1;
+            this.lb_From.Text = " Filter By: From";
+            // 
+            // dataGridViewTopSelling
+            // 
+            this.dataGridViewTopSelling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTopSelling.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.gNameDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTopSelling.Location = new System.Drawing.Point(428, 3);
+            this.dataGridViewTopSelling.Name = "dataGridViewTopSelling";
+            this.dataGridViewTopSelling.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTopSelling.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTopSelling.RowHeadersWidth = 51;
+            this.dataGridViewTopSelling.RowTemplate.Height = 24;
+            this.dataGridViewTopSelling.Size = new System.Drawing.Size(757, 389);
+            this.dataGridViewTopSelling.TabIndex = 0;
+            // 
+            // tabPageIncome
+            // 
+            this.tabPageIncome.Controls.Add(this.txtTotalIncome);
+            this.tabPageIncome.Controls.Add(this.label5);
+            this.tabPageIncome.Controls.Add(this.txtTotal);
+            this.tabPageIncome.Controls.Add(this.label4);
+            this.tabPageIncome.Controls.Add(this.btnLoadIncome);
+            this.tabPageIncome.Controls.Add(this.label1);
+            this.tabPageIncome.Controls.Add(this.comboBoxIncomeSort);
+            this.tabPageIncome.Controls.Add(this.dateTimePickerIncomeTo);
+            this.tabPageIncome.Controls.Add(this.label2);
+            this.tabPageIncome.Controls.Add(this.dateTimePickerIncomeFrom);
+            this.tabPageIncome.Controls.Add(this.label3);
+            this.tabPageIncome.Controls.Add(this.dataGridViewIncome);
+            this.tabPageIncome.Location = new System.Drawing.Point(4, 25);
+            this.tabPageIncome.Name = "tabPageIncome";
+            this.tabPageIncome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageIncome.Size = new System.Drawing.Size(1193, 395);
+            this.tabPageIncome.TabIndex = 1;
+            this.tabPageIncome.Text = "Income";
+            this.tabPageIncome.UseVisualStyleBackColor = true;
+            // 
+            // tabPageOutcome
+            // 
+            this.tabPageOutcome.Controls.Add(this.txtOutcome);
+            this.tabPageOutcome.Controls.Add(this.label10);
+            this.tabPageOutcome.Controls.Add(this.txtImport);
+            this.tabPageOutcome.Controls.Add(this.label6);
+            this.tabPageOutcome.Controls.Add(this.btnLoadOutcome);
+            this.tabPageOutcome.Controls.Add(this.label7);
+            this.tabPageOutcome.Controls.Add(this.comboBoxOutcomeSort);
+            this.tabPageOutcome.Controls.Add(this.dateTimePickerOutcomeTo);
+            this.tabPageOutcome.Controls.Add(this.label8);
+            this.tabPageOutcome.Controls.Add(this.dateTimePickerOutcomeFrom);
+            this.tabPageOutcome.Controls.Add(this.label9);
+            this.tabPageOutcome.Controls.Add(this.dataGridView1);
+            this.tabPageOutcome.Location = new System.Drawing.Point(4, 25);
+            this.tabPageOutcome.Name = "tabPageOutcome";
+            this.tabPageOutcome.Size = new System.Drawing.Size(1193, 395);
+            this.tabPageOutcome.TabIndex = 2;
+            this.tabPageOutcome.Text = "Outcome";
+            this.tabPageOutcome.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewIncome
+            // 
+            this.dataGridViewIncome.AutoGenerateColumns = false;
+            this.dataGridViewIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewIncome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.dataGridViewIncome.DataSource = this.vwItemOrderedBindingSource;
+            this.dataGridViewIncome.Location = new System.Drawing.Point(455, 4);
+            this.dataGridViewIncome.Name = "dataGridViewIncome";
+            this.dataGridViewIncome.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewIncome.RowHeadersWidth = 51;
+            this.dataGridViewIncome.RowTemplate.Height = 24;
+            this.dataGridViewIncome.Size = new System.Drawing.Size(742, 389);
+            this.dataGridViewIncome.TabIndex = 2;
+            // 
+            // btnLoadIncome
+            // 
+            this.btnLoadIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadIncome.Location = new System.Drawing.Point(8, 311);
+            this.btnLoadIncome.Name = "btnLoadIncome";
+            this.btnLoadIncome.Size = new System.Drawing.Size(97, 48);
+            this.btnLoadIncome.TabIndex = 14;
+            this.btnLoadIncome.Text = "Load ";
+            this.btnLoadIncome.UseVisualStyleBackColor = true;
+            this.btnLoadIncome.Click += new System.EventHandler(this.btnLoadIncome_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Sort by:";
+            // 
+            // comboBoxIncomeSort
+            // 
+            this.comboBoxIncomeSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxIncomeSort.FormattingEnabled = true;
+            this.comboBoxIncomeSort.Items.AddRange(new object[] {
+            "Quantity",
+            "Total Price"});
+            this.comboBoxIncomeSort.Location = new System.Drawing.Point(164, 178);
+            this.comboBoxIncomeSort.Name = "comboBoxIncomeSort";
+            this.comboBoxIncomeSort.Size = new System.Drawing.Size(160, 28);
+            this.comboBoxIncomeSort.TabIndex = 12;
+            this.comboBoxIncomeSort.Text = "Select sort type";
+            // 
+            // dateTimePickerIncomeTo
+            // 
+            this.dateTimePickerIncomeTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerIncomeTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerIncomeTo.Location = new System.Drawing.Point(164, 85);
+            this.dateTimePickerIncomeTo.Name = "dateTimePickerIncomeTo";
+            this.dateTimePickerIncomeTo.Size = new System.Drawing.Size(110, 26);
+            this.dateTimePickerIncomeTo.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(79, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "To:";
+            // 
+            // dateTimePickerIncomeFrom
+            // 
+            this.dateTimePickerIncomeFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerIncomeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerIncomeFrom.Location = new System.Drawing.Point(164, 37);
+            this.dateTimePickerIncomeFrom.Name = "dateTimePickerIncomeFrom";
+            this.dateTimePickerIncomeFrom.Size = new System.Drawing.Size(110, 26);
+            this.dateTimePickerIncomeFrom.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = " Filter By: From";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(137, 306);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Sold products:";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(255, 300);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(105, 26);
+            this.txtTotal.TabIndex = 1;
+            // 
+            // txtTotalIncome
+            // 
+            this.txtTotalIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalIncome.Location = new System.Drawing.Point(255, 345);
+            this.txtTotalIncome.Name = "txtTotalIncome";
+            this.txtTotalIncome.ReadOnly = true;
+            this.txtTotalIncome.Size = new System.Drawing.Size(142, 26);
+            this.txtTotalIncome.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(137, 351);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 20);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Total Income";
+            // 
+            // txtImport
+            // 
+            this.txtImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImport.Location = new System.Drawing.Point(249, 299);
+            this.txtImport.Name = "txtImport";
+            this.txtImport.ReadOnly = true;
+            this.txtImport.Size = new System.Drawing.Size(105, 26);
+            this.txtImport.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(131, 305);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 20);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Imported:";
+            // 
+            // btnLoadOutcome
+            // 
+            this.btnLoadOutcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadOutcome.Location = new System.Drawing.Point(2, 310);
+            this.btnLoadOutcome.Name = "btnLoadOutcome";
+            this.btnLoadOutcome.Size = new System.Drawing.Size(97, 48);
+            this.btnLoadOutcome.TabIndex = 24;
+            this.btnLoadOutcome.Text = "Load ";
+            this.btnLoadOutcome.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(39, 184);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 20);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Sort by:";
+            // 
+            // comboBoxOutcomeSort
+            // 
+            this.comboBoxOutcomeSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxOutcomeSort.FormattingEnabled = true;
+            this.comboBoxOutcomeSort.Items.AddRange(new object[] {
+            "Quantity",
+            "Total Price"});
+            this.comboBoxOutcomeSort.Location = new System.Drawing.Point(158, 177);
+            this.comboBoxOutcomeSort.Name = "comboBoxOutcomeSort";
+            this.comboBoxOutcomeSort.Size = new System.Drawing.Size(160, 28);
+            this.comboBoxOutcomeSort.TabIndex = 22;
+            this.comboBoxOutcomeSort.Text = "Select sort type";
+            // 
+            // dateTimePickerOutcomeTo
+            // 
+            this.dateTimePickerOutcomeTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerOutcomeTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerOutcomeTo.Location = new System.Drawing.Point(158, 84);
+            this.dateTimePickerOutcomeTo.Name = "dateTimePickerOutcomeTo";
+            this.dateTimePickerOutcomeTo.Size = new System.Drawing.Size(110, 26);
+            this.dateTimePickerOutcomeTo.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(73, 89);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 20);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "To:";
+            // 
+            // dateTimePickerOutcomeFrom
+            // 
+            this.dateTimePickerOutcomeFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerOutcomeFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerOutcomeFrom.Location = new System.Drawing.Point(158, 36);
+            this.dateTimePickerOutcomeFrom.Name = "dateTimePickerOutcomeFrom";
+            this.dateTimePickerOutcomeFrom.Size = new System.Drawing.Size(110, 26);
+            this.dateTimePickerOutcomeFrom.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 36);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(126, 20);
+            this.label9.TabIndex = 18;
+            this.label9.Text = " Filter By: From";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(449, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(742, 389);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // txtOutcome
+            // 
+            this.txtOutcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOutcome.Location = new System.Drawing.Point(249, 331);
+            this.txtOutcome.Name = "txtOutcome";
+            this.txtOutcome.ReadOnly = true;
+            this.txtOutcome.Size = new System.Drawing.Size(142, 26);
+            this.txtOutcome.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(131, 337);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 20);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Total Outcome";
+            // 
+            // finalSEDataSetOrdered
+            // 
+            this.finalSEDataSetOrdered.DataSetName = "FinalSEDataSetOrdered";
+            this.finalSEDataSetOrdered.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "OrderDate";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Order Date";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "TotalPrice";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Total Price";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 135;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "GName";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Expr1";
+            this.dataGridViewTextBoxColumn4.HeaderText = "GID";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 50;
+            // 
+            // vwItemOrderedBindingSource
+            // 
+            this.vwItemOrderedBindingSource.DataMember = "Vw_ItemOrdered";
+            this.vwItemOrderedBindingSource.DataSource = this.finalSEDataSetOrdered;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "OrderDate";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Order Date";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalPrice";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Total Price";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 135;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gNameDataGridViewTextBoxColumn
+            // 
+            this.gNameDataGridViewTextBoxColumn.DataPropertyName = "GName";
+            this.gNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.gNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gNameDataGridViewTextBoxColumn.Name = "gNameDataGridViewTextBoxColumn";
+            this.gNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gNameDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Expr1";
+            this.dataGridViewTextBoxColumn3.HeaderText = "GID";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 50;
+            // 
+            // vw_ItemOrderedTableAdapter
+            // 
+            this.vw_ItemOrderedTableAdapter.ClearBeforeFill = true;
             // 
             // FormReport
             // 
@@ -338,13 +655,13 @@
             this.tabPageTopSelling.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopSelling)).EndInit();
             this.tabPageIncome.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).EndInit();
+            this.tabPageIncome.PerformLayout();
             this.tabPageOutcome.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutcome)).EndInit();
-            this.tabPageRevenue.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRevenue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetSold)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).EndInit();
+            this.tabPageOutcome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetOrdered)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,13 +674,7 @@
         private System.Windows.Forms.DataGridView dataGridViewTopSelling;
         private System.Windows.Forms.TabPage tabPageIncome;
         private System.Windows.Forms.TabPage tabPageOutcome;
-        private System.Windows.Forms.TabPage tabPageRevenue;
-        private System.Windows.Forms.DataGridView dataGridViewIncome;
-        private System.Windows.Forms.DataGridView dataGridViewOutcome;
-        private System.Windows.Forms.DataGridView dataGridViewRevenue;
-        private FinalSEDataSetSold finalSEDataSetSold;
-        private System.Windows.Forms.BindingSource incomeBindingSource;
-        private FinalSEDataSetSoldTableAdapters.IncomeTableAdapter incomeTableAdapter;
+        
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
         private System.Windows.Forms.Label labelTo;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
@@ -376,5 +687,42 @@
         private System.Windows.Forms.Label labelSort;
         private System.Windows.Forms.ComboBox comboBoxSort;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnLoadIncome;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxIncomeSort;
+        private System.Windows.Forms.DateTimePicker dateTimePickerIncomeTo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerIncomeFrom;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridViewIncome;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTotalIncome;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtImport;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnLoadOutcome;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBoxOutcomeSort;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOutcomeTo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOutcomeFrom;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtOutcome;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.BindingSource vwItemOrderedBindingSource;
+        private FinalSEDataSetOrdered finalSEDataSetOrdered;
+        private FinalSEDataSetOrderedTableAdapters.Vw_ItemOrderedTableAdapter vw_ItemOrderedTableAdapter;
     }
 }

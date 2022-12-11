@@ -102,6 +102,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSEDataSetImport.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FinalSEDataSetOrdered.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalSEDataSetOrdered.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormAccountant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +262,17 @@
     </None>
     <None Include="FinalSEDataSetImport.xss">
       <DependentUpon>FinalSEDataSetImport.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSetOrdered.xsc">
+      <DependentUpon>FinalSEDataSetOrdered.xsd</DependentUpon>
+    </None>
+    <None Include="FinalSEDataSetOrdered.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalSEDataSetOrdered.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalSEDataSetOrdered.xss">
+      <DependentUpon>FinalSEDataSetOrdered.xsd</DependentUpon>
     </None>
     <None Include="goodimportDataSet.xsc">
       <DependentUpon>goodimportDataSet.xsd</DependentUpon>
