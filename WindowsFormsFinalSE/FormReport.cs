@@ -20,6 +20,8 @@ namespace WindowsFormsFinalSE
 
         private void FormReport_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'finalSEDataSetItemImported.Vw_ItemImported' table. You can move, or remove it, as needed.
+            this.vw_ItemImportedTableAdapter.Fill(this.finalSEDataSetItemImported.Vw_ItemImported);
             // TODO: This line of code loads data into the 'finalSEDataSetOrdered.Vw_ItemOrdered' table. You can move, or remove it, as needed.
             this.vw_ItemOrderedTableAdapter.Fill(this.finalSEDataSetOrdered.Vw_ItemOrdered);
             // TODO: This line of code loads data into the 'finalSEDataSetSold.Income' table. You can move, or remove it, as needed.
@@ -73,6 +75,47 @@ namespace WindowsFormsFinalSE
                 txtTotal.Text = num.ToString();
                 txtTotalIncome.Text = total.ToString();
             }
+            
+        }
+
+        private void btnLoadOutcome_Click(object sender, EventArgs e)
+        {
+            dataGridViewOutcome.DataSource = null;
+            int num = 0;
+            int total = 0;
+            if (comboBoxOutcomeSort.Text == "Quantity")
+            {
+                dataGridViewOutcome.DataSource = db.Vw_ItemImported.Where(x => x.ImportDate >= dateTimePickerOutcomeFrom.Value && x.ImportDate <= dateTimePickerOutcomeTo.Value).OrderByDescending(x => x.Quantity).ToList();
+                foreach (DataGridViewRow row in dataGridViewOutcome.Rows)
+                {
+                    num += Convert.ToInt32(row.Cells[4].Value);
+                    total += Convert.ToInt32(row.Cells[5].Value);
+                }
+                txtImport.Text = num.ToString();
+                txtOutcome.Text = total.ToString();
+            }
+            else if (comboBoxOutcomeSort.Text == "Total Price")
+            {
+                dataGridViewOutcome.DataSource = db.Vw_ItemImported.Where(x => x.ImportDate >= dateTimePickerOutcomeFrom.Value && x.ImportDate <= dateTimePickerOutcomeTo.Value).OrderByDescending(x => x.totalPrice).ToList();
+                foreach (DataGridViewRow row in dataGridViewOutcome.Rows)
+                {
+                    num += Convert.ToInt32(row.Cells[4].Value);
+                    total += Convert.ToInt32(row.Cells[5].Value);
+                }
+                txtImport.Text = num.ToString();
+                txtOutcome.Text = total.ToString();
+            }
+        }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            
+            int revenue = 0;
+
+            revenue = (int)((int)db.Vw_ItemOrdered.Where(x => x.OrderDate.Equals(dateTimePicker.Value)).Sum(x => x.TotalPrice) -
+                (int)db.Vw_ItemImported.Where(x => x.ImportDate.Equals(dateTimePicker.Value)).Sum(x => x.totalPrice));
+
+            txtRevenue.Text = revenue.ToString();
         }
     }
 }

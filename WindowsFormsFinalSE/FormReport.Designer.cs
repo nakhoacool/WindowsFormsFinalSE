@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.tabControlReport = new System.Windows.Forms.TabControl();
             this.tabPageTopSelling = new System.Windows.Forms.TabPage();
@@ -66,7 +66,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePickerOutcomeFrom = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewOutcome = new System.Windows.Forms.DataGridView();
             this.txtOutcome = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.finalSEDataSetOrdered = new WindowsFormsFinalSE.FinalSEDataSetOrdered();
@@ -82,19 +82,37 @@
             this.gNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vw_ItemOrderedTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters.Vw_ItemOrderedTableAdapter();
+            this.finalSEDataSetItemImported = new WindowsFormsFinalSE.FinalSEDataSetItemImported();
+            this.vwItemImportedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_ItemImportedTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetItemImportedTableAdapters.Vw_ItemImportedTableAdapter();
+            this.importIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.btnRevenue = new System.Windows.Forms.Button();
+            this.txtRevenue = new System.Windows.Forms.TextBox();
+            this.panelBottom.SuspendLayout();
             this.tabControlReport.SuspendLayout();
             this.tabPageTopSelling.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopSelling)).BeginInit();
             this.tabPageIncome.SuspendLayout();
             this.tabPageOutcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutcome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetOrdered)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetItemImported)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwItemImportedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBottom
             // 
+            this.panelBottom.Controls.Add(this.txtRevenue);
+            this.panelBottom.Controls.Add(this.btnRevenue);
+            this.panelBottom.Controls.Add(this.dateTimePicker);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.Location = new System.Drawing.Point(0, 424);
             this.panelBottom.Name = "panelBottom";
@@ -215,14 +233,14 @@
             this.dataGridViewTopSelling.Location = new System.Drawing.Point(428, 3);
             this.dataGridViewTopSelling.Name = "dataGridViewTopSelling";
             this.dataGridViewTopSelling.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTopSelling.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTopSelling.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTopSelling.RowHeadersWidth = 51;
             this.dataGridViewTopSelling.RowTemplate.Height = 24;
             this.dataGridViewTopSelling.Size = new System.Drawing.Size(757, 389);
@@ -263,7 +281,7 @@
             this.tabPageOutcome.Controls.Add(this.label8);
             this.tabPageOutcome.Controls.Add(this.dateTimePickerOutcomeFrom);
             this.tabPageOutcome.Controls.Add(this.label9);
-            this.tabPageOutcome.Controls.Add(this.dataGridView1);
+            this.tabPageOutcome.Controls.Add(this.dataGridViewOutcome);
             this.tabPageOutcome.Location = new System.Drawing.Point(4, 25);
             this.tabPageOutcome.Name = "tabPageOutcome";
             this.tabPageOutcome.Size = new System.Drawing.Size(1193, 395);
@@ -285,14 +303,14 @@
             this.dataGridViewIncome.Location = new System.Drawing.Point(455, 4);
             this.dataGridViewIncome.Name = "dataGridViewIncome";
             this.dataGridViewIncome.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewIncome.RowHeadersWidth = 51;
             this.dataGridViewIncome.RowTemplate.Height = 24;
             this.dataGridViewIncome.Size = new System.Drawing.Size(742, 389);
@@ -411,7 +429,7 @@
             // txtImport
             // 
             this.txtImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImport.Location = new System.Drawing.Point(249, 299);
+            this.txtImport.Location = new System.Drawing.Point(235, 304);
             this.txtImport.Name = "txtImport";
             this.txtImport.ReadOnly = true;
             this.txtImport.Size = new System.Drawing.Size(105, 26);
@@ -421,7 +439,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(131, 305);
+            this.label6.Location = new System.Drawing.Point(117, 310);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 15;
@@ -436,6 +454,7 @@
             this.btnLoadOutcome.TabIndex = 24;
             this.btnLoadOutcome.Text = "Load ";
             this.btnLoadOutcome.UseVisualStyleBackColor = true;
+            this.btnLoadOutcome.Click += new System.EventHandler(this.btnLoadOutcome_Click);
             // 
             // label7
             // 
@@ -498,29 +517,38 @@
             this.label9.TabIndex = 18;
             this.label9.Text = " Filter By: From";
             // 
-            // dataGridView1
+            // dataGridViewOutcome
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(449, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 389);
-            this.dataGridView1.TabIndex = 17;
+            this.dataGridViewOutcome.AutoGenerateColumns = false;
+            this.dataGridViewOutcome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOutcome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.importIDDataGridViewTextBoxColumn,
+            this.gIDDataGridViewTextBoxColumn,
+            this.gNameDataGridViewTextBoxColumn1,
+            this.quantityDataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn9,
+            this.importDateDataGridViewTextBoxColumn});
+            this.dataGridViewOutcome.DataSource = this.vwItemImportedBindingSource;
+            this.dataGridViewOutcome.Location = new System.Drawing.Point(392, 3);
+            this.dataGridViewOutcome.Name = "dataGridViewOutcome";
+            this.dataGridViewOutcome.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOutcome.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewOutcome.RowHeadersWidth = 51;
+            this.dataGridViewOutcome.RowTemplate.Height = 24;
+            this.dataGridViewOutcome.Size = new System.Drawing.Size(799, 389);
+            this.dataGridViewOutcome.TabIndex = 17;
             // 
             // txtOutcome
             // 
             this.txtOutcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOutcome.Location = new System.Drawing.Point(249, 331);
+            this.txtOutcome.Location = new System.Drawing.Point(235, 336);
             this.txtOutcome.Name = "txtOutcome";
             this.txtOutcome.ReadOnly = true;
             this.txtOutcome.Size = new System.Drawing.Size(142, 26);
@@ -530,7 +558,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(131, 337);
+            this.label10.Location = new System.Drawing.Point(117, 342);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 20);
             this.label10.TabIndex = 25;
@@ -640,6 +668,105 @@
             // 
             this.vw_ItemOrderedTableAdapter.ClearBeforeFill = true;
             // 
+            // finalSEDataSetItemImported
+            // 
+            this.finalSEDataSetItemImported.DataSetName = "FinalSEDataSetItemImported";
+            this.finalSEDataSetItemImported.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vwItemImportedBindingSource
+            // 
+            this.vwItemImportedBindingSource.DataMember = "Vw_ItemImported";
+            this.vwItemImportedBindingSource.DataSource = this.finalSEDataSetItemImported;
+            // 
+            // vw_ItemImportedTableAdapter
+            // 
+            this.vw_ItemImportedTableAdapter.ClearBeforeFill = true;
+            // 
+            // importIDDataGridViewTextBoxColumn
+            // 
+            this.importIDDataGridViewTextBoxColumn.DataPropertyName = "ImportID";
+            this.importIDDataGridViewTextBoxColumn.HeaderText = "ImportID";
+            this.importIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.importIDDataGridViewTextBoxColumn.Name = "importIDDataGridViewTextBoxColumn";
+            this.importIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gIDDataGridViewTextBoxColumn
+            // 
+            this.gIDDataGridViewTextBoxColumn.DataPropertyName = "GID";
+            this.gIDDataGridViewTextBoxColumn.HeaderText = "GID";
+            this.gIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gIDDataGridViewTextBoxColumn.Name = "gIDDataGridViewTextBoxColumn";
+            this.gIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gNameDataGridViewTextBoxColumn1
+            // 
+            this.gNameDataGridViewTextBoxColumn1.DataPropertyName = "GName";
+            this.gNameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.gNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.gNameDataGridViewTextBoxColumn1.Name = "gNameDataGridViewTextBoxColumn1";
+            this.gNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.gNameDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // quantityDataGridViewTextBoxColumn1
+            // 
+            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn1.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
+            this.quantityDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "totalPrice";
+            this.dataGridViewTextBoxColumn9.HeaderText = "totalPrice";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // importDateDataGridViewTextBoxColumn
+            // 
+            this.importDateDataGridViewTextBoxColumn.DataPropertyName = "ImportDate";
+            this.importDateDataGridViewTextBoxColumn.HeaderText = "ImportDate";
+            this.importDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.importDateDataGridViewTextBoxColumn.Name = "importDateDataGridViewTextBoxColumn";
+            this.importDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.CustomFormat = "MM/yyyy";
+            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker.Location = new System.Drawing.Point(221, 25);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.ShowUpDown = true;
+            this.dateTimePicker.Size = new System.Drawing.Size(123, 26);
+            this.dateTimePicker.TabIndex = 0;
+            // 
+            // btnRevenue
+            // 
+            this.btnRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenue.Location = new System.Drawing.Point(81, 20);
+            this.btnRevenue.Name = "btnRevenue";
+            this.btnRevenue.Size = new System.Drawing.Size(106, 31);
+            this.btnRevenue.TabIndex = 1;
+            this.btnRevenue.Text = "Revenue in:";
+            this.btnRevenue.UseVisualStyleBackColor = true;
+            this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
+            // 
+            // txtRevenue
+            // 
+            this.txtRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRevenue.Location = new System.Drawing.Point(396, 27);
+            this.txtRevenue.Name = "txtRevenue";
+            this.txtRevenue.ReadOnly = true;
+            this.txtRevenue.Size = new System.Drawing.Size(203, 26);
+            this.txtRevenue.TabIndex = 2;
+            // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -650,6 +777,8 @@
             this.Name = "FormReport";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.FormReport_Load);
+            this.panelBottom.ResumeLayout(false);
+            this.panelBottom.PerformLayout();
             this.tabControlReport.ResumeLayout(false);
             this.tabPageTopSelling.ResumeLayout(false);
             this.tabPageTopSelling.PerformLayout();
@@ -659,9 +788,11 @@
             this.tabPageOutcome.ResumeLayout(false);
             this.tabPageOutcome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutcome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetOrdered)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetItemImported)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwItemImportedBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -708,7 +839,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePickerOutcomeFrom;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewOutcome;
         private System.Windows.Forms.TextBox txtOutcome;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -724,5 +855,17 @@
         private System.Windows.Forms.BindingSource vwItemOrderedBindingSource;
         private FinalSEDataSetOrdered finalSEDataSetOrdered;
         private FinalSEDataSetOrderedTableAdapters.Vw_ItemOrderedTableAdapter vw_ItemOrderedTableAdapter;
+        private FinalSEDataSetItemImported finalSEDataSetItemImported;
+        private System.Windows.Forms.BindingSource vwItemImportedBindingSource;
+        private FinalSEDataSetItemImportedTableAdapters.Vw_ItemImportedTableAdapter vw_ItemImportedTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button btnRevenue;
+        private System.Windows.Forms.TextBox txtRevenue;
     }
 }
