@@ -12,19 +12,19 @@
               <DbSource ConnectionRef="FinalSEConnectionString (Settings)" DbObjectName="FinalSE.dbo.Vw_ItemImported" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT GID, ImportID, GName, Quantity, totalPrice, ImportDate FROM dbo.Vw_ItemImported</CommandText>
+                    <CommandText>SELECT GName, Quantity, price, ImportID, ImportDate, GID FROM dbo.Vw_ItemImported</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="GID" DataSetColumn="GID" />
-              <Mapping SourceColumn="ImportID" DataSetColumn="ImportID" />
               <Mapping SourceColumn="GName" DataSetColumn="GName" />
               <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
-              <Mapping SourceColumn="totalPrice" DataSetColumn="totalPrice" />
+              <Mapping SourceColumn="price" DataSetColumn="price" />
+              <Mapping SourceColumn="ImportID" DataSetColumn="ImportID" />
               <Mapping SourceColumn="ImportDate" DataSetColumn="ImportDate" />
+              <Mapping SourceColumn="GID" DataSetColumn="GID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -39,20 +39,6 @@
         <xs:element name="Vw_ItemImported" msprop:Generator_RowEvHandlerName="Vw_ItemImportedRowChangeEventHandler" msprop:Generator_RowDeletedName="Vw_ItemImportedRowDeleted" msprop:Generator_RowDeletingName="Vw_ItemImportedRowDeleting" msprop:Generator_RowEvArgName="Vw_ItemImportedRowChangeEvent" msprop:Generator_TablePropName="Vw_ItemImported" msprop:Generator_RowChangedName="Vw_ItemImportedRowChanged" msprop:Generator_RowChangingName="Vw_ItemImportedRowChanging" msprop:Generator_TableClassName="Vw_ItemImportedDataTable" msprop:Generator_RowClassName="Vw_ItemImportedRow" msprop:Generator_TableVarName="tableVw_ItemImported" msprop:Generator_UserTableName="Vw_ItemImported">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="GID" msprop:Generator_ColumnPropNameInRow="GID" msprop:Generator_ColumnPropNameInTable="GIDColumn" msprop:Generator_ColumnVarNameInTable="columnGID" msprop:Generator_UserColumnName="GID">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="6" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ImportID" msprop:Generator_ColumnPropNameInRow="ImportID" msprop:Generator_ColumnPropNameInTable="ImportIDColumn" msprop:Generator_ColumnVarNameInTable="columnImportID" msprop:Generator_UserColumnName="ImportID">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="6" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="GName" msprop:Generator_ColumnPropNameInRow="GName" msprop:Generator_ColumnPropNameInTable="GNameColumn" msprop:Generator_ColumnVarNameInTable="columnGName" msprop:Generator_UserColumnName="GName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -61,8 +47,22 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_UserColumnName="Quantity" type="xs:int" minOccurs="0" />
-              <xs:element name="totalPrice" msprop:Generator_ColumnPropNameInRow="totalPrice" msprop:Generator_ColumnPropNameInTable="totalPriceColumn" msprop:Generator_ColumnVarNameInTable="columntotalPrice" msprop:Generator_UserColumnName="totalPrice" type="xs:int" minOccurs="0" />
+              <xs:element name="price" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnVarNameInTable="columnprice" msprop:Generator_UserColumnName="price" type="xs:int" minOccurs="0" />
+              <xs:element name="ImportID" msprop:Generator_ColumnPropNameInRow="ImportID" msprop:Generator_ColumnPropNameInTable="ImportIDColumn" msprop:Generator_ColumnVarNameInTable="columnImportID" msprop:Generator_UserColumnName="ImportID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="ImportDate" msprop:Generator_ColumnPropNameInRow="ImportDate" msprop:Generator_ColumnPropNameInTable="ImportDateColumn" msprop:Generator_ColumnVarNameInTable="columnImportDate" msprop:Generator_UserColumnName="ImportDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="GID" msprop:Generator_ColumnPropNameInRow="GID" msprop:Generator_ColumnPropNameInTable="GIDColumn" msprop:Generator_ColumnVarNameInTable="columnGID" msprop:Generator_UserColumnName="GID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

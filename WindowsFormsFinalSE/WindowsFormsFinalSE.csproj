@@ -124,6 +124,12 @@
     <Compile Include="FormAgent.Designer.cs">
       <DependentUpon>FormAgent.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelivery.Designer.cs">
+      <DependentUpon>FormDelivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGoods.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgent.resx">
       <DependentUpon>FormAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelivery.resx">
+      <DependentUpon>FormDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGoods.resx">
       <DependentUpon>FormGoods.cs</DependentUpon>

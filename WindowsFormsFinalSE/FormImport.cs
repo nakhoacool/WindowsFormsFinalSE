@@ -216,6 +216,8 @@ namespace WindowsFormsFinalSE
             Reload();
             MessageBox.Show("Import note saved successfully");
             Class.Clear.ResetAllControls(this);
+            txtImportID.Clear();
+            comboBoxID.Text = "";
             btnAdd.Enabled = false;
             btnEdit.Enabled = false;
             btnClear.Enabled = false;

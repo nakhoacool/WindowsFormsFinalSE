@@ -14,11 +14,11 @@ namespace WindowsFormsFinalSE
     
     public partial class Vw_ItemImported
     {
-        public string GID { get; set; }
-        public string ImportID { get; set; }
         public string GName { get; set; }
         public Nullable<int> Quantity { get; set; }
-        public Nullable<int> totalPrice { get; set; }
+        public Nullable<int> price { get; set; }
+        public string ImportID { get; set; }
         public Nullable<System.DateTime> ImportDate { get; set; }
+        public string GID { get; set; }
     }
 }

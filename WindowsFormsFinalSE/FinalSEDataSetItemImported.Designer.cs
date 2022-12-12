@@ -279,17 +279,17 @@ namespace WindowsFormsFinalSE {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Vw_ItemImportedDataTable : global::System.Data.TypedTableBase<Vw_ItemImportedRow> {
             
-            private global::System.Data.DataColumn columnGID;
-            
-            private global::System.Data.DataColumn columnImportID;
-            
             private global::System.Data.DataColumn columnGName;
             
             private global::System.Data.DataColumn columnQuantity;
             
-            private global::System.Data.DataColumn columntotalPrice;
+            private global::System.Data.DataColumn columnprice;
+            
+            private global::System.Data.DataColumn columnImportID;
             
             private global::System.Data.DataColumn columnImportDate;
+            
+            private global::System.Data.DataColumn columnGID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -326,22 +326,6 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GIDColumn {
-                get {
-                    return this.columnGID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ImportIDColumn {
-                get {
-                    return this.columnImportID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn GNameColumn {
                 get {
                     return this.columnGName;
@@ -358,9 +342,17 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn totalPriceColumn {
+            public global::System.Data.DataColumn priceColumn {
                 get {
-                    return this.columntotalPrice;
+                    return this.columnprice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ImportIDColumn {
+                get {
+                    return this.columnImportID;
                 }
             }
             
@@ -369,6 +361,14 @@ namespace WindowsFormsFinalSE {
             public global::System.Data.DataColumn ImportDateColumn {
                 get {
                     return this.columnImportDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GIDColumn {
+                get {
+                    return this.columnGID;
                 }
             }
             
@@ -409,15 +409,15 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Vw_ItemImportedRow AddVw_ItemImportedRow(string GID, string ImportID, string GName, int Quantity, int totalPrice, System.DateTime ImportDate) {
+            public Vw_ItemImportedRow AddVw_ItemImportedRow(string GName, int Quantity, int price, string ImportID, System.DateTime ImportDate, string GID) {
                 Vw_ItemImportedRow rowVw_ItemImportedRow = ((Vw_ItemImportedRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        GID,
-                        ImportID,
                         GName,
                         Quantity,
-                        totalPrice,
-                        ImportDate};
+                        price,
+                        ImportID,
+                        ImportDate,
+                        GID};
                 rowVw_ItemImportedRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVw_ItemImportedRow);
                 return rowVw_ItemImportedRow;
@@ -440,34 +440,34 @@ namespace WindowsFormsFinalSE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnGID = base.Columns["GID"];
-                this.columnImportID = base.Columns["ImportID"];
                 this.columnGName = base.Columns["GName"];
                 this.columnQuantity = base.Columns["Quantity"];
-                this.columntotalPrice = base.Columns["totalPrice"];
+                this.columnprice = base.Columns["price"];
+                this.columnImportID = base.Columns["ImportID"];
                 this.columnImportDate = base.Columns["ImportDate"];
+                this.columnGID = base.Columns["GID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnGID = new global::System.Data.DataColumn("GID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGID);
-                this.columnImportID = new global::System.Data.DataColumn("ImportID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImportID);
                 this.columnGName = new global::System.Data.DataColumn("GName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGName);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
-                this.columntotalPrice = new global::System.Data.DataColumn("totalPrice", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntotalPrice);
+                this.columnprice = new global::System.Data.DataColumn("price", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprice);
+                this.columnImportID = new global::System.Data.DataColumn("ImportID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImportID);
                 this.columnImportDate = new global::System.Data.DataColumn("ImportDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnImportDate);
-                this.columnGID.AllowDBNull = false;
-                this.columnGID.MaxLength = 6;
+                this.columnGID = new global::System.Data.DataColumn("GID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGID);
+                this.columnGName.MaxLength = 50;
                 this.columnImportID.AllowDBNull = false;
                 this.columnImportID.MaxLength = 6;
-                this.columnGName.MaxLength = 50;
+                this.columnGID.AllowDBNull = false;
+                this.columnGID.MaxLength = 6;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,28 +610,6 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string GID {
-                get {
-                    return ((string)(this[this.tableVw_ItemImported.GIDColumn]));
-                }
-                set {
-                    this[this.tableVw_ItemImported.GIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ImportID {
-                get {
-                    return ((string)(this[this.tableVw_ItemImported.ImportIDColumn]));
-                }
-                set {
-                    this[this.tableVw_ItemImported.ImportIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string GName {
                 get {
                     try {
@@ -664,17 +642,28 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int totalPrice {
+            public int price {
                 get {
                     try {
-                        return ((int)(this[this.tableVw_ItemImported.totalPriceColumn]));
+                        return ((int)(this[this.tableVw_ItemImported.priceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'totalPrice\' in table \'Vw_ItemImported\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'price\' in table \'Vw_ItemImported\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVw_ItemImported.totalPriceColumn] = value;
+                    this[this.tableVw_ItemImported.priceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ImportID {
+                get {
+                    return ((string)(this[this.tableVw_ItemImported.ImportIDColumn]));
+                }
+                set {
+                    this[this.tableVw_ItemImported.ImportIDColumn] = value;
                 }
             }
             
@@ -691,6 +680,17 @@ namespace WindowsFormsFinalSE {
                 }
                 set {
                     this[this.tableVw_ItemImported.ImportDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string GID {
+                get {
+                    return ((string)(this[this.tableVw_ItemImported.GIDColumn]));
+                }
+                set {
+                    this[this.tableVw_ItemImported.GIDColumn] = value;
                 }
             }
             
@@ -720,14 +720,14 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IstotalPriceNull() {
-                return this.IsNull(this.tableVw_ItemImported.totalPriceColumn);
+            public bool IspriceNull() {
+                return this.IsNull(this.tableVw_ItemImported.priceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SettotalPriceNull() {
-                this[this.tableVw_ItemImported.totalPriceColumn] = global::System.Convert.DBNull;
+            public void SetpriceNull() {
+                this[this.tableVw_ItemImported.priceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -902,12 +902,12 @@ namespace WindowsFormsFinalSE.FinalSEDataSetItemImportedTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Vw_ItemImported";
-            tableMapping.ColumnMappings.Add("GID", "GID");
-            tableMapping.ColumnMappings.Add("ImportID", "ImportID");
             tableMapping.ColumnMappings.Add("GName", "GName");
             tableMapping.ColumnMappings.Add("Quantity", "Quantity");
-            tableMapping.ColumnMappings.Add("totalPrice", "totalPrice");
+            tableMapping.ColumnMappings.Add("price", "price");
+            tableMapping.ColumnMappings.Add("ImportID", "ImportID");
             tableMapping.ColumnMappings.Add("ImportDate", "ImportDate");
+            tableMapping.ColumnMappings.Add("GID", "GID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -924,8 +924,8 @@ namespace WindowsFormsFinalSE.FinalSEDataSetItemImportedTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT GID, ImportID, GName, Quantity, totalPrice, ImportDate FROM dbo.Vw_ItemImp" +
-                "orted";
+            this._commandCollection[0].CommandText = "SELECT GName, Quantity, price, ImportID, ImportDate, GID FROM dbo.Vw_ItemImported" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
