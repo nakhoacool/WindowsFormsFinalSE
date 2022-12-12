@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.txtRevenue = new System.Windows.Forms.TextBox();
             this.btnRevenue = new System.Windows.Forms.Button();
@@ -49,6 +49,14 @@
             this.dateTimePickerIncomeFrom = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewIncome = new System.Windows.Forms.DataGridView();
+            this.gIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vwItemOrderedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalSEDataSetIOrderedView = new WindowsFormsFinalSE.FinalSEDataSetIOrderedView();
             this.tabPageOutcome = new System.Windows.Forms.TabPage();
             this.txtOutcome = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -71,25 +79,17 @@
             this.vwItemImportedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finalSEDataSetItemImported = new WindowsFormsFinalSE.FinalSEDataSetItemImported();
             this.vw_ItemImportedTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetItemImportedTableAdapters.Vw_ItemImportedTableAdapter();
-            this.finalSEDataSetIOrderedView = new WindowsFormsFinalSE.FinalSEDataSetIOrderedView();
-            this.vwItemOrderedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vw_ItemOrderedTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetIOrderedViewTableAdapters.Vw_ItemOrderedTableAdapter();
-            this.gIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBottom.SuspendLayout();
             this.tabControlReport.SuspendLayout();
             this.tabPageIncome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetIOrderedView)).BeginInit();
             this.tabPageOutcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutcome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwItemImportedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetItemImported)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetIOrderedView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBottom
@@ -109,9 +109,10 @@
             this.txtRevenue.Location = new System.Drawing.Point(397, 20);
             this.txtRevenue.Name = "txtRevenue";
             this.txtRevenue.ReadOnly = true;
-            this.txtRevenue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtRevenue.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtRevenue.Size = new System.Drawing.Size(203, 34);
             this.txtRevenue.TabIndex = 2;
+            this.txtRevenue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnRevenue
             // 
@@ -293,18 +294,82 @@
             this.dataGridViewIncome.Location = new System.Drawing.Point(393, 4);
             this.dataGridViewIncome.Name = "dataGridViewIncome";
             this.dataGridViewIncome.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewIncome.RowHeadersWidth = 51;
             this.dataGridViewIncome.RowTemplate.Height = 24;
             this.dataGridViewIncome.Size = new System.Drawing.Size(779, 389);
             this.dataGridViewIncome.TabIndex = 2;
+            // 
+            // gIDDataGridViewTextBoxColumn1
+            // 
+            this.gIDDataGridViewTextBoxColumn1.DataPropertyName = "GID";
+            this.gIDDataGridViewTextBoxColumn1.HeaderText = "GID";
+            this.gIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.gIDDataGridViewTextBoxColumn1.Name = "gIDDataGridViewTextBoxColumn1";
+            this.gIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.gIDDataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // oIDDataGridViewTextBoxColumn
+            // 
+            this.oIDDataGridViewTextBoxColumn.DataPropertyName = "OID";
+            this.oIDDataGridViewTextBoxColumn.HeaderText = "OID";
+            this.oIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.oIDDataGridViewTextBoxColumn.Name = "oIDDataGridViewTextBoxColumn";
+            this.oIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oIDDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // gNameDataGridViewTextBoxColumn
+            // 
+            this.gNameDataGridViewTextBoxColumn.DataPropertyName = "GName";
+            this.gNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.gNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gNameDataGridViewTextBoxColumn.Name = "gNameDataGridViewTextBoxColumn";
+            this.gNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gNameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalPrice";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Total Price";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "OrderDate";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Order Date";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // vwItemOrderedBindingSource
+            // 
+            this.vwItemOrderedBindingSource.DataMember = "Vw_ItemOrdered";
+            this.vwItemOrderedBindingSource.DataSource = this.finalSEDataSetIOrderedView;
+            // 
+            // finalSEDataSetIOrderedView
+            // 
+            this.finalSEDataSetIOrderedView.DataSetName = "FinalSEDataSetIOrderedView";
+            this.finalSEDataSetIOrderedView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPageOutcome
             // 
@@ -452,14 +517,14 @@
             this.dataGridViewOutcome.Location = new System.Drawing.Point(392, 3);
             this.dataGridViewOutcome.Name = "dataGridViewOutcome";
             this.dataGridViewOutcome.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOutcome.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOutcome.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewOutcome.RowHeadersWidth = 51;
             this.dataGridViewOutcome.RowTemplate.Height = 24;
             this.dataGridViewOutcome.Size = new System.Drawing.Size(799, 389);
@@ -534,73 +599,9 @@
             // 
             this.vw_ItemImportedTableAdapter.ClearBeforeFill = true;
             // 
-            // finalSEDataSetIOrderedView
-            // 
-            this.finalSEDataSetIOrderedView.DataSetName = "FinalSEDataSetIOrderedView";
-            this.finalSEDataSetIOrderedView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vwItemOrderedBindingSource
-            // 
-            this.vwItemOrderedBindingSource.DataMember = "Vw_ItemOrdered";
-            this.vwItemOrderedBindingSource.DataSource = this.finalSEDataSetIOrderedView;
-            // 
             // vw_ItemOrderedTableAdapter
             // 
             this.vw_ItemOrderedTableAdapter.ClearBeforeFill = true;
-            // 
-            // gIDDataGridViewTextBoxColumn1
-            // 
-            this.gIDDataGridViewTextBoxColumn1.DataPropertyName = "GID";
-            this.gIDDataGridViewTextBoxColumn1.HeaderText = "GID";
-            this.gIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.gIDDataGridViewTextBoxColumn1.Name = "gIDDataGridViewTextBoxColumn1";
-            this.gIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.gIDDataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // oIDDataGridViewTextBoxColumn
-            // 
-            this.oIDDataGridViewTextBoxColumn.DataPropertyName = "OID";
-            this.oIDDataGridViewTextBoxColumn.HeaderText = "OID";
-            this.oIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.oIDDataGridViewTextBoxColumn.Name = "oIDDataGridViewTextBoxColumn";
-            this.oIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.oIDDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // gNameDataGridViewTextBoxColumn
-            // 
-            this.gNameDataGridViewTextBoxColumn.DataPropertyName = "GName";
-            this.gNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.gNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gNameDataGridViewTextBoxColumn.Name = "gNameDataGridViewTextBoxColumn";
-            this.gNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gNameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalPrice";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Total Price";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "OrderDate";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Order Date";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // FormReport
             // 
@@ -618,13 +619,13 @@
             this.tabPageIncome.ResumeLayout(false);
             this.tabPageIncome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetIOrderedView)).EndInit();
             this.tabPageOutcome.ResumeLayout(false);
             this.tabPageOutcome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutcome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwItemImportedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetItemImported)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalSEDataSetIOrderedView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
