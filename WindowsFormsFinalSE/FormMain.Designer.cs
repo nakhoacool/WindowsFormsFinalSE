@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.iconGoods = new FontAwesome.Sharp.IconButton();
             this.iconAgent = new FontAwesome.Sharp.IconButton();
-            this.iconReport = new FontAwesome.Sharp.IconButton();
-            this.iconNote = new FontAwesome.Sharp.IconButton();
-            this.iconImport = new FontAwesome.Sharp.IconButton();
             this.iconAccountant = new FontAwesome.Sharp.IconButton();
             this.Logo = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.PictureBox();
@@ -42,7 +40,9 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            this.iconGoods = new FontAwesome.Sharp.IconButton();
+            this.iconImport = new FontAwesome.Sharp.IconButton();
+            this.iconNote = new FontAwesome.Sharp.IconButton();
+            this.iconReport = new FontAwesome.Sharp.IconButton();
             this.MenuPanel.SuspendLayout();
             this.Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -54,11 +54,11 @@
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.MenuPanel.Controls.Add(this.iconGoods);
-            this.MenuPanel.Controls.Add(this.iconAgent);
             this.MenuPanel.Controls.Add(this.iconReport);
             this.MenuPanel.Controls.Add(this.iconNote);
             this.MenuPanel.Controls.Add(this.iconImport);
+            this.MenuPanel.Controls.Add(this.iconGoods);
+            this.MenuPanel.Controls.Add(this.iconAgent);
             this.MenuPanel.Controls.Add(this.iconAccountant);
             this.MenuPanel.Controls.Add(this.Logo);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -66,6 +66,27 @@
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(200, 628);
             this.MenuPanel.TabIndex = 1;
+            // 
+            // iconGoods
+            // 
+            this.iconGoods.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconGoods.FlatAppearance.BorderSize = 0;
+            this.iconGoods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconGoods.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconGoods.IconChar = FontAwesome.Sharp.IconChar.Person;
+            this.iconGoods.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconGoods.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconGoods.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconGoods.Location = new System.Drawing.Point(0, 303);
+            this.iconGoods.Name = "iconGoods";
+            this.iconGoods.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconGoods.Size = new System.Drawing.Size(200, 80);
+            this.iconGoods.TabIndex = 6;
+            this.iconGoods.Text = "Goods";
+            this.iconGoods.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconGoods.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconGoods.UseVisualStyleBackColor = true;
+            this.iconGoods.Click += new System.EventHandler(this.iconGoods_Click);
             // 
             // iconAgent
             // 
@@ -77,7 +98,7 @@
             this.iconAgent.IconColor = System.Drawing.Color.Gainsboro;
             this.iconAgent.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconAgent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconAgent.Location = new System.Drawing.Point(0, 463);
+            this.iconAgent.Location = new System.Drawing.Point(0, 223);
             this.iconAgent.Name = "iconAgent";
             this.iconAgent.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconAgent.Size = new System.Drawing.Size(200, 80);
@@ -87,69 +108,6 @@
             this.iconAgent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconAgent.UseVisualStyleBackColor = true;
             this.iconAgent.Click += new System.EventHandler(this.iconAgent_Click);
-            // 
-            // iconReport
-            // 
-            this.iconReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconReport.FlatAppearance.BorderSize = 0;
-            this.iconReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconReport.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.iconReport.IconChar = FontAwesome.Sharp.IconChar.Readme;
-            this.iconReport.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconReport.Location = new System.Drawing.Point(0, 383);
-            this.iconReport.Name = "iconReport";
-            this.iconReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconReport.Size = new System.Drawing.Size(200, 80);
-            this.iconReport.TabIndex = 4;
-            this.iconReport.Text = "Report";
-            this.iconReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconReport.UseVisualStyleBackColor = true;
-            this.iconReport.Click += new System.EventHandler(this.iconReport_Click);
-            // 
-            // iconNote
-            // 
-            this.iconNote.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconNote.FlatAppearance.BorderSize = 0;
-            this.iconNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconNote.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.iconNote.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
-            this.iconNote.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconNote.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconNote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconNote.Location = new System.Drawing.Point(0, 303);
-            this.iconNote.Name = "iconNote";
-            this.iconNote.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconNote.Size = new System.Drawing.Size(200, 80);
-            this.iconNote.TabIndex = 3;
-            this.iconNote.Text = "Delivery Note";
-            this.iconNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconNote.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconNote.UseVisualStyleBackColor = true;
-            this.iconNote.Click += new System.EventHandler(this.iconNote_Click);
-            // 
-            // iconImport
-            // 
-            this.iconImport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconImport.FlatAppearance.BorderSize = 0;
-            this.iconImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconImport.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.iconImport.IconChar = FontAwesome.Sharp.IconChar.Box;
-            this.iconImport.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconImport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconImport.Location = new System.Drawing.Point(0, 223);
-            this.iconImport.Name = "iconImport";
-            this.iconImport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconImport.Size = new System.Drawing.Size(200, 80);
-            this.iconImport.TabIndex = 2;
-            this.iconImport.Text = "Goods Received";
-            this.iconImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconImport.UseVisualStyleBackColor = true;
-            this.iconImport.Click += new System.EventHandler(this.iconImport_Click);
             // 
             // iconAccountant
             // 
@@ -255,26 +213,68 @@
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
-            // iconGoods
+            // iconImport
             // 
-            this.iconGoods.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconGoods.FlatAppearance.BorderSize = 0;
-            this.iconGoods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconGoods.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.iconGoods.IconChar = FontAwesome.Sharp.IconChar.Person;
-            this.iconGoods.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconGoods.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconGoods.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconGoods.Location = new System.Drawing.Point(0, 543);
-            this.iconGoods.Name = "iconGoods";
-            this.iconGoods.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconGoods.Size = new System.Drawing.Size(200, 80);
-            this.iconGoods.TabIndex = 6;
-            this.iconGoods.Text = "Goods";
-            this.iconGoods.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconGoods.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconGoods.UseVisualStyleBackColor = true;
-            this.iconGoods.Click += new System.EventHandler(this.iconGoods_Click);
+            this.iconImport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconImport.FlatAppearance.BorderSize = 0;
+            this.iconImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconImport.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconImport.IconChar = FontAwesome.Sharp.IconChar.Box;
+            this.iconImport.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconImport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconImport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconImport.Location = new System.Drawing.Point(0, 383);
+            this.iconImport.Name = "iconImport";
+            this.iconImport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconImport.Size = new System.Drawing.Size(200, 80);
+            this.iconImport.TabIndex = 7;
+            this.iconImport.Text = "Goods Received";
+            this.iconImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconImport.UseVisualStyleBackColor = true;
+            this.iconImport.Click += new System.EventHandler(this.iconImport_Click);
+            // 
+            // iconNote
+            // 
+            this.iconNote.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconNote.FlatAppearance.BorderSize = 0;
+            this.iconNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconNote.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconNote.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
+            this.iconNote.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconNote.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconNote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconNote.Location = new System.Drawing.Point(0, 463);
+            this.iconNote.Name = "iconNote";
+            this.iconNote.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconNote.Size = new System.Drawing.Size(200, 80);
+            this.iconNote.TabIndex = 8;
+            this.iconNote.Text = "Delivery Note";
+            this.iconNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconNote.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconNote.UseVisualStyleBackColor = true;
+            this.iconNote.Click += new System.EventHandler(this.iconNote_Click);
+            // 
+            // iconReport
+            // 
+            this.iconReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconReport.FlatAppearance.BorderSize = 0;
+            this.iconReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconReport.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.iconReport.IconChar = FontAwesome.Sharp.IconChar.Readme;
+            this.iconReport.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconReport.Location = new System.Drawing.Point(0, 543);
+            this.iconReport.Name = "iconReport";
+            this.iconReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconReport.Size = new System.Drawing.Size(200, 80);
+            this.iconReport.TabIndex = 9;
+            this.iconReport.Text = "Report";
+            this.iconReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconReport.UseVisualStyleBackColor = true;
+            this.iconReport.Click += new System.EventHandler(this.iconReport_Click);
             // 
             // FormMain
             // 
@@ -300,9 +300,6 @@
         #endregion
 
         private System.Windows.Forms.Panel MenuPanel;
-        private FontAwesome.Sharp.IconButton iconReport;
-        private FontAwesome.Sharp.IconButton iconNote;
-        private FontAwesome.Sharp.IconButton iconImport;
         private FontAwesome.Sharp.IconButton iconAccountant;
         private System.Windows.Forms.Panel Logo;
         private System.Windows.Forms.Panel MainPanel;
@@ -314,6 +311,9 @@
         private System.Windows.Forms.Panel panelShadow;
         private FontAwesome.Sharp.IconButton iconAgent;
         private FontAwesome.Sharp.IconButton iconGoods;
+        private FontAwesome.Sharp.IconButton iconReport;
+        private FontAwesome.Sharp.IconButton iconNote;
+        private FontAwesome.Sharp.IconButton iconImport;
     }
 }
 
