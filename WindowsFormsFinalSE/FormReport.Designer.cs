@@ -29,28 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBottom = new System.Windows.Forms.Panel();
             this.txtRevenue = new System.Windows.Forms.TextBox();
             this.btnRevenue = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tabControlReport = new System.Windows.Forms.TabControl();
-            this.tabPageTopSelling = new System.Windows.Forms.TabPage();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.labelSort = new System.Windows.Forms.Label();
-            this.comboBoxSort = new System.Windows.Forms.ComboBox();
-            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
-            this.labelTo = new System.Windows.Forms.Label();
-            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
-            this.lb_From = new System.Windows.Forms.Label();
-            this.dataGridViewTopSelling = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageIncome = new System.Windows.Forms.TabPage();
             this.txtTotalIncome = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -96,8 +81,6 @@
             this.vw_ItemImportedTableAdapter = new WindowsFormsFinalSE.FinalSEDataSetItemImportedTableAdapters.Vw_ItemImportedTableAdapter();
             this.panelBottom.SuspendLayout();
             this.tabControlReport.SuspendLayout();
-            this.tabPageTopSelling.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopSelling)).BeginInit();
             this.tabPageIncome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vwItemOrderedBindingSource)).BeginInit();
@@ -153,7 +136,6 @@
             // 
             // tabControlReport
             // 
-            this.tabControlReport.Controls.Add(this.tabPageTopSelling);
             this.tabControlReport.Controls.Add(this.tabPageIncome);
             this.tabControlReport.Controls.Add(this.tabPageOutcome);
             this.tabControlReport.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -162,166 +144,6 @@
             this.tabControlReport.SelectedIndex = 0;
             this.tabControlReport.Size = new System.Drawing.Size(1201, 424);
             this.tabControlReport.TabIndex = 1;
-            // 
-            // tabPageTopSelling
-            // 
-            this.tabPageTopSelling.Controls.Add(this.btnLoad);
-            this.tabPageTopSelling.Controls.Add(this.labelSort);
-            this.tabPageTopSelling.Controls.Add(this.comboBoxSort);
-            this.tabPageTopSelling.Controls.Add(this.dateTimePickerTo);
-            this.tabPageTopSelling.Controls.Add(this.labelTo);
-            this.tabPageTopSelling.Controls.Add(this.dateTimePickerFrom);
-            this.tabPageTopSelling.Controls.Add(this.lb_From);
-            this.tabPageTopSelling.Controls.Add(this.dataGridViewTopSelling);
-            this.tabPageTopSelling.Location = new System.Drawing.Point(4, 25);
-            this.tabPageTopSelling.Name = "tabPageTopSelling";
-            this.tabPageTopSelling.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTopSelling.Size = new System.Drawing.Size(1193, 395);
-            this.tabPageTopSelling.TabIndex = 0;
-            this.tabPageTopSelling.Text = "Top Selling";
-            this.tabPageTopSelling.UseVisualStyleBackColor = true;
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.Location = new System.Drawing.Point(154, 300);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(91, 48);
-            this.btnLoad.TabIndex = 7;
-            this.btnLoad.Text = "Load ";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // labelSort
-            // 
-            this.labelSort.AutoSize = true;
-            this.labelSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSort.Location = new System.Drawing.Point(35, 165);
-            this.labelSort.Name = "labelSort";
-            this.labelSort.Size = new System.Drawing.Size(67, 20);
-            this.labelSort.TabIndex = 6;
-            this.labelSort.Text = "Sort by:";
-            // 
-            // comboBoxSort
-            // 
-            this.comboBoxSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSort.FormattingEnabled = true;
-            this.comboBoxSort.Items.AddRange(new object[] {
-            "Quantity",
-            "Total Price"});
-            this.comboBoxSort.Location = new System.Drawing.Point(154, 158);
-            this.comboBoxSort.Name = "comboBoxSort";
-            this.comboBoxSort.Size = new System.Drawing.Size(160, 28);
-            this.comboBoxSort.TabIndex = 5;
-            this.comboBoxSort.Text = "Select sort type";
-            // 
-            // dateTimePickerTo
-            // 
-            this.dateTimePickerTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerTo.Location = new System.Drawing.Point(154, 65);
-            this.dateTimePickerTo.Name = "dateTimePickerTo";
-            this.dateTimePickerTo.Size = new System.Drawing.Size(107, 26);
-            this.dateTimePickerTo.TabIndex = 4;
-            // 
-            // labelTo
-            // 
-            this.labelTo.AutoSize = true;
-            this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.Location = new System.Drawing.Point(69, 70);
-            this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(33, 20);
-            this.labelTo.TabIndex = 3;
-            this.labelTo.Text = "To:";
-            // 
-            // dateTimePickerFrom
-            // 
-            this.dateTimePickerFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(154, 17);
-            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
-            this.dateTimePickerFrom.Size = new System.Drawing.Size(107, 26);
-            this.dateTimePickerFrom.TabIndex = 2;
-            // 
-            // lb_From
-            // 
-            this.lb_From.AutoSize = true;
-            this.lb_From.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_From.Location = new System.Drawing.Point(8, 17);
-            this.lb_From.Name = "lb_From";
-            this.lb_From.Size = new System.Drawing.Size(126, 20);
-            this.lb_From.TabIndex = 1;
-            this.lb_From.Text = " Filter By: From";
-            // 
-            // dataGridViewTopSelling
-            // 
-            this.dataGridViewTopSelling.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTopSelling.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.gNameDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.dataGridViewTopSelling.Location = new System.Drawing.Point(428, 3);
-            this.dataGridViewTopSelling.Name = "dataGridViewTopSelling";
-            this.dataGridViewTopSelling.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTopSelling.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTopSelling.RowHeadersWidth = 51;
-            this.dataGridViewTopSelling.RowTemplate.Height = 24;
-            this.dataGridViewTopSelling.Size = new System.Drawing.Size(757, 389);
-            this.dataGridViewTopSelling.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Expr1";
-            this.dataGridViewTextBoxColumn3.HeaderText = "GID";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 50;
-            // 
-            // gNameDataGridViewTextBoxColumn
-            // 
-            this.gNameDataGridViewTextBoxColumn.DataPropertyName = "GName";
-            this.gNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.gNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gNameDataGridViewTextBoxColumn.Name = "gNameDataGridViewTextBoxColumn";
-            this.gNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gNameDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TotalPrice";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Total Price";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 135;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "OrderDate";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Order Date";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // tabPageIncome
             // 
@@ -469,14 +291,14 @@
             this.dataGridViewIncome.Location = new System.Drawing.Point(455, 4);
             this.dataGridViewIncome.Name = "dataGridViewIncome";
             this.dataGridViewIncome.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewIncome.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewIncome.RowHeadersWidth = 51;
             this.dataGridViewIncome.RowTemplate.Height = 24;
             this.dataGridViewIncome.Size = new System.Drawing.Size(742, 389);
@@ -683,14 +505,14 @@
             this.dataGridViewOutcome.Location = new System.Drawing.Point(392, 3);
             this.dataGridViewOutcome.Name = "dataGridViewOutcome";
             this.dataGridViewOutcome.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOutcome.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOutcome.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewOutcome.RowHeadersWidth = 51;
             this.dataGridViewOutcome.RowTemplate.Height = 24;
             this.dataGridViewOutcome.Size = new System.Drawing.Size(799, 389);
@@ -782,9 +604,6 @@
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
             this.tabControlReport.ResumeLayout(false);
-            this.tabPageTopSelling.ResumeLayout(false);
-            this.tabPageTopSelling.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopSelling)).EndInit();
             this.tabPageIncome.ResumeLayout(false);
             this.tabPageIncome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncome)).EndInit();
@@ -803,23 +622,13 @@
 
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.TabControl tabControlReport;
-        private System.Windows.Forms.TabPage tabPageTopSelling;
-        private System.Windows.Forms.DataGridView dataGridViewTopSelling;
         private System.Windows.Forms.TabPage tabPageIncome;
         private System.Windows.Forms.TabPage tabPageOutcome;
-        
-        private System.Windows.Forms.DateTimePicker dateTimePickerTo;
-        private System.Windows.Forms.Label labelTo;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
-        private System.Windows.Forms.Label lb_From;
         private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodsStatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentStatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label labelSort;
-        private System.Windows.Forms.ComboBox comboBoxSort;
-        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnLoadIncome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxIncomeSort;
@@ -844,11 +653,6 @@
         private System.Windows.Forms.DataGridView dataGridViewOutcome;
         private System.Windows.Forms.TextBox txtOutcome;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;

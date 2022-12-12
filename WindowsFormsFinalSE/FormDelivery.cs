@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WindowsFormsFinalSE
 {
@@ -101,20 +102,50 @@ namespace WindowsFormsFinalSE
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            DataObject copydata = dataGridViewNote.GetClipboardContent();
-            if (copydata != null) Clipboard.SetDataObject(copydata);
-            Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
-            xlapp.Visible = true;
-            Microsoft.Office.Interop.Excel.Workbook xlworkbook;
-            Microsoft.Office.Interop.Excel.Worksheet xlsheet;
-            object miseddata = System.Reflection.Missing.Value;
-            xlworkbook = xlapp.Workbooks.Add(miseddata);
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlApp = new Excel.Application();
+            xlWorkBook = xlApp.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            int i = 0;
+            int j = 0;
+            for (i = 0; i <= dataGridViewNote.RowCount - 1; i++)
+            {
+                for (j = 0; j <= dataGridViewNote.ColumnCount - 1; j++)
+                {
+                    DataGridViewCell cell = dataGridViewNote[j, i];
+                    xlWorkSheet.Cells[i + 1, j + 1] = cell.Value;
+                }
+            }
+            xlWorkBook.SaveAs("DeliveryNote.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.Close(true, misValue, misValue);
+            xlApp.Quit();
 
-            xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlworkbook.Worksheets.get_Item(1);
-            Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[1, 1];
-            xlr.Select();
+            releaseObject(xlWorkSheet);
+            releaseObject(xlWorkBook);
+            releaseObject(xlApp);
 
-            xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+            MessageBox.Show("Excel file created , you can find the file \"\\Documents\\DeliveryNote.xls\"");
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
     }
+    
 }

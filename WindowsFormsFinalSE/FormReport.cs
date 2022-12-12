@@ -35,20 +35,7 @@ namespace WindowsFormsFinalSE
 
 
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            dataGridViewTopSelling.DataSource = null;
-            if (comboBoxSort.Text == "Quantity")
-            {
-                /*datagridviewtopselling should be sorted by quantity*/
-                //dataGridViewTopSelling.DataSource = db.Incomes.Where(x => x.OrderDate >= dateTimePickerFrom.Value && x.OrderDate <= dateTimePickerTo.Value).OrderByDescending(x => x.Quantity).ToList();
-            }
-            else if (comboBoxSort.Text == "Total Price")
-            {
-                /*datagridviewtopselling should be sorted by price*/
-                //dataGridViewTopSelling.DataSource = db.Incomes.Where(x => x.OrderDate >= dateTimePickerFrom.Value && x.OrderDate <= dateTimePickerTo.Value).OrderByDescending(x => x.TotalPrice).ToList();
-            }
-        }
+        
 
         private void btnLoadIncome_Click(object sender, EventArgs e)
         {
