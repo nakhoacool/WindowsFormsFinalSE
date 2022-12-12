@@ -73,7 +73,7 @@
             this.iconGoods.FlatAppearance.BorderSize = 0;
             this.iconGoods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconGoods.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.iconGoods.IconChar = FontAwesome.Sharp.IconChar.Person;
+            this.iconGoods.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
             this.iconGoods.IconColor = System.Drawing.Color.Gainsboro;
             this.iconGoods.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconGoods.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
