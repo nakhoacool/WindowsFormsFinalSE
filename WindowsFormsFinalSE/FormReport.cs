@@ -48,8 +48,8 @@ namespace WindowsFormsFinalSE
                 dataGridViewIncome.DataSource = db.Vw_ItemOrdered.Where(x => x.OrderDate >= dateTimePickerIncomeFrom.Value && x.OrderDate <= dateTimePickerIncomeTo.Value).OrderByDescending(x => x.Quantity).ToList();
                 foreach (DataGridViewRow row in dataGridViewIncome.Rows)
                 {
-                    num += Convert.ToInt32(row.Cells[2].Value);
-                    total += Convert.ToInt32(row.Cells[3].Value);
+                    num += Convert.ToInt32(row.Cells[3].Value);
+                    total += Convert.ToInt32(row.Cells[4].Value);
                 }
                 txtTotal.Text = num.ToString();
                 txtTotalIncome.Text = total.ToString();
@@ -59,8 +59,8 @@ namespace WindowsFormsFinalSE
                 dataGridViewIncome.DataSource = db.Vw_ItemOrdered.Where(x => x.OrderDate >= dateTimePickerIncomeFrom.Value && x.OrderDate <= dateTimePickerIncomeTo.Value).OrderByDescending(x => x.TotalPrice).ToList();
                 foreach (DataGridViewRow row in dataGridViewIncome.Rows)
                 {
-                    num += Convert.ToInt32(row.Cells[2].Value);
-                    total += Convert.ToInt32(row.Cells[3].Value);
+                    num += Convert.ToInt32(row.Cells[3].Value);
+                    total += Convert.ToInt32(row.Cells[4].Value);
                 }
                 txtTotal.Text = num.ToString();
                 txtTotalIncome.Text = total.ToString();
