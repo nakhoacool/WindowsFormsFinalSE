@@ -20,9 +20,9 @@ namespace WindowsFormsFinalSE {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FinalSEDataSetOrdered")]
+    [global::System.Xml.Serialization.XmlRootAttribute("FinalSEDataSetIOrderedView")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FinalSEDataSetOrdered : global::System.Data.DataSet {
+    public partial class FinalSEDataSetIOrderedView : global::System.Data.DataSet {
         
         private Vw_ItemOrderedDataTable tableVw_ItemOrdered;
         
@@ -30,7 +30,7 @@ namespace WindowsFormsFinalSE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public FinalSEDataSetOrdered() {
+        public FinalSEDataSetIOrderedView() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace WindowsFormsFinalSE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected FinalSEDataSetOrdered(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected FinalSEDataSetIOrderedView(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FinalSEDataSetOrdered cln = ((FinalSEDataSetOrdered)(base.Clone()));
+            FinalSEDataSetIOrderedView cln = ((FinalSEDataSetIOrderedView)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FinalSEDataSetOrdered";
+            this.DataSetName = "FinalSEDataSetIOrderedView";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FinalSEDataSetOrdered.xsd";
+            this.Namespace = "http://tempuri.org/FinalSEDataSetIOrderedView.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableVw_ItemOrdered = new Vw_ItemOrderedDataTable();
@@ -225,7 +225,7 @@ namespace WindowsFormsFinalSE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FinalSEDataSetOrdered ds = new FinalSEDataSetOrdered();
+            FinalSEDataSetIOrderedView ds = new FinalSEDataSetIOrderedView();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -279,6 +279,10 @@ namespace WindowsFormsFinalSE {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Vw_ItemOrderedDataTable : global::System.Data.TypedTableBase<Vw_ItemOrderedRow> {
             
+            private global::System.Data.DataColumn columnGID;
+            
+            private global::System.Data.DataColumn columnOID;
+            
             private global::System.Data.DataColumn columnGName;
             
             private global::System.Data.DataColumn columnQuantity;
@@ -286,8 +290,6 @@ namespace WindowsFormsFinalSE {
             private global::System.Data.DataColumn columnTotalPrice;
             
             private global::System.Data.DataColumn columnOrderDate;
-            
-            private global::System.Data.DataColumn columnExpr1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -324,6 +326,22 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GIDColumn {
+                get {
+                    return this.columnGID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OIDColumn {
+                get {
+                    return this.columnOID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn GNameColumn {
                 get {
                     return this.columnGName;
@@ -351,14 +369,6 @@ namespace WindowsFormsFinalSE {
             public global::System.Data.DataColumn OrderDateColumn {
                 get {
                     return this.columnOrderDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
-                get {
-                    return this.columnExpr1;
                 }
             }
             
@@ -399,14 +409,15 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Vw_ItemOrderedRow AddVw_ItemOrderedRow(string GName, int Quantity, int TotalPrice, System.DateTime OrderDate, string Expr1) {
+            public Vw_ItemOrderedRow AddVw_ItemOrderedRow(string GID, string OID, string GName, int Quantity, int TotalPrice, System.DateTime OrderDate) {
                 Vw_ItemOrderedRow rowVw_ItemOrderedRow = ((Vw_ItemOrderedRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        GID,
+                        OID,
                         GName,
                         Quantity,
                         TotalPrice,
-                        OrderDate,
-                        Expr1};
+                        OrderDate};
                 rowVw_ItemOrderedRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVw_ItemOrderedRow);
                 return rowVw_ItemOrderedRow;
@@ -414,9 +425,10 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Vw_ItemOrderedRow FindByExpr1(string Expr1) {
+            public Vw_ItemOrderedRow FindByGIDOID(string GID, string OID) {
                 return ((Vw_ItemOrderedRow)(this.Rows.Find(new object[] {
-                            Expr1})));
+                            GID,
+                            OID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -436,16 +448,21 @@ namespace WindowsFormsFinalSE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnGID = base.Columns["GID"];
+                this.columnOID = base.Columns["OID"];
                 this.columnGName = base.Columns["GName"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnTotalPrice = base.Columns["TotalPrice"];
                 this.columnOrderDate = base.Columns["OrderDate"];
-                this.columnExpr1 = base.Columns["Expr1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnGID = new global::System.Data.DataColumn("GID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGID);
+                this.columnOID = new global::System.Data.DataColumn("OID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOID);
                 this.columnGName = new global::System.Data.DataColumn("GName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGName);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
@@ -454,14 +471,14 @@ namespace WindowsFormsFinalSE {
                 base.Columns.Add(this.columnTotalPrice);
                 this.columnOrderDate = new global::System.Data.DataColumn("OrderDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrderDate);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnExpr1}, true));
+                                this.columnGID,
+                                this.columnOID}, true));
+                this.columnGID.AllowDBNull = false;
+                this.columnGID.MaxLength = 6;
+                this.columnOID.AllowDBNull = false;
+                this.columnOID.MaxLength = 6;
                 this.columnGName.MaxLength = 50;
-                this.columnExpr1.AllowDBNull = false;
-                this.columnExpr1.Unique = true;
-                this.columnExpr1.MaxLength = 6;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -529,7 +546,7 @@ namespace WindowsFormsFinalSE {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FinalSEDataSetOrdered ds = new FinalSEDataSetOrdered();
+                FinalSEDataSetIOrderedView ds = new FinalSEDataSetIOrderedView();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -604,6 +621,28 @@ namespace WindowsFormsFinalSE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string GID {
+                get {
+                    return ((string)(this[this.tableVw_ItemOrdered.GIDColumn]));
+                }
+                set {
+                    this[this.tableVw_ItemOrdered.GIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string OID {
+                get {
+                    return ((string)(this[this.tableVw_ItemOrdered.OIDColumn]));
+                }
+                set {
+                    this[this.tableVw_ItemOrdered.OIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string GName {
                 get {
                     try {
@@ -663,17 +702,6 @@ namespace WindowsFormsFinalSE {
                 }
                 set {
                     this[this.tableVw_ItemOrdered.OrderDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Expr1 {
-                get {
-                    return ((string)(this[this.tableVw_ItemOrdered.Expr1Column]));
-                }
-                set {
-                    this[this.tableVw_ItemOrdered.Expr1Column] = value;
                 }
             }
             
@@ -761,7 +789,7 @@ namespace WindowsFormsFinalSE {
         }
     }
 }
-namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
+namespace WindowsFormsFinalSE.FinalSEDataSetIOrderedViewTableAdapters {
     
     
     /// <summary>
@@ -885,11 +913,12 @@ namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Vw_ItemOrdered";
+            tableMapping.ColumnMappings.Add("GID", "GID");
+            tableMapping.ColumnMappings.Add("OID", "OID");
             tableMapping.ColumnMappings.Add("GName", "GName");
             tableMapping.ColumnMappings.Add("Quantity", "Quantity");
             tableMapping.ColumnMappings.Add("TotalPrice", "TotalPrice");
             tableMapping.ColumnMappings.Add("OrderDate", "OrderDate");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -906,7 +935,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT GName, Quantity, TotalPrice, OrderDate, Expr1 FROM dbo.Vw_ItemOrdered";
+            this._commandCollection[0].CommandText = "SELECT GID, OID, GName, Quantity, TotalPrice, OrderDate FROM dbo.Vw_ItemOrdered";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -914,7 +943,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FinalSEDataSetOrdered.Vw_ItemOrderedDataTable dataTable) {
+        public virtual int Fill(FinalSEDataSetIOrderedView.Vw_ItemOrderedDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -927,9 +956,9 @@ namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FinalSEDataSetOrdered.Vw_ItemOrderedDataTable GetData() {
+        public virtual FinalSEDataSetIOrderedView.Vw_ItemOrderedDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FinalSEDataSetOrdered.Vw_ItemOrderedDataTable dataTable = new FinalSEDataSetOrdered.Vw_ItemOrderedDataTable();
+            FinalSEDataSetIOrderedView.Vw_ItemOrderedDataTable dataTable = new FinalSEDataSetIOrderedView.Vw_ItemOrderedDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1003,7 +1032,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(FinalSEDataSetOrdered dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(FinalSEDataSetIOrderedView dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1013,7 +1042,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(FinalSEDataSetOrdered dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(FinalSEDataSetIOrderedView dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1023,7 +1052,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(FinalSEDataSetOrdered dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(FinalSEDataSetIOrderedView dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1057,7 +1086,7 @@ namespace WindowsFormsFinalSE.FinalSEDataSetOrderedTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(FinalSEDataSetOrdered dataSet) {
+        public virtual int UpdateAll(FinalSEDataSetIOrderedView dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

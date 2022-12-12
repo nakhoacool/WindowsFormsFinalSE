@@ -25,7 +25,7 @@ namespace WindowsFormsFinalSE
             comboBoxGID.Enabled = false;
 
             txtQuantity.Enabled = false;
-
+            ImportGridView.DataSource = db.Imports.ToList();
         }
 
         private void FormGoods_Load(object sender, EventArgs e)
@@ -217,6 +217,7 @@ namespace WindowsFormsFinalSE
             MessageBox.Show("Import note saved successfully");
             Class.Clear.ResetAllControls(this);
             txtImportID.Clear();
+            txtTotalPrice.Clear();
             comboBoxID.Text = "";
             btnAdd.Enabled = false;
             btnEdit.Enabled = false;

@@ -20,14 +20,14 @@ namespace WindowsFormsFinalSE
 
         private void FormReport_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'finalSEDataSetIOrderedView.Vw_ItemOrdered' table. You can move, or remove it, as needed.
+            this.vw_ItemOrderedTableAdapter.Fill(this.finalSEDataSetIOrderedView.Vw_ItemOrdered);
             // TODO: This line of code loads data into the 'finalSEDataSetItemImported.Vw_ItemImported' table. You can move, or remove it, as needed.
             this.vw_ItemImportedTableAdapter.Fill(this.finalSEDataSetItemImported.Vw_ItemImported);
 
 
 
-            // TODO: This line of code loads data into the 'finalSEDataSetOrdered.Vw_ItemOrdered' table. You can move, or remove it, as needed.
-            this.vw_ItemOrderedTableAdapter.Fill(this.finalSEDataSetOrdered.Vw_ItemOrdered);
-            
+     
 
 
         }

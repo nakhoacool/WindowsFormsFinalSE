@@ -95,13 +95,15 @@ warning 6002: The table/view 'FinalSE.dbo.Vw_ItemImported' does not have a prima
 warning 6002: The table/view 'FinalSE.dbo.Vw_ItemOrdered' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Vw_ItemOrdered">
           <Key>
-            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="GID" />
+            <PropertyRef Name="OID" />
           </Key>
+          <Property Name="GID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="OID" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="GName" Type="nvarchar" MaxLength="50" />
           <Property Name="Quantity" Type="int" />
           <Property Name="TotalPrice" Type="int" />
           <Property Name="OrderDate" Type="date" />
-          <Property Name="Expr1" Type="varchar" MaxLength="6" Nullable="false" />
         </EntityType>
         <Association Name="FK__Delivery__AID__440B1D61">
           <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
@@ -207,11 +209,12 @@ warning 6002: The table/view 'FinalSE.dbo.Vw_ItemOrdered' does not have a primar
           </EntitySet>
           <EntitySet Name="Vw_ItemOrdered" EntityType="Self.Vw_ItemOrdered" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [Vw_ItemOrdered].[GID] AS [GID], 
+    [Vw_ItemOrdered].[OID] AS [OID], 
     [Vw_ItemOrdered].[GName] AS [GName], 
     [Vw_ItemOrdered].[Quantity] AS [Quantity], 
     [Vw_ItemOrdered].[TotalPrice] AS [TotalPrice], 
-    [Vw_ItemOrdered].[OrderDate] AS [OrderDate], 
-    [Vw_ItemOrdered].[Expr1] AS [Expr1]
+    [Vw_ItemOrdered].[OrderDate] AS [OrderDate]
     FROM [dbo].[Vw_ItemOrdered] AS [Vw_ItemOrdered]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__Delivery__AID__440B1D61" Association="Self.FK__Delivery__AID__440B1D61">
@@ -453,19 +456,9 @@ warning 6002: The table/view 'FinalSE.dbo.Vw_ItemOrdered' does not have a primar
             <End Role="Import" EntitySet="Imports" />
             <End Role="ImportDetail" EntitySet="ImportDetails" />
           </AssociationSet>
-          <EntitySet Name="Vw_ItemOrdered" EntityType="FinalSEModel.Vw_ItemOrdered" />
           <EntitySet Name="Vw_ItemImported" EntityType="FinalSEModel.Vw_ItemImported" />
+          <EntitySet Name="Vw_ItemOrdered" EntityType="FinalSEModel.Vw_ItemOrdered" />
         </EntityContainer>
-        <EntityType Name="Vw_ItemOrdered">
-          <Key>
-            <PropertyRef Name="Expr1" />
-          </Key>
-          <Property Name="GName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Quantity" Type="Int32" />
-          <Property Name="TotalPrice" Type="Int32" />
-          <Property Name="OrderDate" Type="DateTime" Precision="0" />
-          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="Vw_ItemImported">
           <Key>
             <PropertyRef Name="ImportID" />
@@ -477,6 +470,18 @@ warning 6002: The table/view 'FinalSE.dbo.Vw_ItemOrdered' does not have a primar
           <Property Name="ImportID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="ImportDate" Type="DateTime" Precision="0" />
           <Property Name="GID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Vw_ItemOrdered">
+          <Key>
+            <PropertyRef Name="GID" />
+            <PropertyRef Name="OID" />
+          </Key>
+          <Property Name="GID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="OID" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="GName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="TotalPrice" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -562,17 +567,6 @@ warning 6002: The table/view 'FinalSE.dbo.Vw_ItemOrdered' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Vw_ItemOrdered">
-            <EntityTypeMapping TypeName="FinalSEModel.Vw_ItemOrdered">
-              <MappingFragment StoreEntitySet="Vw_ItemOrdered">
-                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="GName" ColumnName="GName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Vw_ItemImported">
             <EntityTypeMapping TypeName="FinalSEModel.Vw_ItemImported">
               <MappingFragment StoreEntitySet="Vw_ItemImported">
@@ -582,6 +576,18 @@ warning 6002: The table/view 'FinalSE.dbo.Vw_ItemOrdered' does not have a primar
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="GName" ColumnName="GName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_ItemOrdered">
+            <EntityTypeMapping TypeName="FinalSEModel.Vw_ItemOrdered">
+              <MappingFragment StoreEntitySet="Vw_ItemOrdered">
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="GName" ColumnName="GName" />
+                <ScalarProperty Name="OID" ColumnName="OID" />
+                <ScalarProperty Name="GID" ColumnName="GID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

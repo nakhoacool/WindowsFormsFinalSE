@@ -14,10 +14,11 @@ namespace WindowsFormsFinalSE
     
     public partial class Vw_ItemOrdered
     {
+        public string GID { get; set; }
+        public string OID { get; set; }
         public string GName { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<int> TotalPrice { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
-        public string Expr1 { get; set; }
     }
 }
