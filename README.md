@@ -1,6 +1,5 @@
 # Supplement Facts Product Management App
 
-A Windows Forms application for managing and organizing supplement facts product data.
 
 ## Table of Contents
 
