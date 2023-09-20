@@ -40,8 +40,6 @@ To get started with this project, follow these steps:
 
 ## Dependencies
 
-List the key dependencies your project relies on. For example:
-
 - Windows Forms (part of the .NET Framework)
 - Entity Framework (for database interaction)
 - ...
